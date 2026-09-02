@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Experimental Results Data Dump · Biliteral Cipher · September 2, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#FAF8F4; --card:#FFFDFA; --ink:#241F1A; --ink-mid:#544A40;
+  --ink-soft:#7D7266; --rule:#DCD4C7; --rule-soft:#EAE4DA;
+  --accent:#5C3D24; --accent-mid:#8A6A3A; --accent-soft:#F0E9DE;
+  --a-form:#2B4C8C; --b-form:#9A4A2F; --kill:#8E2F3C;
+}
+:root[data-theme="dark"]{
+  --paper:#16130F; --card:#1E1A15; --ink:#EDE7DE; --ink-mid:#B3A899;
+  --ink-soft:#8A8073; --rule:#3A332B; --rule-soft:#2A251F;
+  --accent:#D7B183; --accent-mid:#C9A473; --accent-soft:#2A2219;
+  --a-form:#8BA6E8; --b-form:#D9906B; --kill:#DE7B87;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#16130F; --card:#1E1A15; --ink:#EDE7DE; --ink-mid:#B3A899;
+    --ink-soft:#8A8073; --rule:#3A332B; --rule-soft:#2A251F;
+    --accent:#D7B183; --accent-mid:#C9A473; --accent-soft:#2A2219;
+    --a-form:#8BA6E8; --b-form:#D9906B; --kill:#DE7B87;
+  }
+}
+*{box-sizing:border-box;}
+.endmark{text-align:center;color:var(--ink-soft);font-size:20px;letter-spacing:.6em;padding:26px 0 0;}
+body{margin:0;padding-bottom:60px;background:var(--paper);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+  font-size:18px;line-height:1.6;-webkit-text-size-adjust:100%;}
+.wrap{max-width:860px;margin:0 auto;padding:0 28px;}
+
+header{padding:52px 0 30px;}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;
+  font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-mid);}
+h1{font-size:clamp(30px,5.1vw,46px);line-height:1.08;font-weight:700;
+  letter-spacing:-.015em;margin:12px 0 0;text-wrap:balance;}
+h1 .seg{white-space:nowrap;}
+h1 .sep{color:var(--accent-mid);font-weight:400;padding:0 .12em;}
+@media (max-width:520px){h1 .seg{white-space:normal;}}
+.standfirst{font-size:20px;line-height:1.5;color:var(--ink-mid);margin:16px 0 0;max-width:56ch;}
+.standfirst strong{display:inline-block;margin-top:10px;font-weight:600;color:var(--ink);}
+.asof{margin-top:20px;display:inline-block;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12px;letter-spacing:.06em;color:var(--ink-soft);
+  border:1px solid var(--rule);padding:6px 11px;}
+
+nav{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:14px 0;display:flex;flex-wrap:wrap;gap:9px;align-items:center;
+  position:sticky;top:0;background:var(--paper);z-index:5;}
+button{font-family:inherit;font-size:16px;cursor:pointer;border:1px solid var(--rule);
+  background:transparent;color:var(--ink);padding:9px 16px;border-radius:3px;}
+button:hover{border-color:var(--accent-mid);}
+button[aria-selected="true"]{background:var(--accent);color:var(--paper);border-color:var(--accent);font-weight:600;}
+:root[data-theme="dark"] button[aria-selected="true"]{color:#16130F;}
+.spacer{flex:1;}
+.util{font-size:14px;padding:8px 13px;}
+button:focus-visible{outline:2px solid var(--accent-mid);outline-offset:2px;}
+
+main{padding:8px 0 90px;}
+section[hidden]{display:none;}
+h2{font-size:26px;font-weight:700;margin:46px 0 0;letter-spacing:-.01em;text-wrap:balance;}
+h2:first-child{margin-top:34px;}
+h3{font-size:19px;font-weight:600;margin:30px 0 0;}
+p{margin:14px 0 0;max-width:66ch;}
+ul,ol{margin:14px 0 0;padding-left:22px;max-width:64ch;}
+li{margin-top:8px;}
+strong{font-weight:600;}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.85em;}
+.gl{font-style:italic;font-weight:600;}
+.a-form{color:var(--a-form);font-weight:600;}
+.b-form{color:var(--b-form);font-weight:600;}
+a{color:var(--accent);text-underline-offset:2px;}
+
+details{border-bottom:1px solid var(--rule-soft);padding:2px 0;}
+summary{cursor:pointer;padding:15px 0;font-size:19px;font-weight:600;list-style:none;
+  display:flex;gap:12px;align-items:baseline;}
+summary::-webkit-details-marker{display:none;}
+summary::before{content:"+";color:var(--accent-mid);font-family:"IBM Plex Mono",monospace;
+  font-size:17px;flex:none;width:14px;}
+details[open] summary::before{content:"\2013";}
+details[open] summary{color:var(--accent);}
+details .body{padding:0 0 18px 26px;}
+details .body p:first-child{margin-top:0;}
+
+.note{margin-top:22px;padding:16px 18px;background:var(--card);
+  border-left:3px solid var(--accent-mid);font-size:17px;color:var(--ink-mid);}
+.note strong{color:var(--ink);}
+.note.kill{border-left-color:var(--kill);}
+.note.kill strong{color:var(--kill);}
+
+.rec{border-top:1px solid var(--rule);padding:22px 0;display:grid;
+  grid-template-columns:130px 1fr;gap:6px 22px;}
+.rec:last-of-type{border-bottom:1px solid var(--rule);}
+.rec .kind{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--ink-soft);padding-top:5px;}
+.rec .t{font-size:19px;font-weight:600;line-height:1.35;}
+.rec .m{font-size:15px;color:var(--ink-soft);margin-top:3px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;}
+.rec .d{font-size:16.5px;color:var(--ink-mid);margin-top:9px;max-width:60ch;}
+.rec .u{margin-top:9px;font-size:15px;word-break:break-word;}
+
+.tablewrap{overflow-x:auto;margin-top:20px;}
+table{border-collapse:collapse;width:100%;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:14px;font-variant-numeric:tabular-nums;}
+th{text-align:left;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-soft);border-bottom:1px solid var(--rule);padding:0 14px 8px 0;white-space:nowrap;}
+td{padding:8px 14px 8px 0;border-bottom:1px solid var(--rule-soft);color:var(--ink-mid);vertical-align:top;}
+td:first-child{color:var(--ink);}
+td.n,th.n{text-align:right;padding-right:20px;}
+
+pre{margin-top:18px;padding:16px 18px;background:var(--card);border:1px solid var(--rule-soft);
+  overflow-x:auto;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13.5px;
+  line-height:1.7;color:var(--ink-mid);}
+
+figure{margin:26px 0 0;}
+figcaption{font-size:22px;line-height:1.4;font-style:italic;color:var(--ink-mid);
+  margin-top:14px;max-width:60ch;}
+
+footer strong{font-weight:600;color:var(--ink);letter-spacing:.04em;}
+footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--card);padding:30px 26px 34px;margin-top:56px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;
+  color:var(--ink-soft);line-height:1.9;}
+
+@media (max-width:640px){
+  body{font-size:17px;} .wrap{padding:0 18px;}
+  .rec{grid-template-columns:1fr;gap:4px;}
+  .rec .kind{padding-top:0;}
+  nav{position:static;}
+  figcaption{font-size:22px;}
+}
+@media print{
+  body{padding-bottom:0;}
+  .endmark{display:none;}
+  footer{background:none;}
+  nav,.util{display:none!important;}
+  section[hidden]{display:block!important;}
+  body{background:#fff;color:#000;font-size:11pt;}
+  a{color:#000;}
+  h2{page-break-after:avoid;}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">New Gorhambury</div>
+  <h1><span class="seg">Experimental Results Data Dump</span> <span class="sep">·</span> <span class="seg">Biliteral Cipher</span> <span class="sep">·</span> <span class="seg">September 2, 2026</span></h1>
+  <p class="standfirst">One day's progress, presented three ways.<br><strong>Riverbank Laboratories said in 1916 that the italic <span class="gl">w</span> in Shakespeare's First Folio comes in two shapes. We went and looked.</strong></p>
+  <div class="asof">A record of one day's work · findings may be superseded by later dumps</div>
+</header>
+
+<nav role="tablist" aria-label="Sections">
+  <button role="tab" id="t1" aria-controls="p1" aria-selected="true">FAQ</button>
+  <button role="tab" id="t2" aria-controls="p2" aria-selected="false">Reference</button>
+  <button role="tab" id="t3" aria-controls="p3" aria-selected="false">Technical Colophon</button>
+  <span class="spacer"></span>
+  <button class="util" id="pdf">Save as PDF</button>
+  <button class="util" id="theme">Dark</button>
+</nav>
+</div>
+
+<main class="wrap">
+
+<!-- ================= FAQ ================= -->
+<section id="p1" role="tabpanel" aria-labelledby="t1">
+  <h2>The short version</h2>
+  <p>In 1899 an American cryptanalyst named Elizabeth Wells Gallup said she had found a hidden message inside the First Folio of Shakespeare — not in the words, but in the <em>shapes of the letters</em>. Two slightly different italic typefaces, alternating, spelling out a binary code devised by Sir Francis Bacon.</p>
+  <p>Almost everyone has considered this nonsense for a century. Almost nobody has measured it. That is the whole of what this project does.</p>
+
+  <div class="note"><strong>Today's result in one sentence.</strong> Riverbank's own 1916 manual says the two forms of the letter <span class="gl">w</span> differ in a specific, checkable way — and at the two places it says to look, on the actual page, they do.</div>
+
+  <h2>Questions</h2>
+
+  <details><summary>What is the biliteral cipher?</summary><div class="body">
+    <p>Sir Francis Bacon described it in 1623. Every letter of the alphabet becomes a group of five symbols, each symbol either an <span class="a-form">a</span> or a <span class="b-form">b</span> — binary code, three centuries before binary code. <em>A</em> is <span class="mono">aaaaa</span>, <em>B</em> is <span class="mono">aaaab</span>, and so on.</p>
+    <p>The trick is that the two symbols need not be letters at all. They can be two founts of type so similar that a reader notices nothing. Print an innocent passage in an alternating mixture of the two, and the shapes of the letters carry a second message underneath the first.</p>
+  </div></details>
+
+  <details><summary>So what is actually being tested here?</summary><div class="body">
+    <p>Not whether Bacon wrote Shakespeare. Something much narrower and much more answerable: <strong>is the italic type on these pages one fount, or two?</strong></p>
+    <p>That is a question about metal, ink and paper, settled in 1623. It has a definite answer, the photographs are free and public, and anybody with the same images can check the working or overturn it.</p>
+    <p>It is also the <em>necessary condition</em>. If there is only one fount, the whole claim dies where no amount of argument can reach it. If there are two, nothing about Bacon follows — but a fact about the book would be established that nobody currently knows.</p>
+  </div></details>
+
+  <details><summary>What did you actually find?</summary><div class="body">
+    <p>Riverbank published a manual in 1916 telling students how to tell the two forms apart, letter by letter. For the lowercase <span class="gl">w</span> in the Prologue to <em>Troilus and Cressida</em>, the rule is that the <span class="a-form">a</span>-form ends open and the <span class="b-form">b</span>-form has its final stroke closed into a small loop.</p>
+    <p>The same manual lists exactly where to find one of each: the <span class="gl">w</span> in the word <em>with</em> on line 4, and the <span class="gl">w</span> in <em>drawing</em> on line 12.</p>
+    <p>We fetched both from the Bodleian Library's public photographs of the book. The first is open. The second is looped. <strong>The rule holds where they said it would.</strong></p>
+  </div></details>
+
+  <details><summary>Does that mean the cipher is real?</summary><div class="body">
+    <p><strong>No.</strong> Two letters confirm that the described difference exists and can be seen. They do not show that it sorts every <span class="gl">w</span> in the passage, and they say nothing whatever about whether a message is present.</p>
+    <p>What it does mean is that the first checkable thing anyone has said about this claim in 127 years turned out to be checkable, and true.</p>
+  </div></details>
+
+  <details><summary>Why does a loop matter more than any other difference?</summary><div class="body">
+    <p>Because a hole is either there or it is not.</p>
+    <p>Most of the differences Riverbank describes are subtle — a stroke slightly wider, a curve commencing nearer the top. Four hundred years of ink spread, paper age and printing pressure blur that kind of detail beyond recovery, which is exactly why this argument has never been settled.</p>
+    <p>An enclosed loop is different in kind. A computer can count holes with near-certainty regardless of how heavily the page was inked. The <span class="gl">w</span> may be the one letter in the alphabet where the question can be answered cleanly.</p>
+  </div></details>
+
+  <details><summary>Isn't this just believing what a Baconian told you?</summary><div class="body">
+    <p>It would be, if we were using Gallup's answers to check Gallup's method. We are not.</p>
+    <p>The rule being tested is Riverbank's own published rule. The locations are Riverbank's own published locations. The photographs are the Bodleian Library's, made for entirely unrelated reasons. And the measurement is a hole count, which has no opinion.</p>
+    <p>The instrument we want to use next was built at Carnegie Mellon and UC San Diego to catch anonymous seventeenth-century printers. It has never heard of Elizabeth Wells Gallup. That neutrality is not a convenience — it is a large part of the evidence.</p>
+  </div></details>
+
+  <details><summary>What would change your mind?</summary><div class="body">
+    <p>Written down in advance, before any of this ran:</p>
+    <ul>
+      <li>If every <span class="gl">w</span> in the passage turns out to be the same shape, the claim is dead.</li>
+      <li>If ordinary text from elsewhere in the book — pages nobody claims carry a cipher — comes back looking just as two-formed, then the method is manufacturing structure and every result of ours is worthless.</li>
+      <li>If the classification only works when it is told the answer in advance, it proves nothing.</li>
+    </ul>
+    <p>A negative gets published in the same terms as a positive. That was decided before the data was looked at, and it is the whole difference between an audit and an advocacy.</p>
+  </div></details>
+
+  <details><summary>Who is doing this and why?</summary><div class="body">
+    <p>Walter Wilkinson, Worland, Wyoming. The overall project encompasses Orville Owen's Word Cipher; this is its sister strand.</p>
+    <p>The reason it has merit is that the question has stayed arguable for 127 years purely because nobody measured it — and until about six years ago, nobody easily could. The photographs went online free. The statistical machinery got built for another purpose entirely. Both halves now exist, and no one had put them together.</p>
+  </div></details>
+</section>
+
+<!-- ================= REFERENCE ================= -->
+<section id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+  <h2>External documents</h2>
+  <p>Every source relied on, with what it is and where the original lives. All are free and public.</p>
+
+  <div class="rec">
+    <div class="kind">Facsimile</div>
+    <div>
+      <div class="t">The Bodleian First Folio</div>
+      <div class="m">Bodleian Library, Arch. G c.7 · CC BY 3.0</div>
+      <div class="d">A complete digital facsimile of the Bodleian's copy of the 1623 Folio, 920 images at 5412 × 7216 pixels — roughly 600 dpi across a leaf. Also supplies TEI-XML transcriptions of all 36 plays, though not of the prefatory matter.</div>
+      <div class="u"><a href="https://firstfolio.bodleian.ox.ac.uk/">firstfolio.bodleian.ox.ac.uk</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Image API</div>
+    <div>
+      <div class="t">Bodleian IIIF manifest</div>
+      <div class="m">Presentation 2 · Image API 2.0 level 1</div>
+      <div class="d">The same facsimile served as an image API, so any rectangle of any page can be requested at any scale on demand. Nothing has to be downloaded or hosted. This is the plumbing that makes the whole experiment cost nothing to run.</div>
+      <div class="u"><a href="https://iiif.bodleian.ox.ac.uk/iiif/viewer/390fd0e8-9eae-475d-9564-ed916ab9035c">Universal Viewer</a> · <span class="mono">iiif.bodleian.ox.ac.uk/iiif/manifest/390fd0e8-…json</span></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Primary · 1916</div>
+    <div>
+      <div class="t">The Keys for Deciphering the Greatest Work of Sir Francis Bacon</div>
+      <div class="m">Riverbank Laboratories, Geneva, Illinois · copyright George Fabyan · 110 pp.</div>
+      <div class="d">The manual under test. Contains the Bi-Formed Alphabet Classifier plates for five passages including the Troilus Prologue, per-letter descriptions of what distinguishes the two forms, the rule that a dot or accent inverts a letter's value, and an Index of Typical Letters locating every exemplar by word and line.</div>
+      <div class="u"><a href="https://archive.org/details/keysfordecipheri00rive">archive.org/details/keysfordecipheri00rive</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Primary · 1910</div>
+    <div>
+      <div class="t">Concerning the Bi-literal Cypher of Francis Bacon</div>
+      <div class="m">Elizabeth Wells Gallup · Project Gutenberg ebook 70119</div>
+      <div class="d">Gallup's reply to her critics. Contains the section headed <em>Roman Types</em> answering the charge of arbitrary usage, and states the discrimination heuristic in period terms — that A's preponderate and no combination begins with two B's.</div>
+      <div class="u"><a href="https://www.gutenberg.org/ebooks/70119">gutenberg.org/ebooks/70119</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Method · 2020</div>
+    <div>
+      <div class="t">A Probabilistic Generative Model for Typographical Analysis of Early Modern Printing</div>
+      <div class="m">Goyal, Berg-Kirkpatrick et al. · arXiv 2005.01646</div>
+      <div class="d">Separates a glyph's underlying template from inking, jitter and degradation. Its published evaluation task is fully unsupervised discovery of typefaces in documents containing more than one — which is precisely the question this project needs answered, already built and already peer-reviewed by people with no stake in Bacon.</div>
+      <div class="u"><a href="https://arxiv.org/abs/2005.01646">arxiv.org/abs/2005.01646</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Method · 2023</div>
+    <div>
+      <div class="t">Contrastive Attention Networks for Attribution of Early Modern Print</div>
+      <div class="m">AAAI 2023 · arXiv 2306.07998</div>
+      <div class="d">Learned matching of individual pieces of damaged type across impressions — the machinery behind identifying which physical sort printed which letter.</div>
+      <div class="u"><a href="https://arxiv.org/abs/2306.07998">arxiv.org/abs/2306.07998</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Project</div>
+    <div>
+      <div class="t">Print &amp; Probability</div>
+      <div class="m">Carnegie Mellon University / UC San Diego</div>
+      <div class="d">An interdisciplinary programme identifying anonymous letterpress printers from damaged type, combining book history with computer vision. Releases Ocular (historical OCR that models the fount rather than normalising it away) and Coloring Book, which already analyses remote IIIF images from major repositories.</div>
+      <div class="u"><a href="http://printprobability.org/">printprobability.org</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Bibliography</div>
+    <div>
+      <div class="t">The Printing and Proof-Reading of the First Folio of Shakespeare</div>
+      <div class="m">Charlton Hinman · Oxford, 1963 · 2 vols</div>
+      <div class="d">The standing account of how this book was actually made. Hinman collated the Folger's copies and separated the compositors by tracking recurring damaged types through the volume — the same measurement this project needs, done by hand, on this exact book. Any claim about two founts has to be tested against it rather than around it.</div>
+      <div class="u">Edition details to be verified before citation.</div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Periodical</div>
+    <div>
+      <div class="t">Dr Orville Owen's Cipher Wheel: Past, Present and Future</div>
+      <div class="m">Carla Groenewegen · Baconiana Vol. 1 No. 6, June 2017 · Francis Bacon Society</div>
+      <div class="d">Source of both known published photographs of Owen's cipher wheel canvas, and of the report that the glue holding its pasted pages is failing.</div>
+      <div class="u">Francis Bacon Society</div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Secondary</div>
+    <div>
+      <div class="t">The Shakespeare Mangle</div>
+      <div class="m">Douglas Self · Museum of RetroTech</div>
+      <div class="d">Carries a larger uncredited copy (451 × 298) of the canvas photograph. Openly dismissive of Owen's findings; included because the image is useful and the dismissal is the received view, stated without argument.</div>
+      <div class="u"><a href="http://www.douglas-self.com/MUSEUM/COMMS/shakespeare/shakespeare.htm">douglas-self.com — The Shakespeare Mangle</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COLOPHON ================= -->
+<section id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+  <h2>Technical colophon</h2>
+  <p>Everything below is reproducible from public data and was produced on 2 September 2026. No images were downloaded, nothing is hosted, and the entire pipeline runs in a browser tab.</p>
+
+  <h3>Source and addressing</h3>
+  <p>Bodleian Arch. G c.7 over IIIF Presentation 2. The Troilus Prologue is <strong>canvas 588</strong>, fol. <span class="mono">"gg3"r(±)</span> — one of the cancel leaves from the abandoned post-<em>Romeo</em> placement, which is a nice accident given that this is also the first page Gallup ever classified.</p>
+<pre>service   https://iiif.bodleian.ox.ac.uk/iiif/image/a66a680a-987e-4459-9949-10bbd1cbcb89
+page      5412 x 7216 px   (~600 dpi across the leaf)
+region    {service}/{x},{y},{w},{h}/{size}/0/default.jpg
+licence   CC BY  ·  Image API 2.0 level 1  ·  arbitrary region + sizeByW
+
+canvas index = (Bodleian TEI axc number) - 1
+verse line 1 centre  y = 1454        line pitch = 118 px
+text block           x = 1440 .. 3600</pre>
+  <p>A 600 × 400 region returns in about 1.4 seconds at 95 KB. Harvesting a letter across the whole book is therefore a few thousand small region requests, not 920 very large JPEGs.</p>
+
+  <h3>The criterion, and why it is topological</h3>
+  <p>From the <em>Keys</em>, p. 22, the Bi-Formed Alphabet Classifier for "THE PROLOGUE": the <span class="a-form">a</span>-form <span class="gl">w</span> is a plain italic double-v; the <span class="b-form">b</span>-form has its final element closed into a bowl. That is a difference in <strong>Euler number</strong> — genus 0 against genus 1.</p>
+  <p>This matters more than it sounds. Nearly every other distinction in the manual is metric: a stroke slightly wider, a curve commencing nearer the top, lines produced along the top and base intersecting two to three inches from the letter. Metric features are destroyed by ink spread, threshold choice, registration error and 400 years of paper. A hole is invariant to all of them.</p>
+  <div class="note"><strong>It also explains the 2026 results retrospectively.</strong> <span class="gl">w</span> scored because its difference is a hole. <span class="gl">g</span> returned baseline because its difference lives in a descender the segmentation was clipping. <span class="gl">v</span> failed on sample size. Nothing mysterious in any of it.</div>
+
+  <h3>Classifier</h3>
+<pre>1  fetch region via IIIF                    (requests)
+2  greyscale -> Gaussian blur sigma 1.6      (kills laid-paper grain)
+3  Otsu threshold                            (skimage.filters.threshold_otsu)
+4  remove_small_objects, min 0.15% of crop   (despeckle)
+5  connected-component labelling             (scipy.ndimage.label)
+6  select the glyph                          (operator-confirmed, see note)
+7  binary_fill_holes(mask) &amp; ~mask           (enclosed counters only)
+8  count holes >= 0.4% of glyph area
+9  0 counters -> a-form   |   >=1 -> b-form</pre>
+  <p>No training, no templates, no tuned threshold beyond Otsu. Step 6 is deliberately manual: the operator is shown every numbered component and names the one that is the letter. Automatic selection is a later problem and was not the thing under test.</p>
+  <div class="note kill"><strong>Two failures worth recording.</strong> The first pass thresholded a paper-dominated crop directly and returned 228 and 206 "counters" — it was measuring laid-paper grain. Blurring before thresholding fixed it. The second pass selected the leftmost component, which on one crop was the clipped tail of a neighbouring letter. Both were failures of selection and preprocessing, not of the criterion; both were visible in the diagnostic panels, which is why the panels exist.</div>
+
+  <h3>The result</h3>
+  <p>Riverbank's Index of Typical Letters (p. 90) locates both exemplars for this passage. Fetched at the stated positions:</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>form</th><th class="n">line</th><th>word</th><th>observed</th></tr></thead>
+    <tbody>
+      <tr><td>a</td><td class="n">4</td><td>with</td><td>plain open double-v, no enclosed counter</td></tr>
+      <tr><td>b</td><td class="n">12</td><td>deep-drawing</td><td>final element closed into a bowl</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>The stated criterion holds at the stated locations. That is a claim about type, and it owes nothing to any decipherment.</p>
+
+  <h3>The code space</h3>
+  <p>Bacon's alphabet has 24 letters and five binary places, so it uses 24 of 32 codes. The eight it never uses are exactly <span class="mono">bbaaa</span> through <span class="mono">bbbbb</span> — <strong>every unused code begins <span class="mono">bb</span></strong>. Positions 1 and 2 can never both be <span class="b-form">b</span>. And <span class="mono">aaaaa</span> is legal: it is the letter A, so any pipeline treating "no b found" as a detection failure silently corrupts every A in a message.</p>
+  <p>That converts a structural fact into an accuracy estimator requiring no labels and no plaintext — cut a classified run into quintets, count how many land in the forbidden eight:</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>per-glyph accuracy</th><th class="n">invalid-quintet rate</th></tr></thead>
+    <tbody>
+      <tr><td>100%</td><td class="n">0.0%</td></tr>
+      <tr><td>95%</td><td class="n">3.2%</td></tr>
+      <tr><td>90%</td><td class="n">6.3%</td></tr>
+      <tr><td>85%</td><td class="n">9.2%</td></tr>
+      <tr><td>50% (chance)</td><td class="n">25.0%</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>It also finds the group phase for free, and slid along the text in windows it maps where a carrier region begins and ends — answering "which italics?" by measurement instead of assumption.</p>
+  <div class="note kill"><strong>Two corrections that cost the estimator most of its apparent power.</strong> Only 16 of the 24 letters can reach the forbidden block with a single flip — every letter whose first two symbols are not <span class="mono">aa</span> — so single errors on A through H are silent and the invalid rate systematically under-counts. And Riverbank <em>used</em> the no-<span class="mono">bb</span> rule while marking, so its absence in their published transcription is guaranteed by their procedure, not evidence of anything. The instrument retains its force only against a classifier that has never been shown the constraint.</div>
+
+  <h3>How weak the code is</h3>
+  <p>Fabyan records that Gallup's first pass produced <span class="mono">ELIZXBEXH</span>, that she concluded the word was intended as <em>Elizabeth</em>, and that she then changed the markings and re-marked the entire passage on the revised criteria. Enumerating every bit-flip pattern across that nine-letter, 45-symbol block:</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th class="n">flips</th><th class="n">patterns</th><th class="n">still decode to 9 legal letters</th></tr></thead>
+    <tbody>
+      <tr><td class="n">1</td><td class="n">45</td><td class="n">41 — 91.1%</td></tr>
+      <tr><td class="n">2</td><td class="n">990</td><td class="n">819 — 82.7%</td></tr>
+      <tr><td class="n">3</td><td class="n">14,190</td><td class="n">10,625 — 74.9%</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Three-quarters of <em>triple</em> errors still yield nine perfectly legal letters. The arithmetic did not force ELIZABETH. What forced it was that ELIZABETH is the only <em>name</em> in the neighbourhood — a judgement of plausibility, not a constraint. Which is precisely the step that required out-of-sample confirmation and never received it.</p>
+  <p>A single letter makes the point concrete. <span class="mono">R</span> is <span class="mono">baaaa</span> and <span class="mono">A</span> is <span class="mono">aaaaa</span>: one bit apart. So the published reading <em>Elizabeth, R.</em> — the English royal sign manual — sits one glyph away from <em>Elizabetha</em>, the Latin style used on her formal instruments. Both are historically correct. The deciding glyph is the <span class="gl">o</span> of "or" in the Prologue's last line, <em>Now good, or bad, 'tis but the chance of Warre.</em> Nothing in the cipher chooses between them. Only the reader does.</p>
+
+  <h3>Reconciliation</h3>
+  <p>Riverbank's printed worksheet grid for the Prologue: 15 rows of 14 groups plus a final row of 4 = <strong>214 groups</strong>, 1,070 carrier glyphs, with the trailing <span class="mono">re</span> of "Warre" left uncoded. The Bodleian TEI's letter count for the passage is <strong>1,072</strong>. Grid, transcription and message reconcile to the glyph, and the message terminates exactly two letters before the passage does.</p>
+
+  <h3>Environment</h3>
+<pre>compute    Google Colab (browser)
+libraries  numpy · scipy.ndimage · scikit-image · pillow · requests
+data       fetched per-region from IIIF at run time; nothing stored
+notebook   experiment-four-w-counter-v3.ipynb
+transcript Bodleian TEI F-tro.xml (plays only; no prefatory matter published)
+manual     keysfordecipheri00rive, archive.org full text + page images</pre>
+  <p>The Bodleian's downloads comprise 36 zips and 36 XML files, one per play and nothing else — so the front matter, which is exactly where the cipher is claimed to live, has images but no transcription. That gap is the current bottleneck, and it appears to be a scope decision rather than a judgement about the verse.</p>
+
+  <h3>Publication</h3>
+  <p>This page is a single self-contained HTML file. No build step, no framework, no
+  package manager, no analytics, no trackers, no cookies. Two webfonts and about
+  forty lines of vanilla JavaScript for the tabs and the theme toggle; everything
+  else is markup and CSS. View source and the whole thing is in front of you.</p>
+<pre>publishing   GitHub Pages, from a public repository
+DNS          Namecheap BasicDNS, A records ->  185.199.108.153
+                                               185.199.109.153
+                                               185.199.110.153
+                                               185.199.111.153
+TLS          Let's Encrypt, issued and renewed automatically by GitHub Pages
+domain       .online registration, $0.98 first year
+build        none. the file in the repository is the file served
+issue        one per day, dated, permanent — superseded, never deleted</pre>
+  <p>Dumps are not taken down. The dateline says when the work was done and warns that
+  later issues may supersede it; a link sent today still resolves next year. An
+  ephemeral URL in an email that a reader opens a week later is a broken claim, not a
+  gesture of modesty.</p>
+  <p>Total infrastructure cost: one dollar a year and a repository. That is deliberate.
+  Nothing here depends on a service that can withdraw it, a subscription that can lapse,
+  or a login that can expire — which is the same standard we ask of the sources.</p>
+
+  <h3>Standing rules</h3>
+  <ul>
+    <li>Predictions and falsifiers are written down before the data is looked at.</li>
+    <li>Only open, re-fetchable data. No privileged access, no unique artefact.</li>
+    <li>A determinate procedure. The 1916 method depends on "the practised eye"; that is precisely what cannot be audited.</li>
+    <li>Necessary-condition framing stated with every result: two founts is not a message.</li>
+    <li>Negative controls must return null. A pipeline that finds structure everywhere has found nothing.</li>
+    <li>The null gets published in the same terms as a positive.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="wrap">
+  Experimental Results Data Dump · Biliteral Cipher · 2 September 2026<br>
+  Walter Wilkinson · Worland · Washakie County · Wyoming · <strong>5Ws</strong><br>
+  Folio images © Bodleian Libraries, University of Oxford, CC BY. Riverbank publications public domain.
+</footer>
+
+<div class="endmark" aria-hidden="true">·</div>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(o){
+        var p=document.getElementById(o.getAttribute('aria-controls'));
+        var on=(o===t);
+        o.setAttribute('aria-selected',on?'true':'false');
+        p.hidden=!on;
+      });
+      window.scrollTo({top:0,behavior:'instant'});
+    });
+  });
+  document.getElementById('pdf').addEventListener('click',function(){window.print();});
+  var th=document.getElementById('theme');
+  th.addEventListener('click',function(){
+    var r=document.documentElement;
+    var dark=r.getAttribute('data-theme')==='dark';
+    if(!dark && !r.hasAttribute('data-theme')){
+      dark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    r.setAttribute('data-theme',dark?'light':'dark');
+    th.textContent=dark?'Dark':'Light';
+  });
+})();
+</script>
+</body>
+</html>

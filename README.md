@@ -12,8 +12,11 @@ Two strands, one shape:
 ## Layout
 
 ```
-/index.html              latest issue
-/YYYY-MM-DD/index.html   permanent dated copy of each issue
+/index.html                        landing page, both strands
+/biliteral/index.html              latest biliteral issue
+/biliteral/YYYY-MM-DD/index.html   permanent dated copy
+/word-cipher/index.html            latest word cipher issue
+/word-cipher/YYYY-MM-DD/index.html permanent dated copy
 /CNAME                   custom domain for GitHub Pages
 ```
 
