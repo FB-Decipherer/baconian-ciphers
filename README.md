@@ -1,6 +1,6 @@
 # baconian-ciphers
 
-**Experimental Results Data Dump** — a daily record of one day's progress on the
+**One-Day Report** — a daily record of one day's progress on the
 Baconian cipher work, presented three ways: a public-facing FAQ, a Reference column
 of every external document used, and an unrestrained Technical Colophon.
 
