@@ -38,6 +38,9 @@ body{margin:0;padding-bottom:60px;background:var(--paper);color:var(--ink);
 header{padding:52px 0 30px;}
 .eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;
   font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-mid);}
+.eyebrow a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;}
+.eyebrow a:hover{border-bottom-color:currentColor;}
+.eyebrow .sep{opacity:.5;padding:0 .55em;font-weight:400;letter-spacing:0;}
 h1{font-size:clamp(30px,5.1vw,46px);line-height:1.08;font-weight:700;
   letter-spacing:-.015em;margin:12px 0 0;text-wrap:balance;}
 h1 .seg{white-space:nowrap;}
@@ -157,7 +160,7 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
 
 <div class="wrap">
 <header>
-  <div class="eyebrow">New Gorhambury</div>
+  <div class="eyebrow"><a href="https://gorhambury.org/">New Gorhambury</a><span class="sep">·</span><a href="https://baconian-ciphers.online/">Baconian Ciphers</a></div>
   <h1><span class="seg">One-Day Report</span> <span class="sep">·</span> <span class="seg">Biliteral Cipher</span> <span class="sep">·</span> <span class="seg">September 4, 2026</span></h1>
   <div class="claimlabel">Today's claim</div>
   <p class="standfirst"><strong>A page nobody claims is enciphered <em>failed</em> to reproduce the split in the letter <span class="gl">w</span> — the first time a test designed to kill the claim did not kill it — while on the same day the Baconians' own books turned out to claim this same passage in three different printings of Shakespeare, which at most one of them can be reading.</strong></p>
