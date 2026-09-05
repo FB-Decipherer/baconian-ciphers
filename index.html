@@ -11,7 +11,7 @@
 *{box-sizing:border-box}
 body{margin:0;padding-bottom:60px;background:var(--paper);color:var(--ink);
 font-family:"Source Serif 4",Georgia,serif;font-size:18px;line-height:1.6}
-.wrap{max-width:760px;margin:0 auto;padding:0 28px}
+.wrap{max-width:860px;margin:0 auto;padding:0 28px}
 header{padding:64px 0 34px}
 .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;
 letter-spacing:.15em;text-transform:uppercase;color:var(--accent-mid)}
@@ -22,15 +22,36 @@ letter-spacing:.15em;text-transform:uppercase;color:var(--accent-mid)}
 h1{font-size:clamp(32px,5.4vw,48px);line-height:1.06;font-weight:700;
 letter-spacing:-.015em;margin:12px 0 0;text-wrap:balance}
 .standfirst{font-size:20px;color:var(--ink-mid);margin:16px 0 0;max-width:54ch}
+.strands{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+@media (max-width:720px){.strands{grid-template-columns:1fr}}
 .strand{display:block;text-decoration:none;color:inherit;background:var(--card);
 border:1px solid var(--rule);border-left:3px solid var(--accent-mid);
-padding:24px 26px;margin-top:18px}
+padding:24px 26px;margin-top:0}
 .strand:hover{border-left-color:var(--accent)}
 .strand .k{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;
 text-transform:uppercase;color:var(--ink-soft)}
 .strand .n{font-size:25px;font-weight:700;margin-top:7px;color:var(--accent)}
-.strand .d{font-size:17px;color:var(--ink-mid);margin-top:9px;max-width:52ch}
+.strand .d{font-size:17px;color:var(--ink-mid);margin-top:9px}
 .strand .s{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);margin-top:12px}
+
+.archhead{margin-top:52px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;
+letter-spacing:.15em;text-transform:uppercase;color:var(--accent-mid)}
+.archsub{font-size:16px;color:var(--ink-soft);margin:8px 0 0}
+.issue{display:grid;grid-template-columns:104px 1fr;gap:20px;align-items:start;
+text-decoration:none;color:inherit;border-top:1px solid var(--rule);padding:20px 0}
+.issue:last-of-type{border-bottom:1px solid var(--rule)}
+.issue:hover .t{color:var(--accent)}
+.issue .thumb{width:104px;height:104px;background:var(--card);border:1px solid var(--rule);
+object-fit:cover;display:block}
+.issue .noshot{width:104px;height:104px;background:var(--card);border:1px solid var(--rule);
+display:flex;align-items:center;justify-content:center;
+font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;color:var(--ink-soft)}
+.issue .m{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.11em;
+text-transform:uppercase;color:var(--ink-soft)}
+.issue .t{font-size:18px;font-weight:600;line-height:1.35;margin-top:5px}
+.issue .c{font-size:15.5px;color:var(--ink-mid);margin-top:6px}
+@media (max-width:520px){.issue{grid-template-columns:76px 1fr;gap:14px}
+ .issue .thumb,.issue .noshot{width:76px;height:76px}}
 footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
 background:var(--card);padding:28px 26px 32px;margin-top:56px;
 font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);line-height:1.9}
@@ -47,6 +68,7 @@ footer strong{font-weight:600;color:var(--ink);letter-spacing:.04em}
   used, and an unrestrained technical colophon.</p>
 </header>
 
+<div class="strands">
 <a class="strand" href="/biliteral/">
   <div class="k">Strand</div>
   <div class="n">Biliteral Cipher</div>
@@ -61,6 +83,46 @@ footer strong{font-weight:600;color:var(--ink);letter-spacing:.04em}
   <div class="d">Orville Owen's method, and the containing programme — reverse-engineering
   how the Word Cipher actually worked.</div>
   <div class="s">Latest — September 4, 2026</div>
+</a>
+</div>
+
+<div class="archhead">All issues</div>
+<p class="archsub">Newest first. Issues are superseded, never removed &mdash; a link sent today still resolves next year.</p>
+
+<a class="issue" href="/word-cipher/2026-09-04/">
+  <img class="thumb" src="thumbs/2026-09-04-word-cipher.png" alt="" loading="lazy">
+  <div>
+    <div class="m">Word Cipher &middot; September 4, 2026</div>
+    <div class="t">The only close-up, measured</div>
+    <div class="c">The lines that dominate the one published photograph of Owen&rsquo;s canvas carry no colour. They are creases in the fabric, not his pencil.</div>
+  </div>
+</a>
+
+<a class="issue" href="/biliteral/2026-09-04/">
+  <img class="thumb" src="thumbs/2026-09-04-biliteral.png" alt="" loading="lazy">
+  <div>
+    <div class="m">Biliteral Cipher &middot; September 4, 2026</div>
+    <div class="t">A control page that failed to kill the claim</div>
+    <div class="c">A page nobody claims is enciphered did not reproduce the split in the letter w &mdash; while the Baconians&rsquo; own books turned out to work three different printings.</div>
+  </div>
+</a>
+
+<a class="issue" href="/biliteral/2026-09-03/">
+  <div class="noshot">NO FIGURE</div>
+  <div>
+    <div class="m">Biliteral Cipher &middot; September 3, 2026</div>
+    <div class="t">Fifteen out of fifteen, by the wrong rule</div>
+    <div class="c">A measurement of the page reproduces Riverbank&rsquo;s 1916 marking of the italic w on every letter it could isolate &mdash; using a rule that is not the one their manual states.</div>
+  </div>
+</a>
+
+<a class="issue" href="/biliteral/2026-09-02/">
+  <div class="noshot">NO FIGURE</div>
+  <div>
+    <div class="m">Biliteral Cipher &middot; September 2, 2026</div>
+    <div class="t">Two shapes, and nobody had looked</div>
+    <div class="c">Riverbank Laboratories said in 1916 that the italic w in Shakespeare&rsquo;s First Folio comes in two shapes. We went and looked.</div>
+  </div>
 </a>
 
 <p class="parent">Part of <a href="https://gorhambury.org/">New Gorhambury</a> — the sources, the experiments, and the Word Cipher work.</p>
