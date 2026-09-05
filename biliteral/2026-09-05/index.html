@@ -207,6 +207,12 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
     <figcaption>A signal that is real should not depend on how the two shapes were laid on top of one another. Three fitting methods were tried &mdash; sliding only, then a nearest-point fit, then a nearest-point fit that also fits the letter&rsquo;s lean. Lowercase <span class="gl">w</span> moves by 0.08&nbsp;sd across all three. Capital <span class="mono">P</span> moves by 2.42 and <span class="mono">f</span> by 1.43, which is how we know those two were artefacts of the fitting and not properties of the page.</figcaption>
   </figure>
 
+  <figure>
+    <div class="bigfig"><a href="the-stencil-provenance.jpg"><img src="the-stencil-provenance.jpg" alt="All sixty stencil pairs, coloured by the Folio passage each exemplar was cut from"></a></div>
+    <div class="figbar">drag sideways on a phone &middot; tap or click for full size</div>
+    <figcaption>Riverbank&rsquo;s exemplar letters are not Bacon&rsquo;s specimen alphabet. They were cut out of the First Folio itself and mounted on graph paper &mdash; and the book prints a table saying, for every borrowed letter, which passage, which line and which word. Six of the sixty were cut out of the Prologue: the page this project tests. Those six can never be scored on it. Lowercase <span class="gl">w</span> is not among them.</figcaption>
+  </figure>
+
   <h2>Questions</h2>
 
   <details><summary>What is the biliteral cipher?</summary><div class="body">
@@ -445,6 +451,7 @@ P        8   (5 / 3)    -0.1930   -0.2585    +0.50 sd
 c       18   (8 /10)    -0.4068   -0.5703    +0.48 sd
 r       64  (45 /19)    +0.0160   +0.0003    +0.04 sd
 f        9   (6 / 3)    +0.0248   +0.0164    +0.03 sd</pre>
+  <p class="small"><strong>Two of these six no longer stand.</strong> <span class="mono">P</span> is struck twice over &mdash; it swings 2.42&nbsp;sd between fitting methods, and its 1-form exemplar was cut from this very page (see below). <span class="mono">f</span> is struck once, for reversing sign under a better fit. The table is left as first computed so the corrections can be checked against it.</p>
   <p>Per-glyph values for <span class="gl">w</span>:</p>
 <pre>marked a   +0.582  +0.521  +0.511  +0.606  +0.681
 marked b   -0.680  -0.606  -0.670</pre>
@@ -476,6 +483,24 @@ P          +0.50        -1.91            -1.25            2.42</pre>
 marked b   -0.355  -0.415  -0.632</pre>
   <div class="note"><strong>Two results withdrawn.</strong> Capital <span class="mono">P</span> and <span class="mono">f</span> reverse sign when the registration improves. A property of the page does not do that. Neither was ever claimed as a finding, but both are struck from the table above: they measured the fit, not the ink. <span class="gl">w</span> moved by 0.08&nbsp;sd and is unaffected by which method is used.</div>
   <p>Not yet done: the per-footprint occupancies are computed blob by blob but still pooled into a single mean before scoring. Matching individual footprints between the two forms &mdash; <span class="mono">scipy.optimize.linear_sum_assignment</span> over a blob-to-blob cost &mdash; is the next version of the scorer and is not in these numbers.</p>
+
+  <h3>&#9873; Where the stencils came from</h3>
+  <p>Riverbank&rsquo;s plates carry two different kinds of alphabet, and the difference matters. At printed p.&nbsp;16 they reproduce Bacon&rsquo;s own specimen &mdash; captioned, in their words, &ldquo;Spedding&rsquo;s modernized illustration of Bacon&rsquo;s example of the use of a biformed alphabet&rdquo;, from the 1857 edition. That plate is <em>not</em> what this project uses.</p>
+  <p>The stencils come instead from pp.&nbsp;38&ndash;72, the <em>Illustrated Description of the Typical Letters</em>: enlarged photographs of letters <strong>cut out of the First Folio itself</strong> and mounted on cross-section paper. Riverbank say so plainly (p.&nbsp;11): the pages carrying the &ldquo;I.M.&rdquo; and &ldquo;Digges&rdquo; poems, &ldquo;A Catalogue&rdquo;, &ldquo;The Prologue&rdquo; and &ldquo;The Names of the Principall Actors&rdquo; were photographed from the original 1623 copy, and the letters cut from those photographs.</p>
+  <div class="note"><strong>Which is why four letters have nothing to measure.</strong> For <span class="mono">e</span>, <span class="mono">o</span>, <span class="mono">a</span> and <span class="mono">r</span>, both &ldquo;forms&rdquo; were cut from the same fount. Their plates convict themselves not by accident but by construction.</div>
+  <h3>&#9873; The circularity check</h3>
+  <p>Printed p.&nbsp;79 is a table headed <em>Letters Taken from Other Sources to Supplement the Alphabets and the Classifiers for the &ldquo;I.M.&rdquo; Poem</em> &mdash; forty-one numbered entries giving letter, case, form, source passage, line and word. Anything absent from it comes from the &ldquo;I.M.&rdquo; Poem by default. Seven entries name <strong>The Prologue</strong>, the page tested here:</p>
+<pre>  #   letter  case  form   line   word
+  9     S       2     a      1    Scene
+ 10     T       2     b     15    Their
+ 17     P       2     b      7    Put
+ 21     E       2     a     20    Expectation
+ 25     G       2     a      1    Greece
+ 32     ct      1    bb     20    Expectation
+ 34     R       2     a      6    Regall</pre>
+  <p>Six of those correspond to stencil pairs held here (<span class="mono">S</span>, <span class="mono">P</span>, <span class="mono">E</span>, <span class="mono">G</span>, <span class="mono">R</span>, <span class="mono">ct</span>; the Case&nbsp;2 <span class="mono">T</span> is not among the extracted plates). <strong>All six are struck from any scoring of this page.</strong> An exemplar cut from the page cannot be used to test the page.</p>
+  <div class="note"><strong>Capital P, convicted twice.</strong> <span class="mono">P</span> was withdrawn earlier today because its separation swings 2.42&nbsp;sd between fitting methods. It now turns out its 1-form exemplar was cut from the Prologue, line 7, the word &ldquo;Put&rdquo;. Two independent reasons, arrived at from opposite directions, condemning the same letter.</div>
+  <p>Lowercase italic <span class="gl">w</span> does not appear in the table, and its plate carries no source note &mdash; only the descriptions &ldquo;the letter is flat topped&rdquo; and &ldquo;first and third strokes on the left extend above the body&rdquo;. By the book&rsquo;s own default rule its exemplars come from the <strong>&ldquo;I.M.&rdquo; Poem</strong>, Ben Jonson&rsquo;s verse facing the Droeshout portrait &mdash; a different page, a different forme, from the Troilus Prologue. <strong>The <span class="gl">w</span> result is not circular.</strong> Of the other scored letters, <span class="mono">h</span>, <span class="mono">r</span> and <span class="mono">f</span> are likewise clean; <span class="mono">c</span>&rsquo;s 1-form was borrowed from the &ldquo;L. Digges&rdquo; poem, which is not circular here but is not the &ldquo;I.M.&rdquo; Poem either.</p>
 
   <h3>Why this differs from every earlier confirmation</h3>
   <p>The 3 September height measurement, the 5 September shape-similarity matrix and the projection profiles all derived their two forms <em>from the page</em>. A fair critic could answer that a split was found and then named.</p>
