@@ -201,6 +201,12 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
     <figcaption>The same operation on all sixty pairs in the manual, sorted most-different first. Lowercase <span class="gl">w</span> is the only one whose stencils, applied to the page, separate what Riverbank marked. Four letters &mdash; <span class="mono">e</span>, <span class="mono">o</span>, <span class="mono">a</span>, <span class="mono">r</span> &mdash; leave nothing to measure at all.</figcaption>
   </figure>
 
+    <figure>
+    <div class="bigfig"><a href="the-registration-stress-test.jpg"><img src="the-registration-stress-test.jpg" alt="Separation for six letters under three different registration methods"></a></div>
+    <div class="figbar">drag sideways on a phone &middot; tap or click for full size</div>
+    <figcaption>A signal that is real should not depend on how the two shapes were laid on top of one another. Three fitting methods were tried &mdash; sliding only, then a nearest-point fit, then a nearest-point fit that also fits the letter&rsquo;s lean. Lowercase <span class="gl">w</span> moves by 0.08&nbsp;sd across all three. Capital <span class="mono">P</span> moves by 2.42 and <span class="mono">f</span> by 1.43, which is how we know those two were artefacts of the fitting and not properties of the page.</figcaption>
+  </figure>
+
   <h2>Questions</h2>
 
   <details><summary>What is the biliteral cipher?</summary><div class="body">
@@ -451,6 +457,25 @@ best of all 56 splits      2.057     <- Riverbank's labelling IS the best split
 median of all 56          -0.127
 splits at least as good        1
 p = 1/56 = 0.0179   (the floor at this sample size)</pre>
+
+  <h3>&#9873; The registration stress test</h3>
+  <p>The scoring above lays the stencil on the glyph by <em>sliding it only</em> &mdash; an exhaustive search over whole-pixel offsets, keeping the position of greatest overlap. That is the crudest fit available. If a result depends on it, the result is a property of the fitting, not of the page. So the whole measurement was rebuilt twice more and the three answers compared.</p>
+  <p>The second and third builds use <strong>partial Procrustes</strong> registration: <span class="mono">scipy.linalg.orthogonal_procrustes</span> (the Kabsch rotation, solved by singular-value decomposition of the cross-covariance) driven by a trimmed iterative-closest-point loop, with correspondences from <span class="mono">scipy.spatial.cKDTree</span> and the worst 20&nbsp;per&nbsp;cent of matches discarded each pass. Reflection is forbidden by a determinant check; lean is clamped to &plusmn;12&deg;.</p>
+  <div class="note"><strong>Why not full Procrustes.</strong> The textbook routine, <span class="mono">scipy.spatial.procrustes</span>, normalises scale away before comparing. Scale is half of what is being measured here &mdash; the two forms may honestly differ in size &mdash; so scale is held fixed at the calibrated 2.047 and only rotation and translation are fitted.</div>
+  <h3>A dead step, found by testing it</h3>
+  <p>The second build reported a fitted lean of 0.00&deg; for every glyph. That looked like a finding &mdash; plates and page sharing an orientation &mdash; so it was tested: take a real <span class="gl">w</span>, rotate it by a known 8&deg;, and ask the fitter to recover the angle. It returned 0.00&deg;. <strong>The rotation step was inert.</strong> Iterative-closest-point on a <em>filled</em> shape cannot see rotation: every interior point already has a neighbour beside it, and the correspondence vectors cancel. Refitted on the shape&rsquo;s <em>outline</em>, the same test recovers 8&deg; at about 78&nbsp;per&nbsp;cent of true size &mdash; attenuated by the trimming and the clamp, but alive. All figures below are from the corrected build.</p>
+<pre>letter   slide only   ICP, filled   ICP, outline+lean    swing
+w          +2.06        +2.02            +1.98            0.08
+h          +0.61        +0.37            +0.31            0.30
+c          +0.48        +0.31            +0.23            0.25
+r          +0.04        -0.16            -0.01            0.20
+f          +0.03        -1.40            -1.27            1.43
+P          +0.50        -1.91            -1.25            2.42</pre>
+  <p>Under the strictest of the three, <span class="gl">w</span> is still rank 1 of all 56 splits at p&nbsp;=&nbsp;0.018, still with complete separation:</p>
+<pre>marked a   +0.405  +0.348  +0.225  +0.497  +0.621
+marked b   -0.355  -0.415  -0.632</pre>
+  <div class="note"><strong>Two results withdrawn.</strong> Capital <span class="mono">P</span> and <span class="mono">f</span> reverse sign when the registration improves. A property of the page does not do that. Neither was ever claimed as a finding, but both are struck from the table above: they measured the fit, not the ink. <span class="gl">w</span> moved by 0.08&nbsp;sd and is unaffected by which method is used.</div>
+  <p>Not yet done: the per-footprint occupancies are computed blob by blob but still pooled into a single mean before scoring. Matching individual footprints between the two forms &mdash; <span class="mono">scipy.optimize.linear_sum_assignment</span> over a blob-to-blob cost &mdash; is the next version of the scorer and is not in these numbers.</p>
 
   <h3>Why this differs from every earlier confirmation</h3>
   <p>The 3 September height measurement, the 5 September shape-similarity matrix and the projection profiles all derived their two forms <em>from the page</em>. A fair critic could answer that a split was found and then named.</p>
