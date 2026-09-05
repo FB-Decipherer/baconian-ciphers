@@ -26,8 +26,13 @@ letter-spacing:-.015em;margin:12px 0 0;text-wrap:balance}
 @media (max-width:720px){.strands{grid-template-columns:1fr}}
 .strand{display:block;text-decoration:none;color:inherit;background:var(--card);
 border:1px solid var(--rule);border-left:3px solid var(--accent-mid);
-padding:24px 26px;margin-top:0}
+padding:0;margin-top:0;overflow:hidden}
 .strand:hover{border-left-color:var(--accent)}
+.strandfig{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover;
+border-bottom:1px solid var(--rule);background:#efece5}
+.strandbody{padding:20px 26px 24px}
+.strandcap{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-soft);
+margin:-4px 0 12px;letter-spacing:.02em}
 .strand .k{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.12em;
 text-transform:uppercase;color:var(--ink-soft)}
 .strand .n{font-size:25px;font-weight:700;margin-top:7px;color:var(--accent)}
@@ -70,19 +75,29 @@ footer strong{font-weight:600;color:var(--ink);letter-spacing:.04em}
 
 <div class="strands">
 <a class="strand" href="/biliteral/">
+  <img class="strandfig" src="strand-biliteral.jpg" width="1600" height="800" loading="eager"
+       alt="A table of the alphabet printed twice, in two slightly different founts, headed a and b">
+  <div class="strandbody">
   <div class="k">Strand</div>
   <div class="n">Biliteral Cipher</div>
+  <div class="strandcap">Bacon&rsquo;s bi-formed alphabet, as Spedding drew it &mdash; Riverbank, <i>The Keys for Deciphering</i>, 1916, p.&nbsp;16</div>
   <div class="d">Is the italic type in Shakespeare's First Folio one fount, or two?
   A bibliographical test of a claim made in 1899 and never measured.</div>
-  <div class="s">Latest — September 5, 2026</div>
+  <div class="s">Latest &mdash; September 5, 2026</div>
+  </div>
 </a>
 
 <a class="strand" href="/word-cipher/">
+  <img class="strandfig" src="strand-word-cipher.jpg" width="1600" height="800" loading="eager"
+       alt="Folio pages pasted to canvas and marked in red, blue and pencil">
+  <div class="strandbody">
   <div class="k">Strand</div>
   <div class="n">Word Cipher</div>
-  <div class="d">Orville Owen's method, and the containing programme — reverse-engineering
+  <div class="strandcap">The cipher wheel&rsquo;s canvas &mdash; Folio pages mounted and marked in Owen&rsquo;s workshop</div>
+  <div class="d">Orville Owen's method, and the containing programme &mdash; reverse-engineering
   how the Word Cipher actually worked.</div>
-  <div class="s">Latest — September 5, 2026</div>
+  <div class="s">Latest &mdash; September 5, 2026</div>
+  </div>
 </a>
 </div>
 
