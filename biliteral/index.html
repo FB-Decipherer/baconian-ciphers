@@ -225,6 +225,12 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
     <figcaption>The specificity control. One stencil &mdash; the one cut from Riverbank&rsquo;s plates for <span class="gl">w</span> &mdash; applied to every letter on the page. If it were reading ink weight, or position in the line, or anything else the whole page shares, the letters with the most glyphs would show it first. <span class="mono">e</span>, with ninety-nine glyphs, comes out at 0.01. Eighteen letters land inside their own null envelopes. The nineteenth is <span class="gl">w</span>.</figcaption>
   </figure>
 
+  <figure>
+    <div class="bigfig"><a href="the-most-data-the-least-signal.jpg"><img src="the-most-data-the-least-signal.jpg" alt="Agreement with Gallup's marking against sample size, for eight letters, from unsupervised clustering"></a></div>
+    <div class="figbar">drag sideways on a phone &middot; tap or click for full size</div>
+    <figcaption>Riverbank&rsquo;s plates set aside entirely. A clustering program was shown only the glyphs, told nothing about ciphers or which letter was which, and asked to sort each letter into two groups. Its answer for <span class="gl">w</span> is Gallup&rsquo;s 1899 answer, exactly &mdash; the same five together, the same three together. For <span class="mono">e</span>, with ninety-nine glyphs, it finds nothing that corresponds to her marking at all.</figcaption>
+  </figure>
+
   <h2>Questions</h2>
 
   <details><summary>What is the biliteral cipher?</summary><div class="body">
@@ -539,6 +545,22 @@ P         8     1.16     1.34   0.179
 w         8     1.98     1.44   0.018   &lt;- the only letter outside its envelope</pre>
   <div class="note"><strong>The artefact hypotheses die here.</strong> An ink-weight or page-position effect cannot hide in a letter with ninety-nine measurements, and <span class="mono">e</span> returns 0.01. The two letters that look large &mdash; <span class="mono">p</span> at 1.17 and <span class="mono">P</span> at 1.16 &mdash; are <em>inside</em> their envelopes: that is what eight or eleven glyphs do by luck, and the envelope prices it in automatically rather than by anyone&rsquo;s judgement.</div>
   <p>This does not enlarge the sample. It is still eight glyphs of one letter, and p&nbsp;=&nbsp;0.018 remains the floor available at that size. What it removes is the whole family of explanations in which the stencil works for a reason that has nothing to do with the letter <span class="gl">w</span>.</p>
+
+  <h3>&#9873; Setting the plates aside altogether</h3>
+  <p>Every test to this point has used Riverbank&rsquo;s 1916 exemplars in some form. A different question can be asked that uses nothing of theirs: <em>do the glyphs of a given letter, on the page itself, fall into two groups?</em> That is the bibliographical question in its plainest form, and it needs no exemplar, no scale factor and no ground truth.</p>
+  <p>Each glyph of a letter was normalised for size, registered to that letter&rsquo;s own average shape by outline ICP, reduced by principal components, and clustered into two groups by a Gaussian mixture. The clustering never sees Gallup&rsquo;s marking. Only afterwards is its answer compared with hers, by the adjusted Rand index &mdash; 0 for chance agreement, 1 for identical. The chance level for each letter was fixed by shuffling that letter&rsquo;s own labels two thousand times.</p>
+<pre>letter    n    agreement    chance (95%)
+e        99      -0.007          0.028
+t        72      +0.006          0.050
+i        65      +0.085          0.048
+r        64      -0.018          0.062
+n        59      -0.013          0.065
+a        58      +0.009          0.077
+o        42      -0.018          0.037
+w         8      +1.000          0.138   &lt;- identical to Gallup</pre>
+  <div class="note"><strong>Two methods that share nothing.</strong> Riverbank&rsquo;s printed plates and a clustering program shown only the Bodleian&rsquo;s photograph arrive at the same partition of the eight <span class="gl">w</span>&rsquo;s &mdash; and it is the partition Gallup published in 1899. The probability of hitting that partition by chance is 1 in 56.</div>
+  <p><span class="mono">i</span> exceeds its chance level slightly (0.085 against 0.048). With eight letters tested, roughly one such exceedance is expected by luck, and it is recorded here rather than claimed.</p>
+  <div class="note"><strong>And the hard half.</strong> A biliteral cipher requires <em>every</em> letter to carry a bit; the message is spelled by all of them in sequence, not by a chosen few. The four letters Riverbank&rsquo;s own plates cannot separate &mdash; <span class="mono">e</span>, <span class="mono">o</span>, <span class="mono">a</span>, <span class="mono">r</span> &mdash; are also the four this test cannot separate, with between 42 and 99 glyphs apiece. That is not a limitation of the plates. It is the page saying no. Reconciling that with <span class="gl">w</span> is now the central problem of this project, and it is not yet reconciled.</div>
 
   <h3>Why this differs from every earlier confirmation</h3>
   <p>The 3 September height measurement, the 5 September shape-similarity matrix and the projection profiles all derived their two forms <em>from the page</em>. A fair critic could answer that a split was found and then named.</p>
