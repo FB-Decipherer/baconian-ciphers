@@ -213,6 +213,12 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
     <figcaption>Riverbank&rsquo;s exemplar letters are not Bacon&rsquo;s specimen alphabet. They were cut out of the First Folio itself and mounted on graph paper &mdash; and the book prints a table saying, for every borrowed letter, which passage, which line and which word. Six of the sixty were cut out of the Prologue: the page this project tests. Those six can never be scored on it. Lowercase <span class="gl">w</span> is not among them.</figcaption>
   </figure>
 
+  <figure>
+    <div class="bigfig"><a href="one-letter-out-of-nineteen.jpg"><img src="one-letter-out-of-nineteen.jpg" alt="Separation against sample size for nineteen letters, with each letter's null envelope"></a></div>
+    <div class="figbar">drag sideways on a phone &middot; tap or click for full size</div>
+    <figcaption>The specificity control. One stencil &mdash; the one cut from Riverbank&rsquo;s plates for <span class="gl">w</span> &mdash; applied to every letter on the page. If it were reading ink weight, or position in the line, or anything else the whole page shares, the letters with the most glyphs would show it first. <span class="mono">e</span>, with ninety-nine glyphs, comes out at 0.01. Eighteen letters land inside their own null envelopes. The nineteenth is <span class="gl">w</span>.</figcaption>
+  </figure>
+
   <h2>Questions</h2>
 
   <details><summary>What is the biliteral cipher?</summary><div class="body">
@@ -501,6 +507,32 @@ marked b   -0.355  -0.415  -0.632</pre>
   <p>Six of those correspond to stencil pairs held here (<span class="mono">S</span>, <span class="mono">P</span>, <span class="mono">E</span>, <span class="mono">G</span>, <span class="mono">R</span>, <span class="mono">ct</span>; the Case&nbsp;2 <span class="mono">T</span> is not among the extracted plates). <strong>All six are struck from any scoring of this page.</strong> An exemplar cut from the page cannot be used to test the page.</p>
   <div class="note"><strong>Capital P, convicted twice.</strong> <span class="mono">P</span> was withdrawn earlier today because its separation swings 2.42&nbsp;sd between fitting methods. It now turns out its 1-form exemplar was cut from the Prologue, line 7, the word &ldquo;Put&rdquo;. Two independent reasons, arrived at from opposite directions, condemning the same letter.</div>
   <p>Lowercase italic <span class="gl">w</span> does not appear in the table, and its plate carries no source note &mdash; only the descriptions &ldquo;the letter is flat topped&rdquo; and &ldquo;first and third strokes on the left extend above the body&rdquo;. By the book&rsquo;s own default rule its exemplars come from the <strong>&ldquo;I.M.&rdquo; Poem</strong>, Ben Jonson&rsquo;s verse facing the Droeshout portrait &mdash; a different page, a different forme, from the Troilus Prologue. <strong>The <span class="gl">w</span> result is not circular.</strong> Of the other scored letters, <span class="mono">h</span>, <span class="mono">r</span> and <span class="mono">f</span> are likewise clean; <span class="mono">c</span>&rsquo;s 1-form was borrowed from the &ldquo;L. Digges&rdquo; poem, which is not circular here but is not the &ldquo;I.M.&rdquo; Poem either.</p>
+
+  <h3>&#9873; The specificity control</h3>
+  <p>Every measurement so far asked the same question of the same letter. That leaves the obvious objection unanswered: perhaps the stencil is not reading the <em>shape</em> of a <span class="gl">w</span> at all, but something the whole page shares &mdash; a difference in inking between formes, a drift down the page, a compositor&rsquo;s habit. Any of those would separate the a-marked glyphs from the b-marked glyphs of <em>any</em> letter, not just of <span class="gl">w</span>.</p>
+  <p>So the <span class="gl">w</span> stencil was applied, unchanged, to all nineteen letters on the page with at least three glyphs of each mark &mdash; 736 glyphs in all. Each letter was then compared against <strong>its own</strong> null envelope: the 95th percentile of the separation obtainable by shuffling that letter&rsquo;s own a/b labels, exhaustively where the sample allows it and over four thousand permutations where it does not. The envelope is wide for eight glyphs and narrow for ninety-nine, which is exactly the point.</p>
+<pre>letter    n    |sep|   95% env      p
+e        99     0.01     0.44   0.969
+t        72     0.34     0.47   0.161
+i        65     0.31     0.50   0.223
+r        64     0.17     0.53   0.535
+n        59     0.09     0.54   0.733
+a        58     0.47     0.54   0.089
+s        44     0.26     0.63   0.424
+o        42     0.04     0.67   0.917
+d        37     0.14     0.68   0.685
+l        35     0.10     0.72   0.800
+h        28     0.26     0.76   0.523
+u        26     0.14     0.77   0.727
+c        18     0.67     0.89   0.200
+g        17     0.09     0.98   0.872
+y        16     0.00     1.03   1.000
+p        11     1.17     1.27   0.091
+f         9     0.54     1.54   0.512
+P         8     1.16     1.34   0.179
+w         8     1.98     1.44   0.018   &lt;- the only letter outside its envelope</pre>
+  <div class="note"><strong>The artefact hypotheses die here.</strong> An ink-weight or page-position effect cannot hide in a letter with ninety-nine measurements, and <span class="mono">e</span> returns 0.01. The two letters that look large &mdash; <span class="mono">p</span> at 1.17 and <span class="mono">P</span> at 1.16 &mdash; are <em>inside</em> their envelopes: that is what eight or eleven glyphs do by luck, and the envelope prices it in automatically rather than by anyone&rsquo;s judgement.</div>
+  <p>This does not enlarge the sample. It is still eight glyphs of one letter, and p&nbsp;=&nbsp;0.018 remains the floor available at that size. What it removes is the whole family of explanations in which the stencil works for a reason that has nothing to do with the letter <span class="gl">w</span>.</p>
 
   <h3>Why this differs from every earlier confirmation</h3>
   <p>The 3 September height measurement, the 5 September shape-similarity matrix and the projection profiles all derived their two forms <em>from the page</em>. A fair critic could answer that a split was found and then named.</p>
