@@ -1,0 +1,82 @@
+<script>
+(function(){
+  var tabs = [].slice.call(document.querySelectorAll('[role="tab"]'));
+  var cols = { tA:'cA', tB:'cB', tC:'cC' };
+  var wide = function(){ return window.matchMedia('(min-width:1101px)').matches; };
+  function select(id){
+    tabs.forEach(function(t){
+      var on = t.id === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      var c = document.getElementById(cols[t.id]);
+      c.classList.toggle('active', on);
+      c.classList.toggle('dim', wide() ? !on : false);
+    });
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(t.id); });
+    t.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var n = tabs[(i + d + tabs.length) % tabs.length];
+      n.focus(); select(n.id);
+    });
+  });
+  window.addEventListener('resize', function(){
+    var cur = tabs.filter(function(t){ return t.getAttribute('aria-selected') === 'true'; })[0];
+    if (cur) select(cur.id);
+  });
+  select('tA');
+
+  // footnote markers -> reference card
+  document.querySelectorAll('.fn').forEach(function(f){
+    f.addEventListener('click', function(){
+      var el = document.getElementById(f.dataset.ref);
+      if (!el) return;
+      if (!wide()) select('tB');
+      el.scrollIntoView({behavior:'smooth', block:'center'});
+      el.classList.add('flash');
+      setTimeout(function(){ el.classList.remove('flash'); }, 1600);
+    });
+  });
+
+  document.getElementById('pdf').addEventListener('click', function(){ window.print(); });
+  var th = document.getElementById('theme');
+  th.addEventListener('click', function(){
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+    th.textContent = dark ? 'Dark' : 'Light';
+  });
+
+  // link health: same-origin status file only. No file, no claim.
+  fetch('links.json', {cache:'no-store'}).then(function(r){
+    if (!r.ok) throw 0; return r.json();
+  }).then(function(d){
+    var dead = d.dead || {}, any = false;
+    Object.keys(dead).forEach(function(id){
+      var card = document.getElementById(id);
+      if (!card) return;
+      var a = card.querySelector('.rlink');
+      if (!a) return;
+      a.classList.add('broken');
+      a.removeAttribute('href');
+      a.setAttribute('aria-disabled','true');
+      any = true;
+    });
+    if (any) {
+      var n = document.getElementById('deadnote');
+      var lines = Object.keys(dead).map(function(id){
+        var t = document.getElementById(id).querySelector('.rtitle').textContent;
+        return '&ldquo;' + t + '&rdquo; — unreachable as of ' + dead[id];
+      });
+      n.innerHTML = '<b>A note on the struck-through links.</b> ' +
+        'These sources were live when this report was written and are not now. ' +
+        'They are shown rather than removed, so that what was cited stays visible.<br><br>' +
+        lines.join('<br>') + '<br><br>Last checked ' + (d.checked || 'unknown') + '.';
+      n.hidden = false;
+    }
+  }).catch(function(){ /* no status file: say nothing */ });
+})();
+</script>
+</body>
+</html>
