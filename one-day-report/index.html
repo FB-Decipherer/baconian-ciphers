@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One-Day Report · the format, explaining itself</title>
+<meta name="description" content="A three-column page format for publishing one day's work: plain answers, previewed references, and full technical detail. This page is an example of itself.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FCFAF5; --card:#F5F1E8; --ink:#1E1B16; --ink-mid:#4A443A;
+  --rule:#DCD5C6; --accent:#4C7A4E; --accentb:#B4372C; --gold:#C8992F;
+  --dead:#8A8177;
+}
+:root[data-theme="dark"]{
+  --paper:#15130F; --card:#1E1B16; --ink:#F2EDE3; --ink-mid:#B7AF9F;
+  --rule:#38332A; --accent:#7FA981; --accentb:#D2695C; --gold:#D9B45C;
+  --dead:#6B655B;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.62;}
+.wrap{max-width:1560px;margin:0 auto;padding:0 26px;}
+a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule);}
+a:hover{border-bottom-color:var(--accent);}
+
+/* ---------- header ---------- */
+header{padding:38px 0 4px;}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mid);
+  display:flex;align-items:center;gap:.4em;}
+.eyebrow .sep{opacity:.55;font-family:"Source Serif 4",serif;font-size:1.5em;line-height:0;}
+.mark{width:22px;height:22px;flex:none;}
+h1{font-size:clamp(30px,4.4vw,48px);line-height:1.12;font-weight:600;margin:14px 0 0;
+  letter-spacing:-.012em;}
+h1 .sep{color:var(--accent);font-weight:400;padding:0 .18em;}
+h1 .seg{display:inline-block;}
+.claimlabel{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);margin-top:20px;}
+.standfirst{font-size:20px;line-height:1.5;color:var(--ink-mid);margin:8px 0 0;max-width:62ch;}
+.standfirst strong{display:inline-block;margin-top:10px;font-weight:600;color:var(--ink);}
+.asof{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-mid);
+  border:1px solid var(--rule);border-radius:999px;padding:5px 13px;display:inline-block;margin-top:20px;}
+
+/* ---------- nav ---------- */
+nav{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  margin-top:26px;padding:11px 0;position:sticky;top:0;background:var(--paper);z-index:20;}
+button{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.06em;
+  background:none;border:1px solid var(--rule);color:var(--ink-mid);
+  padding:8px 15px;border-radius:6px;cursor:pointer;}
+button:hover{border-color:var(--accent);color:var(--ink);}
+button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+button .key{color:var(--gold);font-weight:500;margin-right:.55em;}
+button[aria-selected="true"] .key{color:var(--gold);}
+nav .spacer{flex:1;}
+.util{font-size:11.5px;padding:7px 12px;}
+
+/* ---------- the three columns ---------- */
+main{display:grid;gap:0 34px;padding:30px 0 10px;
+  grid-template-columns:1fr minmax(280px,.82fr) 1fr;}
+.col{min-width:0;}
+.col + .col{border-left:1px solid var(--rule);padding-left:34px;}
+.colhead{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-mid);padding-bottom:9px;
+  border-bottom:2px solid var(--ink);margin-bottom:20px;
+  position:sticky;top:52px;background:var(--paper);}
+.colhead b{color:var(--gold);font-weight:500;}
+.col.dim{opacity:.42;}
+h2{font-size:22px;font-weight:600;margin:30px 0 6px;letter-spacing:-.006em;}
+h2:first-of-type{margin-top:0;}
+h3{font-size:15.5px;font-weight:600;margin:24px 0 4px;
+  font-family:"IBM Plex Mono",monospace;letter-spacing:.02em;color:var(--accent);}
+p{margin:9px 0 0;}
+.lede{font-size:18px;color:var(--ink-mid);}
+ul,ol{margin:9px 0 0;padding-left:20px;}
+li{margin:5px 0;}
+.mono{font-family:"IBM Plex Mono",monospace;font-size:.9em;}
+pre{font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.5;
+  background:var(--card);border:1px solid var(--rule);border-radius:7px;
+  padding:13px 15px;overflow-x:auto;margin:12px 0 0;}
+.note{margin-top:18px;padding:14px 16px;background:var(--card);
+  border-left:3px solid var(--accent);border-radius:0 7px 7px 0;}
+
+details{border-top:1px solid var(--rule);}
+details:last-of-type{border-bottom:1px solid var(--rule);}
+summary{cursor:pointer;padding:12px 0;font-weight:600;list-style:none;
+  display:flex;gap:.6em;align-items:baseline;}
+summary::-webkit-details-marker{display:none;}
+summary::before{content:"+";font-family:"IBM Plex Mono",monospace;color:var(--accent);flex:none;}
+details[open] summary::before{content:"−";}
+details .body{padding:0 0 14px 1.5em;}
+
+/* footnote markers */
+.fn{font-family:"IBM Plex Mono",monospace;font-size:.72em;vertical-align:super;
+  color:var(--accentb);border:0;padding:0 .12em;cursor:pointer;font-weight:500;}
+.fn:hover{text-decoration:underline;}
+
+/* ---------- reference blocks (column B) ---------- */
+.ref{border:1px solid var(--rule);border-radius:9px;padding:15px 16px;margin-bottom:15px;
+  background:var(--card);scroll-margin-top:100px;}
+.ref.flash{border-color:var(--accentb);box-shadow:0 0 0 3px rgba(180,55,44,.14);}
+.rnum{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--accentb);font-weight:500;}
+.rkind{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-mid);display:inline;margin-left:.7em;}
+.rtitle{font-size:17px;font-weight:600;margin-top:7px;line-height:1.3;}
+.rmeta{font-size:13.5px;color:var(--ink-mid);margin-top:4px;font-style:italic;}
+.rprev{font-size:14.5px;margin-top:9px;}
+.rwhy{font-size:14.5px;margin-top:7px;color:var(--ink-mid);}
+.rwhy b{color:var(--ink);font-weight:600;}
+.rlink{display:block;margin-top:12px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;
+  padding:8px 11px;border:1px solid var(--rule);border-radius:6px;
+  background:var(--paper);word-break:break-all;border-bottom:1px solid var(--rule);}
+.rlink:hover{border-color:var(--accent);}
+.rlink::before{content:"→ ";color:var(--accent);}
+.rlink.broken{color:var(--dead);border-style:dashed;cursor:not-allowed;
+  text-decoration:line-through;pointer-events:none;}
+.rlink.broken::before{content:"× ";color:var(--dead);}
+#deadnote{margin-top:22px;padding:13px 15px;border:1px dashed var(--rule);border-radius:7px;
+  font-size:14px;color:var(--ink-mid);}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  background:var(--card);padding:28px 26px 32px;margin-top:54px;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:1.9;color:var(--ink-mid);
+  text-align:center;}
+footer strong{color:var(--ink);letter-spacing:.04em;}
+.endmark{text-align:center;padding:26px 0 58px;color:var(--ink-mid);}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  main{grid-template-columns:1fr;gap:0;}
+  .col + .col{border-left:0;padding-left:0;border-top:1px solid var(--rule);
+    margin-top:34px;padding-top:26px;}
+  .col{display:none;}
+  .col.active{display:block;}
+  .col.dim{opacity:1;}
+  .colhead{position:static;}
+}
+@media print{
+  nav,.endmark{display:none;}
+  .col{display:block!important;opacity:1!important;}
+  main{grid-template-columns:1fr;}
+  .col + .col{border-left:0;padding-left:0;page-break-before:always;}
+  details{border:0;} details .body{display:block!important;padding-left:0;}
+  summary::before{content:"";}
+  body{background:#fff;color:#000;font-size:11pt;}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">
+    <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="1.5" y="4" width="6" height="16" rx="1.4" fill="#4C7A4E"></rect>
+      <rect x="9" y="4" width="6" height="16" rx="1.4" fill="#C8992F"></rect>
+      <rect x="16.5" y="4" width="6" height="16" rx="1.4" fill="#B4372C"></rect>
+    </svg>
+    <span>One-Day Report</span><span class="sep">·</span><span>the format</span>
+  </div>
+  <h1><span class="seg">One-Day Report</span> <span class="sep">·</span> <span class="seg">the format, explaining itself</span></h1>
+  <div class="claimlabel">What this page is</div>
+  <p class="standfirst">A way to publish one day's work so that three different readers each get what they came for.<br>
+  <strong>This page is not a description of the format. It <em>is</em> the format, with itself as the subject — so every feature below is demonstrated by the thing you are reading.</strong></p>
+  <div class="asof">a working demonstration · nothing here needs a server, a database, or a login</div>
+</header>
+
+<nav role="tablist" aria-label="Columns">
+  <button role="tab" id="tA" aria-controls="cA" aria-selected="true"><span class="key">A</span>Plain answers</button>
+  <button role="tab" id="tB" aria-controls="cB" aria-selected="false"><span class="key">B</span>References</button>
+  <button role="tab" id="tC" aria-controls="cC" aria-selected="false"><span class="key">C</span>How it works</button>
+  <span class="spacer"></span>
+  <button class="util" id="pdf">Save as PDF</button>
+  <button class="util" id="theme">Dark</button>
+</nav>
+</div>
+
+<div class="wrap">
+<main>
+
+<!-- ================= A ================= -->
+<section class="col active" id="cA" role="tabpanel" aria-labelledby="tA">
+  <div class="colhead"><b>A</b> &nbsp;Plain answers</div>
+  <p class="lede">Start here if you have never seen one of these. Ten questions, no jargon. Nothing in this column assumes you know anything about the subject or about how the page is built.</p>
+
+  <details open><summary>What is a One-Day Report?</summary><div class="body">
+    <p>A single web page that records what one person did on one day of a piece of work — what was tried, what was found, and what failed — published the same day.</p>
+    <p>It is not a blog post and not a paper. A blog post argues; a paper waits until the work is finished. This sits in between: it is a dated, citable record of a day, written while the day is fresh, and never revised afterwards.</p>
+  </div></details>
+
+  <details><summary>Why one day?</summary><div class="body">
+    <p>Because a day is a unit a person can actually finish. Work that is written up weekly gets compressed and tidied; work written up at the end gets rewritten to match the conclusion. A day is short enough that you still remember the dead ends.</p>
+    <p>It also fixes the hardest problem in keeping a research record: knowing when to write. The answer is: when the day ends.</p>
+  </div></details>
+
+  <details><summary>Who is it for?</summary><div class="body">
+    <p>Three readers, which is why there are three columns.</p>
+    <ul>
+      <li><b>The newcomer</b>, who wants to know what this is and whether it matters. Column A.</li>
+      <li><b>The checker</b>, who wants to see your sources before deciding whether to believe you. Column B.</li>
+      <li><b>The specialist</b>, who wants the method, the numbers and the failures. Column C.</li>
+    </ul>
+    <p>Most formats serve one of those and make the other two work for it. This one refuses to choose.</p>
+  </div></details>
+
+  <details><summary>Why three columns instead of one long page?</summary><div class="body">
+    <p>Because the three readers want the same day described at three different depths, and interleaving them serves nobody. A newcomer scrolling past a table of measurements stops reading. A specialist scrolling past an explanation of basic terms also stops reading.</p>
+    <p>Side by side, each reader picks a lane and stays in it — and can glance sideways when curious. On a phone the three become three buttons, one at a time.</p>
+  </div></details>
+
+  <details><summary>What is the middle column for?</summary><div class="body">
+    <p>Every source, previewed. When column A or column C cites something, the citation<span class="fn" data-ref="r1">1</span> is a small numbered marker; clicking it moves you to a card in the middle that tells you what the source is, who made it, and what you would find if you went there.</p>
+    <p>The actual link is the <em>last</em> thing in the card, deliberately. By the time you reach it you already know whether it is worth the trip.</p>
+  </div></details>
+
+  <details><summary>Why not just put the links at the bottom, like footnotes?</summary><div class="body">
+    <p>Because nobody reads the bottom of a page, and a bare link tells you nothing. A list of twenty URLs is a list of twenty decisions you cannot make without opening twenty tabs.</p>
+    <p>A preview turns each one into a decision you can make in five seconds: this is a government PDF from 2024 about X, and the part that matters is on page 3. Most readers stop there, satisfied. That is the point.</p>
+  </div></details>
+
+  <details><summary>What happens when a link dies?</summary><div class="body">
+    <p>Links rot. Government pages move, archives reorganise, companies go under. A report that quietly turns into a page of dead ends is worse than no report.</p>
+    <p>So the page checks its own links<span class="fn" data-ref="r2">2</span>. When one is found dead, the link is <em>disabled rather than removed</em> — you can still see where it pointed, and the preview still tells you what was there — and a dated note appears at the foot of the middle column saying when the break was noticed.</p>
+    <p>Nothing is deleted. A reader a decade from now can see exactly what was cited and that it was live when the report was written.</p>
+  </div></details>
+
+  <details><summary>Does it need a server, a database, or a content system?</summary><div class="body">
+    <p>No. Each report is one file. It has no back end, no database, no comment system, no analytics and no cookies. You can save it to a memory stick and it still works.</p>
+    <p>That is not minimalism for its own sake. It means nothing about the report can be withdrawn by a service that changes its mind.</p>
+  </div></details>
+
+  <details><summary>What does it cost to run?</summary><div class="body">
+    <p>About a dollar a year — the price of the domain name. The hosting is free<span class="fn" data-ref="r3">3</span> and the security certificate is free<span class="fn" data-ref="r4">4</span>.</p>
+    <p>That number is a design constraint, not a boast. A record that costs nothing to keep is a record that will still be there when the interest has gone.</p>
+  </div></details>
+
+  <details><summary>Can I use this format for my own work?</summary><div class="body">
+    <p>Yes. It is a single HTML file: copy the most recent one, replace the content, publish. There is nothing to install and nothing to buy.</p>
+    <p>It suits anything with a daily rhythm and an audience that ranges from curious to expert — a research project, a restoration, a legal or planning fight, a long build, a field survey. Two live examples are cited in the middle column<span class="fn" data-ref="r5">5</span><span class="fn" data-ref="r6">6</span>.</p>
+  </div></details>
+
+  <details><summary>I have never used GitHub. Can I still publish one of these?</summary><div class="body">
+    <p>Yes, and you never have to see a command line. You need two free things and about twenty minutes, once.</p>
+    <ol>
+      <li>A <b>GitHub account</b><span class="fn" data-ref="r3">3</span> — an email address and a password. Free.</li>
+      <li><b>GitHub Desktop</b><span class="fn" data-ref="r9">9</span>, a normal application for Mac or Windows. Free. It puts a folder on your computer that is joined to the internet.</li>
+    </ol>
+    <p>After that the whole publishing routine is: edit the file, open GitHub Desktop, type one line saying what you changed, click <b>Commit</b>, then click <b>Push origin</b>. The page is live about a minute later.</p>
+    <p>There are exactly two words to learn. <b>Commit</b> means &ldquo;save this version, with a note about what changed.&rdquo; <b>Push</b> means &ldquo;send it to the internet.&rdquo; Everything else in that application can be ignored for as long as you like.</p>
+    <p>The part people expect to be hard — the website, the address, the padlock in the browser bar — is the part you never touch. Column C has the twenty-minute setup written out step by step.</p>
+  </div></details>
+
+  <div class="note"><strong>The one rule that matters.</strong> The failures get published in the same words as the successes. A format that only records what worked is advertising. Column C of a real report always contains at least one thing that went wrong — and often a correction to an earlier report.</div>
+</section>
+
+<!-- ================= B ================= -->
+<section class="col dim" id="cB" role="tabpanel" aria-labelledby="tB">
+  <div class="colhead"><b>B</b> &nbsp;References</div>
+  <p class="lede" style="font-size:15.5px">Everything cited in A or C, previewed. The link is always the last line — read the card first and decide whether you need the original at all.</p>
+
+  <article class="ref" id="r1">
+    <span class="rnum">1</span><span class="rkind">Standard · typography</span>
+    <div class="rtitle">Source Serif 4 and IBM Plex Mono</div>
+    <div class="rmeta">Adobe and IBM · open licence · served from Google Fonts</div>
+    <div class="rprev">The two typefaces this format uses: a serif for reading and a monospace for anything the reader might need to type, copy or check. Both are free, both are open-licensed, and both are legible at small sizes on poor screens.</div>
+    <div class="rwhy"><b>Why it is cited:</b> a demonstration of what a reference card is for. You now know what these are and why, and almost certainly do not need to visit the page.</div>
+    <a class="rlink" href="https://fonts.google.com/specimen/Source+Serif+4">fonts.google.com/specimen/Source+Serif+4</a>
+  </article>
+
+  <article class="ref" id="r2">
+    <span class="rnum">2</span><span class="rkind">Method · link health</span>
+    <div class="rtitle">Checking that a citation still resolves</div>
+    <div class="rmeta">A scheduled check writes a small status file the page reads at load</div>
+    <div class="rprev">A browser cannot reliably test somebody else's link: for security reasons a cross-origin request comes back opaque, with no status code attached. A page that claims to check its own links in the browser is mostly guessing, and will report healthy links as dead.</div>
+    <div class="rwhy"><b>Why it is cited:</b> because the honest version matters more than the clever one. The check runs on a schedule, away from the reader, and writes a small file of results; the page reads that file and marks anything known-dead. See column C for the mechanics.</div>
+    <a class="rlink" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">developer.mozilla.org/en-US/docs/Web/HTTP/CORS</a>
+  </article>
+
+  <article class="ref" id="r3">
+    <span class="rnum">3</span><span class="rkind">Infrastructure · hosting</span>
+    <div class="rtitle">GitHub Pages</div>
+    <div class="rmeta">GitHub · static hosting from a repository · free for public repositories</div>
+    <div class="rprev">Serves plain files straight from a folder, with no build step and no server to maintain. Publishing is a commit. A custom domain is set by putting the domain name in a one-line file at the top of the repository.</div>
+    <div class="rwhy"><b>Why it is cited:</b> it is the whole of the hosting stack. If you can copy a file into a folder, you can publish one of these.</div>
+    <a class="rlink" href="https://docs.github.com/en/pages">docs.github.com/en/pages</a>
+  </article>
+
+  <article class="ref" id="r4">
+    <span class="rnum">4</span><span class="rkind">Infrastructure · security</span>
+    <div class="rtitle">Let's Encrypt</div>
+    <div class="rmeta">Internet Security Research Group · free automated certificates</div>
+    <div class="rprev">Issues the certificate that puts the padlock in the address bar, automatically and at no cost. On this stack you never touch it: the certificate appears a few minutes after the domain resolves, and renews itself.</div>
+    <div class="rwhy"><b>Why it is cited:</b> it is the second half of the dollar-a-year claim in column A. Nothing in the running cost is hosting or security.</div>
+    <a class="rlink" href="https://letsencrypt.org/">letsencrypt.org</a>
+  </article>
+
+  <article class="ref" id="r5">
+    <span class="rnum">5</span><span class="rkind">Example · in use</span>
+    <div class="rtitle">Baconian Ciphers — a research strand</div>
+    <div class="rmeta">Walter Wilkinson · Worland, Wyoming · daily issues since September 2026</div>
+    <div class="rprev">The format in its original setting: a measurement-led examination of a claim about a 1623 book. Each issue carries that day's tests, the numbers, and the things that failed — including, on several days, corrections to earlier issues.</div>
+    <div class="rwhy"><b>Why it is cited:</b> it shows the format under load, with real technical content in column C and real sources in column B. It is also where the rule about publishing failures came from.</div>
+    <a class="rlink" href="https://baconian-ciphers.online/">baconian-ciphers.online</a>
+  </article>
+
+  <article class="ref" id="r6">
+    <span class="rnum">6</span><span class="rkind">Example · in use</span>
+    <div class="rtitle">A municipal ordinance audit</div>
+    <div class="rmeta">Worland, Wyoming · a reading of local animal-control law against its sources</div>
+    <div class="rprev">The same format applied to something with no research content at all: a citizen reading a town's ordinances, quoting them, and showing where the published text and the enforced practice diverge. Column B here is almost entirely primary documents — the ordinances themselves.</div>
+    <div class="rwhy"><b>Why it is cited:</b> to show the format is not about science. It suits any subject where a reader might reasonably ask "says who?" and deserves an answer better than a bare link.</div>
+    <a class="rlink" href="https://gorhambury.org/">gorhambury.org</a>
+  </article>
+
+  <article class="ref" id="r7">
+    <span class="rnum">7</span><span class="rkind">Standard · text</span>
+    <div class="rtitle">CommonMark</div>
+    <div class="rmeta">A precisely specified version of Markdown</div>
+    <div class="rprev">The specification that settles what Markdown actually means — where the ambiguities are resolved and how lists, emphasis and code blocks behave. Relevant if you draft your reports in Markdown before they become a page.</div>
+    <div class="rwhy"><b>Why it is cited:</b> column C recommends drafting in plain text so that a report survives its own tooling. This is the version of plain text worth using.</div>
+    <a class="rlink" href="https://commonmark.org/">commonmark.org</a>
+  </article>
+
+  <article class="ref" id="r8">
+    <span class="rnum">8</span><span class="rkind">Standard · accessibility</span>
+    <div class="rtitle">WAI-ARIA Authoring Practices — Tabs</div>
+    <div class="rmeta">W3C Web Accessibility Initiative</div>
+    <div class="rprev">The agreed pattern for a set of buttons that switch between panels: which roles to use, what keyboard behaviour a reader expects, and how a screen reader should announce the change.</div>
+    <div class="rwhy"><b>Why it is cited:</b> the A / B / C buttons follow it. Three buttons is a small enough interface that getting it right costs nothing.</div>
+    <a class="rlink" href="https://www.w3.org/WAI/ARIA/apg/patterns/tabs/">w3.org/WAI/ARIA/apg/patterns/tabs</a>
+  </article>
+
+  <article class="ref" id="r9">
+    <span class="rnum">9</span><span class="rkind">Tool · publishing</span>
+    <div class="rtitle">GitHub Desktop</div>
+    <div class="rmeta">GitHub · free application for macOS and Windows · no command line</div>
+    <div class="rprev">A window with a list of the files you have changed, a box to type what you changed, and two buttons: Commit, then Push. It keeps a folder on your computer in step with a folder on GitHub's servers, which is what actually gets published.</div>
+    <div class="rwhy"><b>Why it is cited:</b> it is the only piece of software a publisher of these reports has to install, and it is the step first-time users expect to be difficult. Download it, sign in with the account, choose a folder. That is the whole of it.</div>
+    <a class="rlink" href="https://desktop.github.com/">desktop.github.com</a>
+  </article>
+
+  <div id="deadnote" hidden></div>
+</section>
+
+<!-- ================= C ================= -->
+<section class="col dim" id="cC" role="tabpanel" aria-labelledby="tC">
+  <div class="colhead"><b>C</b> &nbsp;How it works</div>
+  <p class="lede">Concepts first, mechanics last. A reader who stops a third of the way down should still have learned something whole.</p>
+
+  <h2>The shape</h2>
+  <p>One HTML file per report. No framework, no build step, no dependencies except two web fonts, and those degrade to system serif and system mono if they fail to load. The file is typically 40–60&nbsp;KB and renders before a spinner would have appeared.</p>
+  <p>Three columns on a wide screen, three buttons on a narrow one, and one continuous document when printed. The same markup serves all three — nothing is duplicated, because duplicated content is content that will drift.</p>
+
+  <h2>Why the reference column sits in the middle</h2>
+  <p>Physical position carries meaning. A source column on the far right reads as an appendix; at the bottom it reads as an afterthought. Between the plain answers and the technical detail, it reads as what it is: the common evidence that both other columns rest on.</p>
+  <p>It also means that whichever column you are reading, the citation is one short glance away rather than one long scroll.</p>
+
+  <h2>The anatomy of a reference card</h2>
+  <p>Fixed order, every time, so a reader learns the shape once<span class="fn" data-ref="r7">7</span>:</p>
+  <pre>1  number and kind      what sort of thing this is
+2  title                what it is called
+3  provenance           who made it, when, under what licence
+4  preview              what you would find if you went there
+5  why it is cited      what it is doing in THIS report
+6  the link             last, and only last</pre>
+  <p>Items 4 and 5 are the ones that do the work, and they are the two that a bare footnote never provides. Item 5 in particular is the honest one: it forces the writer to say what the source is actually supporting, which is where padded citation lists fall apart.</p>
+
+  <h2>Link health, done honestly</h2>
+  <p>The obvious implementation is wrong. A browser cannot read the status of a cross-origin request: with <span class="mono">mode:'no-cors'</span> the response comes back opaque, and <span class="mono">response.status</span> is 0 whether the page is healthy, missing or on fire<span class="fn" data-ref="r2">2</span>. Any in-page checker built that way reports false deaths, which is worse than not checking.</p>
+  <p>So the check runs elsewhere, on a schedule, and writes a small file the page reads at load:</p>
+  <pre>links.json
+{ "checked": "2026-09-10",
+  "dead":   { "r4": "2026-08-02" },
+  "note":   "one source unreachable since 2 August 2026" }</pre>
+  <p>At load the page fetches that file — same origin, so the status <em>is</em> readable — and for any id listed as dead it disables the link, strikes it through, and writes the dated note at the foot of column B. If the file is missing or unreadable the page does nothing at all: no file means no claim, never a false alarm.</p>
+  <div class="note"><strong>The principle, which generalises.</strong> A feature that fails silently in the direction of a false positive is worse than an absent feature. The page would rather say nothing about a link than say something untrue about it.</div>
+
+  <h2>What is deliberately absent</h2>
+  <ul>
+    <li><b>No analytics, no trackers, no cookies.</b> Nothing to consent to, so no consent banner.</li>
+    <li><b>No comments.</b> A dated record of one day is not a conversation.</li>
+    <li><b>No revision.</b> Issues are superseded, never edited. A link sent today resolves to the same words next year.</li>
+    <li><b>No browser storage.</b> Even the dark-mode setting lives in memory only, so the page behaves identically in a private window.</li>
+  </ul>
+
+  <h2>Typography and layout</h2>
+  <p>Body text at 17&nbsp;px with a 1.62 line height, measure capped near 62 characters. Figure captions are set at <b>22&nbsp;px</b> — larger than the body, deliberately, because a caption is often the only thing a scanning reader reads.</p>
+  <p>Colour is carried by three accents only: green for structure, gold for the column keys, red for citations and for anything broken. Dark mode redefines eight custom properties and nothing else.</p>
+
+  <h2>Print and PDF</h2>
+  <p>&ldquo;Save as PDF&rdquo; calls the browser's own print dialogue. Print rules unhide all three columns, expand every collapsed answer, drop the navigation, and start each column on a fresh page — so the printed artefact is a linear document in the order A, B, C, and the reader of a PDF is not missing anything the reader of the page could see.</p>
+
+  <h2>Accessibility</h2>
+  <p>The buttons are a real tab set: <span class="mono">role="tablist"</span>, <span class="mono">aria-selected</span>, panels labelled by their button, arrow-key navigation<span class="fn" data-ref="r8">8</span>. Answers are native <span class="mono">&lt;details&gt;</span> elements, so they are searchable by the browser's own find, and work with JavaScript disabled.</p>
+  <p>With JavaScript off entirely the page still reads: all three columns render, all answers open, nothing is lost but the switching.</p>
+
+  <h2>Hosting, domain, cost</h2>
+  <pre>hosting     GitHub Pages, served from the repository root
+domain      four A records at the apex, one CNAME for www
+TLS         issued automatically, renewed automatically
+build       none
+cost        the domain, and nothing else</pre>
+  <p>All internal links are relative, so moving the whole site to a different domain touches exactly one file.</p>
+
+  <h2>Publishing, for someone who has used neither GitHub nor GitHub Desktop</h2>
+  <p>This is the section that decides whether the format spreads. It is written for a reader who has never done any of it, and it assumes no command line at any point.</p>
+  <h3>Once, at the start — about twenty minutes</h3>
+  <pre>1  Make a free GitHub account.
+
+2  Make a new repository. Name it whatever the site is called.
+   Tick "Public". A repository is a folder that lives on their
+   servers and keeps every version of everything in it.
+
+3  Install GitHub Desktop and sign in with that account.
+   File > Clone repository > pick the one you just made,
+   and choose where it should sit on your computer.
+   You now have an ordinary folder that is joined to GitHub.
+
+4  Put index.html in that folder.
+
+5  On github.com, in the repository: Settings > Pages.
+   Set the source to the main branch, root folder. Save.
+   Your site is now live at username.github.io/reponame.
+
+6  OPTIONAL, and this is the only step that costs money.
+   Buy a domain (about a dollar a year at the cheaper
+   registrars). At the registrar, point it at GitHub:
+     four A records on @  ->  185.199.108.153
+                              185.199.109.153
+                              185.199.110.153
+                              185.199.111.153
+     one CNAME on www     ->  username.github.io.
+   Then put a one-line file called CNAME in the folder
+   containing just your domain name, and publish it.
+   Set the DNS BEFORE you publish that file, or GitHub
+   shows a scary red warning that clears by itself once
+   the records propagate.
+
+7  Wait for the padlock. A few minutes after the domain
+   resolves, a certificate is issued automatically and a
+   tickbox appears saying "Enforce HTTPS". Tick it.</pre>
+  <h3>Every day after that — about one minute</h3>
+  <pre>1  Edit index.html.
+2  Open GitHub Desktop. Your changes are listed on the left.
+3  Type a short line in the Summary box saying what changed.
+4  Click "Commit to main".
+5  Click "Push origin".
+6  The page is live in about a minute.</pre>
+  <p>Two words, and no more. <b>Commit</b> is &ldquo;save this version with a note.&rdquo; <b>Push</b> is &ldquo;send it to the internet.&rdquo; Branches, pull requests, merges and the rest exist and can be ignored indefinitely; a one-person daily record has no use for any of them.</p>
+  <div class="note"><strong>Why this route and not a website builder.</strong> Because every version is kept, with a date and a note, by default and without effort — which is precisely what a dated record of daily work requires. The version history is not a developer feature here. It is the point.</div>
+
+  <h2>Page D — the setup page nobody sees</h2>
+  <p>A fourth page exists and is never linked from the report. It is the setup sheet: the title and date, the standfirst, which image heads the issue, the reference list, and the last link-check result. It writes the values the report reads.</p>
+  <p>It is not an admin panel in the usual sense — there is no login, because there is nothing behind it to protect. It is a form that produces a file, kept out of the navigation because it is furniture, not content.</p>
+
+  <h2>Failures recorded in building this page</h2>
+  <p>Per the rule in column A, and these are real:</p>
+  <ul>
+    <li><b>The first link checker was wrong.</b> It used <span class="mono">no-cors</span> fetches and treated any error as death, which would have marked healthy sources dead. Replaced by the scheduled check described above.</li>
+    <li><b>The middle column was first placed on the right.</b> It read as an appendix and got ignored in testing. Moving it between the other two changed nothing but position, and that fixed it.</li>
+    <li><b>The link was originally the first line of each card.</b> Readers clicked it immediately and never read the preview, which defeated the entire purpose. Putting it last was the single most important decision in the design.</li>
+  </ul>
+</section>
+
+</main>
+</div>
+
+<footer>
+  One-Day Report · the format, explaining itself · 10 September 2026<br>
+  Walter Wilkinson · Worland · Washakie County · Wyoming · <strong>5Ws</strong><br>
+  No analytics, no trackers, no cookies. This page sets nothing and stores nothing.
+</footer>
+<div class="endmark">·</div>
+
+<script>
+(function(){
+  var tabs = [].slice.call(document.querySelectorAll('[role="tab"]'));
+  var cols = { tA:'cA', tB:'cB', tC:'cC' };
+  var wide = function(){ return window.matchMedia('(min-width:1101px)').matches; };
+  function select(id){
+    tabs.forEach(function(t){
+      var on = t.id === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      var c = document.getElementById(cols[t.id]);
+      c.classList.toggle('active', on);
+      c.classList.toggle('dim', wide() ? !on : false);
+    });
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(t.id); });
+    t.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var n = tabs[(i + d + tabs.length) % tabs.length];
+      n.focus(); select(n.id);
+    });
+  });
+  window.addEventListener('resize', function(){
+    var cur = tabs.filter(function(t){ return t.getAttribute('aria-selected') === 'true'; })[0];
+    if (cur) select(cur.id);
+  });
+  select('tA');
+
+  // footnote markers -> reference card
+  document.querySelectorAll('.fn').forEach(function(f){
+    f.addEventListener('click', function(){
+      var el = document.getElementById(f.dataset.ref);
+      if (!el) return;
+      if (!wide()) select('tB');
+      el.scrollIntoView({behavior:'smooth', block:'center'});
+      el.classList.add('flash');
+      setTimeout(function(){ el.classList.remove('flash'); }, 1600);
+    });
+  });
+
+  document.getElementById('pdf').addEventListener('click', function(){ window.print(); });
+  var th = document.getElementById('theme');
+  th.addEventListener('click', function(){
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+    th.textContent = dark ? 'Dark' : 'Light';
+  });
+
+  // link health: same-origin status file only. No file, no claim.
+  fetch('links.json', {cache:'no-store'}).then(function(r){
+    if (!r.ok) throw 0; return r.json();
+  }).then(function(d){
+    var dead = d.dead || {}, any = false;
+    Object.keys(dead).forEach(function(id){
+      var card = document.getElementById(id);
+      if (!card) return;
+      var a = card.querySelector('.rlink');
+      if (!a) return;
+      a.classList.add('broken');
+      a.removeAttribute('href');
+      a.setAttribute('aria-disabled','true');
+      any = true;
+    });
+    if (any) {
+      var n = document.getElementById('deadnote');
+      var lines = Object.keys(dead).map(function(id){
+        var t = document.getElementById(id).querySelector('.rtitle').textContent;
+        return '&ldquo;' + t + '&rdquo; — unreachable as of ' + dead[id];
+      });
+      n.innerHTML = '<b>A note on the struck-through links.</b> ' +
+        'These sources were live when this report was written and are not now. ' +
+        'They are shown rather than removed, so that what was cited stays visible.<br><br>' +
+        lines.join('<br>') + '<br><br>Last checked ' + (d.checked || 'unknown') + '.';
+      n.hidden = false;
+    }
+  }).catch(function(){ /* no status file: say nothing */ });
+})();
+</script>
+</body>
+</html>
