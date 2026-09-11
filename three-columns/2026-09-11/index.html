@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One-Day Report · Three Columns · September 11, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#FAF8F4; --card:#FFFDFA; --ink:#241F1A; --ink-mid:#544A40;
+  --ink-soft:#7D7266; --rule:#DCD4C7; --rule-soft:#EAE4DA;
+  --accent:#5C3D24; --accent-mid:#8A6A3A; --accent-soft:#F0E9DE;
+  --a-form:#2B4C8C; --b-form:#9A4A2F; --kill:#8E2F3C;
+}
+:root[data-theme="dark"]{
+  --paper:#16130F; --card:#1E1A15; --ink:#EDE7DE; --ink-mid:#B3A899;
+  --ink-soft:#8A8073; --rule:#3A332B; --rule-soft:#2A251F;
+  --accent:#D7B183; --accent-mid:#C9A473; --accent-soft:#2A2219;
+  --a-form:#8BA6E8; --b-form:#D9906B; --kill:#DE7B87;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#16130F; --card:#1E1A15; --ink:#EDE7DE; --ink-mid:#B3A899;
+    --ink-soft:#8A8073; --rule:#3A332B; --rule-soft:#2A251F;
+    --accent:#D7B183; --accent-mid:#C9A473; --accent-soft:#2A2219;
+    --a-form:#8BA6E8; --b-form:#D9906B; --kill:#DE7B87;
+  }
+}
+*{box-sizing:border-box;}
+.endmark{text-align:center;color:var(--ink-soft);font-size:20px;letter-spacing:.6em;padding:26px 0 0;}
+body{margin:0;padding-bottom:60px;background:var(--paper);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+  font-size:18px;line-height:1.6;-webkit-text-size-adjust:100%;}
+.wrap{max-width:860px;margin:0 auto;padding:0 28px;}
+
+header{padding:52px 0 30px;}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;
+  font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-mid);}
+.rose{width:13px;height:13px;vertical-align:-2px;margin-right:.5em;}
+.eyebrow a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;}
+.eyebrow a:hover{border-bottom-color:currentColor;}
+.eyebrow .sep{opacity:.6;padding:0 .34em;font-weight:400;letter-spacing:0;font-family:"Source Serif 4",Georgia,serif;font-size:1.55em;line-height:0;vertical-align:-.04em;}
+h1{font-size:clamp(30px,5.1vw,46px);line-height:1.08;font-weight:700;
+  letter-spacing:-.015em;margin:12px 0 0;text-wrap:balance;}
+h1 .seg{white-space:nowrap;}
+h1 .sep{color:var(--accent-mid);font-weight:400;padding:0 .12em;}
+@media (max-width:520px){h1 .seg{white-space:normal;}}
+.standfirst{font-size:20px;line-height:1.5;color:var(--ink-mid);margin:16px 0 0;max-width:56ch;}
+.standfirst strong{display:inline-block;margin-top:10px;font-weight:600;color:var(--ink);}
+.claimlabel{margin-top:26px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;
+  font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-mid);}
+.asof{margin-top:20px;display:inline-block;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12px;letter-spacing:.06em;color:var(--ink-soft);
+  border:1px solid var(--rule);padding:6px 11px;}
+
+nav{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:14px 0;display:flex;flex-wrap:wrap;gap:9px;align-items:center;
+  position:sticky;top:0;background:var(--paper);z-index:5;}
+button{font-family:inherit;font-size:16px;cursor:pointer;border:1px solid var(--rule);
+  background:transparent;color:var(--ink);padding:9px 16px;border-radius:3px;}
+button:hover{border-color:var(--accent-mid);}
+button[aria-selected="true"]{background:var(--accent);color:var(--paper);border-color:var(--accent);font-weight:600;}
+:root[data-theme="dark"] button[aria-selected="true"]{color:#16130F;}
+.spacer{flex:1;}
+.util{font-size:14px;padding:8px 13px;}
+button:focus-visible{outline:2px solid var(--accent-mid);outline-offset:2px;}
+
+main{padding:8px 0 90px;}
+section[hidden]{display:none;}
+h2{font-size:26px;font-weight:700;margin:46px 0 0;letter-spacing:-.01em;text-wrap:balance;}
+h2:first-child{margin-top:34px;}
+h3{font-size:19px;font-weight:600;margin:30px 0 0;}
+p{margin:14px 0 0;max-width:66ch;}
+ul,ol{margin:14px 0 0;padding-left:22px;max-width:64ch;}
+li{margin-top:8px;}
+strong{font-weight:600;}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.85em;}
+.gl{font-style:italic;font-weight:600;}
+.a-form{color:var(--a-form);font-weight:600;}
+.b-form{color:var(--b-form);font-weight:600;}
+a{color:var(--accent);text-underline-offset:2px;}
+
+details{border-bottom:1px solid var(--rule-soft);padding:2px 0;}
+summary{cursor:pointer;padding:15px 0;font-size:19px;font-weight:600;list-style:none;
+  display:flex;gap:12px;align-items:baseline;}
+summary::-webkit-details-marker{display:none;}
+summary::before{content:"+";color:var(--accent-mid);font-family:"IBM Plex Mono",monospace;
+  font-size:17px;flex:none;width:14px;}
+details[open] summary::before{content:"\2013";}
+details[open] summary{color:var(--accent);}
+details .body{padding:0 0 18px 26px;}
+details .body p:first-child{margin-top:0;}
+
+.note{margin-top:22px;padding:16px 18px;background:var(--card);
+  border-left:3px solid var(--accent-mid);font-size:17px;color:var(--ink-mid);}
+.note strong{color:var(--ink);}
+.note.kill{border-left-color:var(--kill);}
+.note.kill strong{color:var(--kill);}
+
+.rec{border-top:1px solid var(--rule);padding:22px 0;display:grid;
+  grid-template-columns:130px 1fr;gap:6px 22px;}
+.rec:last-of-type{border-bottom:1px solid var(--rule);}
+.rec .kind{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--ink-soft);padding-top:5px;}
+.rec .t{font-size:19px;font-weight:600;line-height:1.35;}
+.rec .m{font-size:15px;color:var(--ink-soft);margin-top:3px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;}
+.rec .d{font-size:16.5px;color:var(--ink-mid);margin-top:9px;max-width:60ch;}
+.rec .u{margin-top:9px;font-size:15px;word-break:break-word;}
+
+.tablewrap{overflow-x:auto;margin-top:20px;}
+table{border-collapse:collapse;width:100%;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:14px;font-variant-numeric:tabular-nums;}
+th{text-align:left;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-soft);border-bottom:1px solid var(--rule);padding:0 14px 8px 0;white-space:nowrap;}
+td{padding:8px 14px 8px 0;border-bottom:1px solid var(--rule-soft);color:var(--ink-mid);vertical-align:top;}
+td:first-child{color:var(--ink);}
+td.n,th.n{text-align:right;padding-right:20px;}
+
+pre{margin-top:18px;padding:16px 18px;background:var(--card);border:1px solid var(--rule-soft);
+  overflow-x:auto;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13.5px;
+  line-height:1.7;color:var(--ink-mid);}
+
+figure{margin:26px 0 0;}
+.bigfig{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);}
+.bigfig img{display:block;width:100%;}
+.figbar{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:9px;}
+@media (max-width:760px){.bigfig img{width:1200px;max-width:none;}}
+figcaption{font-size:22px;line-height:1.4;font-style:italic;color:var(--ink-mid);
+  margin-top:14px;max-width:60ch;}
+
+footer strong{font-weight:600;color:var(--ink);letter-spacing:.04em;}
+footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--card);padding:30px 26px 34px;margin-top:56px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;
+  color:var(--ink-soft);line-height:1.9;}
+
+@media (max-width:640px){
+  body{font-size:17px;} .wrap{padding:0 18px;}
+  .rec{grid-template-columns:1fr;gap:4px;}
+  .rec .kind{padding-top:0;}
+  nav{position:static;}
+  figcaption{font-size:22px;}
+}
+@media print{
+  body{padding-bottom:0;}
+  .endmark{display:none;}
+  footer{background:none;}
+  nav,.util{display:none!important;}
+  section[hidden]{display:block!important;}
+  body{background:#fff;color:#000;font-size:11pt;}
+  a{color:#000;}
+  h2{page-break-after:avoid;}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow"><svg class="rose" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon fill="#4C7A4E" points="18.94,2.45 17.23,10.30 23.22,15.65 15.23,16.45 12,23.80 8.77,16.45 0.78,15.65 6.77,10.30 5.06,2.45 12,6.50"/><g fill="#B4372C"><circle cx="12" cy="7.00" r="3.9"/><circle cx="16.76" cy="10.46" r="3.9"/><circle cx="14.94" cy="16.05" r="3.9"/><circle cx="9.06" cy="16.05" r="3.9"/><circle cx="7.24" cy="10.46" r="3.9"/></g><g fill="#FCF8F0"><circle cx="13.76" cy="9.57" r="2.2"/><circle cx="14.85" cy="12.93" r="2.2"/><circle cx="12" cy="15.00" r="2.2"/><circle cx="9.15" cy="12.93" r="2.2"/><circle cx="10.24" cy="9.57" r="2.2"/></g><circle cx="12" cy="12" r="1.4" fill="#C8992F"/></svg><a href="https://gorhambury.org/">New Gorhambury</a><span class="sep">·</span><a href="https://baconian-ciphers.online/">Baconian Ciphers</a></div>
+  <h1><span class="seg">One-Day Report</span> <span class="sep">·</span> <span class="seg">Three Columns</span> <span class="sep">·</span> <span class="seg">September 11, 2026</span></h1>
+  <div class="claimlabel">Today's claim</div>
+  <p class="standfirst">One day&rsquo;s progress, presented three ways.<br><strong>The Three Columns format was argued into a funding proposal today, and the argument that survived is not about money. Wyoming has funded the supply of artificial intelligence in Cheyenne and the research in Laramie, and has given nobody the job of carrying it to the counties &mdash; while University of Wyoming Extension, present in all twenty-three counties since 1914 and in Worland for over a hundred years, publishes nine program areas of which not one is artificial intelligence, or digital anything. The gap is an aperture, not a shortfall. Ten thousand dollars is what it costs to find out whether it can be opened, and the sheet that asks for it is printed, sourced and finished.</strong></p>
+  <div class="asof">findings may be superseded by later reports</div>
+</header>
+
+<nav role="tablist" aria-label="Sections">
+  <button role="tab" id="t1" aria-controls="p1" aria-selected="true">FAQ</button>
+  <button role="tab" id="t2" aria-controls="p2" aria-selected="false">Reference</button>
+  <button role="tab" id="t3" aria-controls="p3" aria-selected="false">Technical Colophon</button>
+  <span class="spacer"></span>
+  <button class="util" id="pdf">Save as PDF</button>
+  <button class="util" id="theme">Dark</button>
+</nav>
+</div>
+
+<main class="wrap">
+
+<!-- ================= FAQ ================= -->
+<section id="p1" role="tabpanel" aria-labelledby="t1">
+  <h2>The short version</h2>
+  <p>Today&rsquo;s work was not on the ciphers. It was on the format they are published in &mdash; and on the argument for funding it as a thing in its own right.</p>
+  <p>The Governor was reported this week intending to make Wyoming first in the nation for artificial intelligence. The money behind that is real and it is already moving: a data campus south of Cheyenne that opens at 1.8&nbsp;gigawatts and could reach ten, and a research program in Laramie that has drawn federal, state and private funds since 2021. Washakie County will see none of it. The question put to the sources today was whether that is a complaint or a structural fact &mdash; and if the latter, whether ten thousand dollars can test it.</p>
+
+  <div class="note"><strong>Today&rsquo;s result in one sentence.</strong> The gap is not money, it is an <strong>aperture</strong>: Wyoming has funded the <em>supply</em> of AI in Cheyenne and the <em>research</em> in Laramie, and has given nobody the job of carrying it to the counties &mdash; while the machine built for exactly that job, <strong>University of Wyoming Extension, present in all twenty-three counties since 1914 and in Worland for over a hundred years</strong>, lists nine program areas and artificial intelligence is not among them, nor is any digital or technology program at all.</div>
+
+  <div class="note"><strong>Why that framing and not the obvious one.</strong> The obvious pitch is that Laramie gets the research money and Worland does not. That pitch loses. Research money was never going to come to Worland, and a proposal that reads as anti-university dies in front of an administration that has to fund the university. The aperture framing costs the university nothing, gives it the starring role &mdash; it already owns the delivery system &mdash; and is checkable in one click against UW&rsquo;s own published page.</div>
+
+  <figure>
+    <svg viewBox="0 0 1080 300" width="100%" role="img" aria-label="Three panels comparing ten gigawatts of AI supply in Cheyenne, twenty-seven million dollars of AI research in Laramie, and nothing at all for the other twenty-two counties">
+      <rect x="0" y="0" width="1080" height="300" fill="none"></rect>
+      <line x1="360" y1="20" x2="360" y2="250" stroke="#DCD4C7" stroke-width="2"></line>
+      <line x1="720" y1="20" x2="720" y2="250" stroke="#DCD4C7" stroke-width="2"></line>
+
+      <text x="24" y="46" font-family="Georgia,serif" font-size="22" fill="#8A6A3A">SUPPLY &mdash; CHEYENNE</text>
+      <text x="24" y="128" font-family="Georgia,serif" font-size="66" font-weight="bold" fill="#544A40">10 GW</text>
+      <text x="24" y="170" font-family="Georgia,serif" font-size="23" fill="#544A40">Project Jade, approved</text>
+      <text x="24" y="202" font-family="Georgia,serif" font-size="23" fill="#544A40">6 January 2026</text>
+
+      <text x="384" y="46" font-family="Georgia,serif" font-size="22" fill="#8A6A3A">RESEARCH &mdash; LARAMIE</text>
+      <text x="384" y="128" font-family="Georgia,serif" font-size="66" font-weight="bold" fill="#544A40">$27M</text>
+      <text x="384" y="170" font-family="Georgia,serif" font-size="23" fill="#544A40">federal seed to the Wyoming</text>
+      <text x="384" y="202" font-family="Georgia,serif" font-size="23" fill="#544A40">Innovation Partnership, 2021</text>
+
+      <text x="744" y="46" font-family="Georgia,serif" font-size="22" fill="#B4372C">EXTENSION &mdash; THE OTHER 22</text>
+      <text x="744" y="128" font-family="Georgia,serif" font-size="66" font-weight="bold" fill="#B4372C">$0</text>
+      <text x="744" y="170" font-family="Georgia,serif" font-size="23" fill="#544A40">no program, no line item,</text>
+      <text x="744" y="202" font-family="Georgia,serif" font-size="23" fill="#544A40">nothing to underfund</text>
+
+      <line x1="24" y1="250" x2="1056" y2="250" stroke="#5f5a50" stroke-width="2"></line>
+      <text x="540" y="284" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#5f5a50">Two of the three are funded. The third was never built.</text>
+    </svg>
+    <figcaption>The spine of the proposal, in the form a legislator reads first. The third figure is the only one that is not a measurement &mdash; it is an absence, and absences are what the sheet argues about. Sources for the first two are carded in the middle column; the third is the claim being made, and it rests on UW Extension&rsquo;s own published list of program areas.</figcaption>
+  </figure>
+
+  <h2>Questions</h2>
+
+  <details><summary>What is Three Columns?</summary><div class="body">
+    <p>A fixed format for publishing one subject as one small public website. Column&nbsp;A answers, in plain English, about ten questions somebody new to the subject actually asks. Column&nbsp;B is a catalog of every external reference made anywhere on the page, each one previewed, with the live link last. Column&nbsp;C is the technical layer &mdash; whatever that is for the subject at hand.</p>
+    <p>The page you are reading is in that format. So is the daily record of the cipher work, and so is a plain-language guide to the Worland dog ordinances. The format documents itself at <a href="https://threecolumns.online/">threecolumns.online</a>.</p>
+  </div></details>
+
+  <details><summary>What actually happened today?</summary><div class="body">
+    <p>A one-page proposal was researched, written, argued over line by line, and rendered to a printable sheet. It asks for ten thousand dollars to run a pilot in Washakie County.</p>
+    <p>Most of the day went on the argument rather than the writing. Three separate framings were tried and two were discarded: <em>Laramie gets the money and we do not</em> (loses, because it makes an enemy of the university), and <em>fund ten web pages for the county</em> (loses, because ten pages is a purchase and not a capability). What survived is the third: the state has funded AI supply and AI research and has never built the thing that carries either to a county, although the vehicle for doing so has existed since 1914.</p>
+  </div></details>
+
+  <details><summary>What is the proposal asking for, exactly?</summary><div class="body">
+    <p>Four half-day workshops in Worland for up to ten people; ten finished, published county reports on subjects the room chooses; a written manual and a copyable template under an open license so any of the other twenty-two counties can do the same for the same money; and a public accounting of every hour and every dollar, published in the format it teaches.</p>
+    <p>The distinction the sheet now turns on is between the two levels. <strong>A deliverable</strong> is one custom, practically useful ultralight website. <strong>The product</strong> is the template and method that make them. The grant funds the second. What the county keeps is not ten websites but the standing ability to make the eleventh.</p>
+  </div></details>
+
+  <details><summary>Why only ten thousand dollars?</summary><div class="body">
+    <p>Because that is the ceiling of an existing program &mdash; the Wyoming Business Council&rsquo;s Community Economic Growth Grant &mdash; and because a request at that size needs nobody to be brave.</p>
+    <p>It matters more than usual this biennium. In the March 2026 session the legislature cut the Business Council from the Governor&rsquo;s recommended $54.6&nbsp;million to roughly $15&nbsp;million, halted the Small Business Innovation Research program, and gave Business Ready Community grants no new money. Anything larger than a very small ask is now arithmetically impossible there. Whether this particular fund survived at all is the first thing to confirm, and the sheet says so in plain terms rather than assuming.</p>
+  </div></details>
+
+  <details><summary>Who would receive the money, if not you?</summary><div class="body">
+    <p>The Washakie Development Association. This is not a nicety: the Business Council states that it is unable to loan or grant state funds directly to a private business or individual, so a local economic development organization has to be the applicant and hold the funds.</p>
+    <p>That constraint turned out to improve the proposal. A local board asking for ten thousand dollars reads very differently from a resident asking for it.</p>
+  </div></details>
+
+  <details><summary>Isn&rsquo;t this just one county asking for a handout?</summary><div class="body">
+    <p>It is written specifically so that it is not, and the mechanism is the open license.</p>
+    <p>Wyoming&rsquo;s capital sits near the southeast corner of a state three hundred and seventy-two miles from top to bottom &mdash; one of the least centrally located capitals in the nation &mdash; and the university is fifty miles from it. Worland is 341 miles from Cheyenne and 306 from Laramie, five and a half hours either way. None of that is anybody&rsquo;s fault; it is where the railroad went. But it does mean an administration has to decide <em>deliberately</em> that a new effort will reach the far counties, because geography will not do it unaided.</p>
+    <p>So the sheet says Washakie is not asking to be favored but volunteering to be the test case, and the method is published openly, so whatever it proves it proves for all twenty-three. A legislator from Sheridan or Goshen can back it on the same grounds and get the same thing.</p>
+  </div></details>
+
+  <details><summary>If the AI does the work, who is accountable for what it says?</summary><div class="body">
+    <p>The person who signed it. The division is stated on the sheet rather than glossed: the machine reads the source documents cold, works out the questions a newcomer would ask, answers them, builds the page, assembles the reference column and publishes it; the person chooses the subject, adds the questions only a local would think to ask, checks every answer against its source, and signs.</p>
+    <p>Column&nbsp;B is what makes that accountability visible &mdash; every claim sits beside the source it came from, so anyone can check the checker. A chatbot gives you an answer and no way to test it. This gives you the means to prove it wrong. Nothing may appear in column&nbsp;A <em>or</em>&nbsp;C that is not carded in&nbsp;B.</p>
+  </div></details>
+
+  <details><summary>What could stop it?</summary><div class="body">
+    <p>Three things, in order of likelihood. The Business Council fund may no longer exist after the March cuts &mdash; unconfirmed, and the first phone call. The Washakie Development Association may not want to sponsor it. And extension, which is the better home for it on the argument&rsquo;s own logic, may have no appetite for a technology program it was not asked for.</p>
+    <p>None of those is a reason not to ask. But the sheet is written so that a reader who says no is saying no to something specific, which is more useful than a polite maybe.</p>
+  </div></details>
+
+  <details><summary>Who is doing this, and why?</summary><div class="body">
+    <p>Walter Wilkinson, in Worland. A retired technology engineer, twenty years in the Boston software industry, now spending them on a cryptographic audit of claims made about Shakespeare&rsquo;s First Folio. The format in this proposal was built for that audit, because the audit needed a way of publishing findings that a skeptic could check line by line.</p>
+    <p>It turned out the format was the more generally useful thing. A county clerk needs the same discipline a referee does, for different reasons.</p>
+    <p>The wider project is <a href="https://gorhambury.org/">New Gorhambury</a>; the argued case for the cipher claim is <a href="https://gorhambury.org/public/experiments/experiment-one/">Experiment One</a>. Experiment One argues a conclusion. These reports deliberately do not &mdash; including this one, which reports a proposal written, not a proposal accepted.</p>
+  </div></details>
+
+</section>
+
+<section id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+  <h2>External documents</h2>
+  <p>Every source relied on today, with what it is and where the original lives. All are free and public. Nothing appears in the other two columns that is not carded here.</p>
+
+  <div class="rec">
+    <div class="kind">News &middot; 6 January 2026 &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Laramie County approves construction of what could become the largest data center in US</div>
+      <div class="m">WyoFile &middot; nonprofit Wyoming newsroom &middot; 6 January 2026</div>
+      <div class="d">Reports the unanimous approval of Project Jade at the Switch Grass Industrial Park, eight miles south of Cheyenne &mdash; Crusoe with Tallgrass Energy Partners, opening at 1.8&nbsp;gigawatts and potentially scaling to ten, about 5,000 construction workers at peak and 400 permanent positions, first buildings due 2027.</div>
+      <div class="d"><strong>Why cited:</strong> it supplies the left-hand figure of the three-way contrast, and the only one of the three that a skeptic is likely to already know. Using a Wyoming newsroom rather than a trade publication matters here; the sheet is read by people who read WyoFile.</div>
+      <div class="u"><a href="https://wyofile.com/laramie-county-approves-construction-of-what-could-become-the-largest-data-center-in-us/">wyofile.com &middot; Laramie County approves construction</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Reference &middot; institutional &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">University of Wyoming Extension</div>
+      <div class="m">University of Wyoming &middot; the land-grant outreach organization, serving Wyoming since 1914</div>
+      <div class="d">The index page states that Extension serves all twenty-three counties and the Wind River Indian Reservation, and lists its program areas: 4-H Youth Development, Agriculture and Natural Resources, Cent$ible Nutrition, Financial Literacy, Leadership &amp; Board Training, Nutrition and Food Safety, Yard and Garden, Pesticide Safety Education, Integrated Pest Management.</div>
+      <div class="d"><strong>Why cited:</strong> this is the whole argument, and it is load-bearing. The claim is not that Extension is doing AI badly &mdash; it is that artificial intelligence is not among the published program areas, and neither is any digital or technology program. That is checkable in one click, which is the only reason the claim is worth making.</div>
+      <div class="u"><a href="https://www.uwyo.edu/uwe/index.html">uwyo.edu/uwe</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Reference &middot; county office &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Washakie County Extension &mdash; Serving Washakie County for Over 100 Years</div>
+      <div class="m">University of Wyoming Extension &middot; 1200 Culbertson Street, Suite G, Worland WY 82401</div>
+      <div class="d">Four staff: Amber Armajo (4-H and Youth Development), Dan VanderPloeg (Agriculture and Horticulture), Angela Michel (Cent$ible Nutrition), Tera Neufer (administration). Programs listed include 4-H, agriculture and natural resources, horticulture, Community Vitality &amp; Health, and nutrition. The office runs WESTI Ag Day and a sugar beet conference in Worland each February.</div>
+      <div class="d"><strong>Why cited:</strong> it converts the abstract argument into an address. The aperture is not a metaphor &mdash; it is a building on Culbertson Street with four people in it who already run adult workshops in this county and already have the room and the mailing list.</div>
+      <div class="u"><a href="https://uwyoextension.org/washakiecounty/">uwyoextension.org/washakiecounty</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">News &middot; 23 November 2021 &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Governor launches Wyoming Innovation Partnership with first investment of federal funds</div>
+      <div class="m">County 10 &middot; 23 November 2021</div>
+      <div class="d">Records Governor Gordon committing $27&nbsp;million of American Rescue Plan money to the Wyoming Innovation Partnership, allocated to the University of Wyoming and the community colleges, described as covering the first year.</div>
+      <div class="d"><strong>Why cited:</strong> it supplies the middle figure of the contrast, and it is also the cleanest evidence for the aperture claim. The Partnership&rsquo;s steering group is the presidents of all nine public higher-education institutions plus four state officials. Every seat at that table is an institution. There is no seat for a county, which is not a criticism of the design &mdash; it is the design.</div>
+      <div class="u"><a href="https://county10.com/governor-launches-wyoming-innovation-partnership-with-first-investment-of-federal-funds/">county10.com &middot; Governor launches Wyoming Innovation Partnership</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Reference &middot; institutional &middot; cross-check</div>
+    <div>
+      <div class="t">The University of Wyoming AI Initiative (AI4WY)</div>
+      <div class="m">Office of the President, University of Wyoming &middot; Old Main 206, Laramie</div>
+      <div class="d">Describes a people-centered initiative across six named sectors &mdash; agriculture, engineering, energy, tourism, wildlife conservation and rural healthcare. Documents a $4&nbsp;million NSF award of August 2024 for research computing infrastructure and a seed program of January 2025 supporting twelve UW research projects.</div>
+      <div class="d"><strong>Why cited:</strong> to check the aperture claim against the strongest counter-evidence. AI4WY names rural healthcare and agriculture, so it is not indifferent to the counties &mdash; but no delivery mechanism to them is described anywhere on the page. The claim survives the check, which is why it is on the sheet.</div>
+      <div class="u"><a href="https://www.uwyo.edu/president/initiatives/ai4wy/index.html">uwyo.edu &middot; AI4WY</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">News &middot; 12 December 2025 &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">UW seeks employee raises, AI research funding and athletics boost in 2026</div>
+      <div class="m">Laramie Reporter &middot; 12 December 2025</div>
+      <div class="d">Reports UW&rsquo;s budget request of nearly $484&nbsp;million, including $2.5&nbsp;million for AI research which the Governor cut from his recommended budget. Records that a previous $2.5&nbsp;million state match had been grown to nearly $9&nbsp;million in total, and that UW announced an &ldquo;AI Across the University&rdquo; commission the same day.</div>
+      <div class="d"><strong>Why cited:</strong> it is the honest qualifier on the middle panel. Laramie is not being handed AI money freely either &mdash; it asked for $2.5&nbsp;million and was refused. The contrast is about function, not about grievance, and this source is what keeps it so.</div>
+      <div class="u"><a href="https://laramiereporter.substack.com/p/uw-seeks-employee-raises-ai-research">laramiereporter.substack.com &middot; UW seeks employee raises, AI research funding</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">News &middot; 16 March 2026 &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">What you need to know about the Wyoming Legislature&rsquo;s just completed budget session</div>
+      <div class="m">WyoFile &middot; 16 March 2026</div>
+      <div class="d">Covers the 2026 budget session. Records that the legislature reduced the Wyoming Business Council from the Governor&rsquo;s recommended $54.6&nbsp;million to roughly $15&nbsp;million for the biennium, halted the Small Business Innovation Research program, and left Business Ready Community grants with no new funding though existing dollars remain.</div>
+      <div class="d"><strong>Why cited:</strong> it is the piece of bad news the sheet had to carry. It was found while checking something else, and it may mean the intended fund no longer exists. It is printed as a flagged warning on the back sheet rather than buried, because a proposal built on a dead fund wastes the reader&rsquo;s time and the writer&rsquo;s credibility.</div>
+      <div class="u"><a href="https://wyofile.com/what-you-need-to-know-about-the-wyoming-legislatures-just-completed-budget-session/">wyofile.com &middot; the just completed budget session</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Program page &middot; state agency &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Rural Development Grants &mdash; Wyoming Business Council</div>
+      <div class="m">Wyoming Business Council &middot; page last updated 1 May 2026</div>
+      <div class="d">Describes the Community Economic Growth Grant at a maximum of $10,000 with deadlines on 1 March and 1 September, and Leadership Grants at $2,000 and $1,500 with a ten per cent match. Contact given as Amber Power, Leadership &amp; Engagement Manager.</div>
+      <div class="d"><strong>Why cited:</strong> it sets the size of the ask. It is also carded with a caveat: the page still carries leftover text from an earlier review cycle saying grants would reopen by 1 January 2024, which is visibly stale. A figure taken from a page that is out of date in one place is not a figure to build a budget on, and the sheet says so.</div>
+      <div class="u"><a href="https://wyomingbusiness.org/communities/financing/rural-development-grant/">wyomingbusiness.org &middot; Rural Development Grants</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Program page &middot; state agency &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Community financing programs &mdash; Wyoming Business Council</div>
+      <div class="m">Wyoming Business Council</div>
+      <div class="d">Lists Building Resilient Communities, Rural Development Grants, the Community Development Block Grant, Business Ready Community and Community Facility Rehabilitation, and states that the Council is unable to loan or grant state funds directly to a private business or individual.</div>
+      <div class="d"><strong>Why cited:</strong> that single sentence determines who the applicant must be. It is the reason the proposal is addressed to the Washakie Development Association and not filed by the person who wrote it.</div>
+      <div class="u"><a href="https://wyomingbusiness.org/communities/financing/">wyomingbusiness.org &middot; community financing</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Directory &middot; state agency &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Wyoming Business Council team and regional directors</div>
+      <div class="m">Wyoming Business Council</div>
+      <div class="d">Six regional directors with the counties each covers. Kristin Fong holds the Northwest region &mdash; Big Horn, Hot Springs, Park and Washakie &mdash; on 307-271-2619. Josh Dorrell is chief executive; Ben Peterson is Technology Solutions Manager and Taylor Vignaroli Entrepreneur Development Manager.</div>
+      <div class="d"><strong>Why cited:</strong> the back sheet is a route, and a route needs names. One telephone call to a regional director establishes whether a fund is live, which is worth more than a polished application aimed at a program that closed in March.</div>
+      <div class="u"><a href="https://wyomingbusiness.org/about/team/">wyomingbusiness.org &middot; team</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Organization &middot; local &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">About Us &mdash; Washakie Development Association</div>
+      <div class="m">Washakie Development Association, founded 1990 &middot; 801 Big Horn Avenue, Suite 207, Worland WY 82401</div>
+      <div class="d">LeAnn Baker is Executive Director. The board is chaired by Matt Schneider of Security State Bank, with Tom McKinnon, Kayla Bryant of 307 Honey and Tad DeBolt of Big Horn Federal as officers, and seven further directors. Its stated purpose covers business creation, expansion, retention, recruitment and community development.</div>
+      <div class="d"><strong>Why cited:</strong> it is the body that must apply, and the card exists so that the person reading the proposal can see who would be holding the money before they are asked to support it.</div>
+      <div class="u"><a href="https://washakiedevelopment.com/about-us/">washakiedevelopment.com &middot; about us</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Election guide &middot; 2026 &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Eric Barlow &mdash; Governor &mdash; WyoFile 2026 Election Guide</div>
+      <div class="m">WyoFile &middot; candidate profile, 2026 cycle</div>
+      <div class="d">Large-animal veterinarian, rancher and small business owner; raised on a Campbell County ranch, served in the Marine Corps, five terms in the Wyoming House including Majority Leader and Speaker, now in the Senate. Quoted on local control of data center siting, on career-building as the aim of workforce policy, and on the state&rsquo;s role being to create conditions rather than pick winners.</div>
+      <div class="d"><strong>Why cited:</strong> the proposal is aimed at him, and the framing was built from his own published positions rather than guessed at. His line about the state not picking winners is quoted on the back sheet at the point where the reader is being briefed on how to approach legislators.</div>
+      <div class="u"><a href="https://projects.wyofile.com/election-guide-2026/candidates/barlow-eric/">projects.wyofile.com &middot; Barlow, Eric</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Reference &middot; encyclopedic &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">2026 Wyoming gubernatorial election</div>
+      <div class="m">Wikipedia &middot; CC BY-SA</div>
+      <div class="d">Records that Mark Gordon is term-limited and cannot seek a third consecutive term, that Eric Barlow won the Republican primary of 18 August 2026 with 45.1 per cent, that the general election falls on 3 November 2026, and that analysts rate the race Solid or Safe Republican.</div>
+      <div class="d"><strong>Why cited:</strong> it changed the target. The proposal was originally going to be aimed at the sitting Governor. He has roughly four months left and no successor obligation, so it was redirected at the incoming administration and the 2027 session. A tertiary source is adequate for a fact of this kind, which is why it is carded as encyclopedic rather than primary.</div>
+      <div class="u"><a href="https://en.wikipedia.org/wiki/2026_Wyoming_gubernatorial_election">en.wikipedia.org &middot; 2026 Wyoming gubernatorial election</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Reference &middot; encyclopedic &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Washakie County, Wyoming &middot; Cheyenne, Wyoming &middot; Wyoming</div>
+      <div class="m">Wikipedia &middot; CC BY-SA &middot; three articles read together</div>
+      <div class="d">Washakie County: 7,685 at the 2020 census, down 9.9 per cent from 8,533 in 2010, estimated 7,597 in 2025, peak 8,883 in 1960; 23.5 per cent aged 65 or over, median age 44.4. Cheyenne: lying near the southeast corner of the state, and &ldquo;one of the least centrally located state capitals in the nation&rdquo;. Wyoming: 372 miles north to south, 280 east to west, twenty-three counties, 588,753 people in 2025, the least populous state.</div>
+      <div class="d"><strong>Why cited:</strong> the geography section of the sheet rests on these. The phrase about the least centrally located capital is doing real work: it lets the argument be made as a fact about where the railroad went rather than as a grievance, which is the difference between a proposal a legislator can carry and one he cannot.</div>
+      <div class="u"><a href="https://en.wikipedia.org/wiki/Washakie_County,_Wyoming">en.wikipedia.org &middot; Washakie County</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Reference &middot; road distances &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Driving distances: Worland to Cheyenne, Worland to Laramie</div>
+      <div class="m">mapsof.net distance calculator</div>
+      <div class="d">Worland to Cheyenne 341 miles, about five and a half hours by road. Worland to Laramie 306 miles, about the same, with the halfway point at Bairoil.</div>
+      <div class="d"><strong>Why cited:</strong> the two figures in the geography strip. A commercial distance calculator is a weaker source than the rest of this column and is carded as such; the numbers are consistent with the obvious route through Casper and are used to the nearest mile, not asserted to a precision they do not have.</div>
+      <div class="u"><a href="https://www.mapsof.net/distance/worland-to-laramie">mapsof.net &middot; Worland to Laramie</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Live site &middot; exemplar &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Worland Dog Laws &mdash; Index and FAQ</div>
+      <div class="m">Built in this format and published at no cost &middot; pages last built 25 August 2026 &middot; ordinance source dated 27 October 2025</div>
+      <div class="d">Twelve questions a dog owner actually asks &mdash; leashing, licensing, parks, barking, bites, impoundment, the airport &mdash; over a categorized ordinance index and a separate audit of how the city publishes them. It also records what it found missing: not one of Worland&rsquo;s public parks posts any dog regulation at all.</div>
+      <div class="d"><strong>Why cited:</strong> it is the practical exemplar printed on the sheet, and it was checked live today before the URL went onto a document that will be handed to people. A dead link on a leave-behind is worse than no link.</div>
+      <div class="u"><a href="https://worland-dog-law.online/">worland-dog-law.online</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Live site &middot; exemplar &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Three Columns &mdash; a website format that shows its sources</div>
+      <div class="m">threecolumns.online &middot; stood up 10 September 2026</div>
+      <div class="d">The format documenting itself: column A plain answers, column B previewed source cards with the link last, column C the mechanics including the link-checking method, the security model and the recorded failures.</div>
+      <div class="d"><strong>Why cited:</strong> it is the product the proposal is about, and the page a reader is sent to if they want to know what is being funded rather than what it would produce.</div>
+      <div class="u"><a href="https://threecolumns.online/">threecolumns.online</a></div>
+    </div>
+  </div>
+
+</section>
+
+<section id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+  <h2>Technical colophon</h2>
+  <p>What was built today, how it was checked, and every place it was wrong before it was right.</p>
+
+  <h3>&#9873; Method &mdash; why a printed sheet and not a web page</h3>
+  <p>Every other artifact in this project is a website. This one is a sheet of paper, because of who receives it. A regional director, an economic development board and a legislator are reached across a desk, and a URL handed across a desk is a request that somebody do something later. The sheet is therefore authored as HTML with a print stylesheet and delivered two ways: a live page, and a PDF at US&nbsp;Letter that prints identically. The format is not abandoned &mdash; the sources travel with the argument exactly as column&nbsp;B requires &mdash; it is projected onto paper.</p>
+
+  <h3>&#9873; Measuring the page instead of looking at it</h3>
+  <p>A leave-behind that breaks badly across pages is worse than a plain one, and page breaks cannot be judged from a screen. So the sheet was rendered headless on every substantive edit &mdash; Chromium via Playwright, <span class="mono">page.pdf()</span> at Letter with 0.42&nbsp;inch margins &mdash; and the resulting PDF read back with <span class="mono">pypdf</span>, extracting the text of each page and printing its character count.</p>
+  <p>That last step is the whole trick. An orphan announces itself as a page with an anomalously small character count. The worst instance today was a page of <strong>132 characters</strong> holding nothing but the signature line, which a human eye scrolling a browser would not have caught and which would have printed as a nearly blank sheet at the front of a proposal.</p>
+  <p>Thirteen renders were made over the day. The page count moved 5&nbsp;&rarr;&nbsp;4&nbsp;&rarr;&nbsp;5&nbsp;&rarr;&nbsp;4 as content was added and traded away; the final document is four pages, three of proposal and one of private working notes.</p>
+
+  <h3>&#9873; What was traded to hold the page count</h3>
+  <p>Recorded because the temptation is to present the final document as if it had been written that way. It was not. Held to four pages by: reducing print body type from 9.6&nbsp;pt to 8.6&nbsp;pt in five steps; narrowing page margins from 0.45 to 0.42&nbsp;inch; setting the source list as a two-column CSS grid at 6.6&nbsp;pt rather than a single column, which halved its height; deleting a section headed <em>Why this shape and not a bigger one</em> that had become restatement, and keeping only its one live sentence; and moving a pull quote between sheets twice.</p>
+  <p>Multi-column layout was tried first with CSS <span class="mono">columns</span> and abandoned &mdash; multicol fragmenting across a page break is unreliable in print and silently produced a fifth page. A two-column <span class="mono">grid</span> with <span class="mono">break-inside: avoid</span> on each item behaved.</p>
+
+  <h3>&#9873; The typographic system</h3>
+  <p>Archivo for headings, figures and labels; Source Serif 4 for running text; both from Google Fonts, both with real fallback stacks. The neutral is biased green-grey rather than warm, because the warm-cream-and-terracotta palette is the current default look of machine-generated documents and this one has to read as institutional. One accent does the arguing: a deep sage green for structure, and a burnt iron red used <em>once</em> on the figure that carries the point. Color tokens are declared in a bare <span class="mono">:root</span> and redefined for both the media query and the explicit dark attribute, so the page holds in all three theme states rather than the two people usually test.</p>
+  <p>The rendered PDF is set in the fallback faces rather than Archivo and Source Serif, because the container that renders it cannot reach Google Fonts. Pagination and layout are identical; only the letterforms differ. Printing from a browser gives the intended faces. This is stated rather than quietly tolerated, because a reader comparing the PDF with the live page would otherwise think something was broken.</p>
+
+  <h3>&#9873; What the central claim actually rests on</h3>
+  <p>The argument is that Wyoming has no aperture through which AI reaches a county. It rests on two checkable things and nothing else.</p>
+  <p>First, University of Wyoming Extension&rsquo;s own index page: it serves all twenty-three counties and the Wind River Indian Reservation, has done since 1914, and its published program areas are 4-H Youth Development, Agriculture and Natural Resources, Cent$ible Nutrition, Financial Literacy, Leadership &amp; Board Training, Nutrition and Food Safety, Yard and Garden, Pesticide Safety Education and Integrated Pest Management. Artificial intelligence is not among them and neither is any digital or technology program.</p>
+  <p>Second, the Wyoming Innovation Partnership&rsquo;s own description of its steering group: the presidents of all nine public higher-education institutions, plus the Governor&rsquo;s Office, the Business Council chief executive, the Director of Workforce Services, the Executive Director of the Community College Commission and the Superintendent of Public Instruction. Every seat is an institution.</p>
+  <p><strong>The honest limit.</strong> Neither is proof that no AI outreach exists &mdash; only that none is published where it would be found. A program running without a web page would falsify the claim, and the sheet is written so that a single email from Extension saying <em>we already do this</em> would end the argument cleanly. That is the version of the claim worth making: one that can lose.</p>
+
+  <h3>&#9873; Geography, and why it is stated as arithmetic</h3>
+  <p>Cheyenne lies near the southeast corner of a state 372 miles north to south and 280 east to west; Wikipedia&rsquo;s own article calls it one of the least centrally located capitals in the nation, and Laramie is about fifty miles further west. Worland is 341 road miles from Cheyenne and 306 from Laramie, each about five and a half hours.</p>
+  <p>These are given as distances rather than as complaint for a specific reason. In any state whose capital sits in an extreme corner there is a standing sense of neglect in the rest of it, and a proposal that draws on that feeling reads as grievance and is easy to dismiss. The same facts stated as arithmetic, with the explicit concession that it is nobody&rsquo;s fault and only where the railroad went, produce a structural observation a legislator can repeat in committee without sounding aggrieved. The distances come from a commercial calculator and are carded as the weakest source in the column.</p>
+
+  <h3>&#9873; The division of labor, stated on the sheet</h3>
+  <p>The claim that makes the pilot cheap is that a beginner does in a day what used to take a skilled person a week. The reason is that the machine now settles the <em>questions</em>, not only the answers &mdash; it reads the source documents cold and works out what a newcomer would ask, which is the part a person who has worked a counter for twenty years can no longer do, having forgotten what they did not know.</p>
+  <p>That claim invites an obvious objection and the sheet answers it before it is raised: if the machine writes it, the person who signed it is accountable, and column&nbsp;B is what makes the accountability inspectable. Every claim sits beside the source it came from. Nothing may appear in&nbsp;A or&nbsp;C that is not carded in&nbsp;B.</p>
+
+  <h3>&#9873; A late structural correction &mdash; the private sheet</h3>
+  <p>Until the final hour the document was one artifact of four pages in which page four, headed <em>The route</em>, named individuals with direct telephone numbers, advised which door to try first and why, and recorded a doubt that the intended fund had survived the March 2026 budget cuts. Walter asked whether that page was meant to be public. It was not, and it had not been marked as such.</p>
+  <p>Corrected by splitting the artifact: pages one to three are the proposal and carry the source list, which belongs with the argument; page four is a private working sheet, headed <em>Working notes &mdash; keep this sheet</em> and ruled in the accent red with a line saying plainly that it is not for handing over. The error was a category error &mdash; strategy and deliverable written into one document because they were written in one sitting.</p>
+
+  <h3>&#9873; Failures and corrections</h3>
+  <p><strong>A cost line that priced twelve dollars at zero.</strong> To recover a line of vertical space, two rows of the cost table were merged into one reading <em>Hosting on GitHub Pages, permanently &mdash; plus a domain name at about $12 a year</em>, against a value of <strong>$0</strong>. Caught by Walter, not by the renderer. Split back into three honest rows. A compression made for layout reasons had changed a fact, which is the specific way that layout work goes wrong.</p>
+  <p><strong>A definition written from a single instance.</strong> Column&nbsp;C was described on the sheet as <em>statute text, citations and reasoning</em> &mdash; which is what column&nbsp;C contains in the dog-laws exemplar, and not what column&nbsp;C is. Corrected to the general case: the technical layer, whatever that is for the subject &mdash; ordinance text for a law, method and measurements for research, procedure for a process.</p>
+  <p><strong>Column&nbsp;B understated.</strong> The sheet said <em>nothing may appear in A that is not sourced in B</em>. Column&nbsp;B sources A <em>and</em>&nbsp;C. Holding the technical column to the same standard is the greater part of the claim, and omitting it gave away the strongest thing the format does.</p>
+  <p><strong>The product was never named.</strong> For most of the day the sheet described producing <em>one clear, permanently hosted, fully sourced public page</em> and never said what was being bought. Ten pages is a purchase; the ability to make the eleventh is a capability. Rewritten to separate the two levels explicitly &mdash; a deliverable is one custom, practically useful ultralight website; the product is the template and method that make them, and the grant funds the second.</p>
+  <p><strong>British spellings throughout.</strong> Favoured, customised, catalogue, licence, programme. Corrected globally, and recorded as a standing rule rather than a one-time fix.</p>
+
+  <h3>&#9873; A correction to this site</h3>
+  <p>While looking for somewhere to put a date in the landing page heading, a worse fault surfaced. The issues of <strong>8 and 9 September</strong> had been written, committed and pushed, and neither was listed under <em>All issues</em>. The strand card advertised <em>Latest &mdash; September 9, 2026</em> while nothing on the site linked to it. Both were unreachable for three days.</p>
+  <p>The cause was a procedural gap rather than a mistake: the operating note for producing an issue said to update the landing page&rsquo;s <em>Latest</em> line, and that is one edit where there are three &mdash; the strand card, a new card at the head of the archive, and the dated heading. Both issues are now linked, with a 300&nbsp;&times;&nbsp;300 thumbnail cropped from the <span class="gl">w</span>-census figure for the 8th and the existing <span class="mono">NO FIGURE</span> tile for the text-only 9th.</p>
+  <p>The procedure has been amended to name all three edits, and to require a reachability check that cannot be passed by inspection: list every dated folder on disk, extract every issue href from the landing page, and diff the two. Any folder that appears only on disk is an orphan. It now fails a test rather than going unnoticed for three days.</p>
+
+  <h3>&#9873; Environment</h3>
+  <p>Sources gathered by web fetch and search against the live pages listed in the middle column, read today rather than recalled. The sheet authored as a single self-contained HTML file with an embedded print stylesheet. Rendering and page-count verification with Playwright driving headless Chromium, and <span class="mono">pypdf</span> for page-level text extraction. The thumbnail for the 8 September issue cropped with Pillow from the existing census figure at 1502&nbsp;&times;&nbsp;1502 source pixels, resampled to 300&nbsp;&times;&nbsp;300. Repository edits made directly on the local machine; nothing in this issue required a model to be trusted about a fact, and every figure in it resolves to a card in column&nbsp;B.</p>
+
+  <h3>&#9873; Publication</h3>
+  <p>GitHub Pages from the repository root, no build step, no framework, no analytics, no trackers and no cookies. The custom domain <strong>baconian-ciphers.online</strong> resolves through four A records at the apex to GitHub&rsquo;s addresses, with <span class="mono">www</span> a CNAME to the Pages host; TLS is issued automatically by Let&rsquo;s Encrypt and HTTPS is enforced. All internal links are relative, so a change of domain touches one file. Total infrastructure cost is about a dollar a year &mdash; chosen deliberately, so that nothing here depends on a service that can withdraw it. Issues are superseded, never deleted: a link sent today will resolve next year.</p>
+  <p>This is the first issue of a third strand. The two cipher strands report research; this one reports the format itself being made into something a county could use. Where they disagree about convention, the cipher strands win, because they are older.</p>
+
+</section>
+
+</main>
+
+<footer class="wrap">
+  One-Day Report · Three Columns · 11 September 2026<br>
+  Walter Wilkinson · Worland · Washakie County · Wyoming · <strong>5Ws</strong><br>
+  Sources are carded in the middle column. Figures drawn for this issue; no third-party images used.
+</footer>
+
+<div class="endmark" aria-hidden="true">·</div>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(o){
+        var p=document.getElementById(o.getAttribute('aria-controls'));
+        var on=(o===t);
+        o.setAttribute('aria-selected',on?'true':'false');
+        p.hidden=!on;
+      });
+      window.scrollTo({top:0,behavior:'instant'});
+    });
+  });
+  document.getElementById('pdf').addEventListener('click',function(){window.print();});
+  var th=document.getElementById('theme');
+  th.addEventListener('click',function(){
+    var r=document.documentElement;
+    var dark=r.getAttribute('data-theme')==='dark';
+    if(!dark && !r.hasAttribute('data-theme')){
+      dark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    r.setAttribute('data-theme',dark?'light':'dark');
+    th.textContent=dark?'Dark':'Light';
+  });
+})();
+</script>
+</body>
+</html>
