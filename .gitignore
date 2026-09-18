@@ -7,3 +7,6 @@ _to_delete/
 
 # git leftovers from the sandbox, which cannot delete files
 .git/_stale/
+
+# session continuity notes — never published
+claude/
