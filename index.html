@@ -29,6 +29,8 @@ letter-spacing:.08em;color:var(--ink-soft);white-space:nowrap;vertical-align:.32
 .standfirst{font-size:20px;color:var(--ink-mid);margin:16px 0 0;max-width:54ch}
 .strands{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
 @media (max-width:720px){.strands{grid-template-columns:1fr}}
+/* an odd strand out spans the row, picture left and words right, instead of sitting alone */
+@media (min-width:721px){.strands>.strand:last-child:nth-child(odd){grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;align-items:center}}
 .strand{display:block;text-decoration:none;color:inherit;background:var(--card);
 border:1px solid var(--rule);border-left:3px solid var(--accent-mid);
 padding:0;margin-top:0;overflow:hidden}
@@ -99,15 +101,15 @@ footer strong{font-weight:600;color:var(--ink);letter-spacing:.04em}
   <div class="k">Strand</div>
   <div class="n">Word Cipher</div>
   <div class="strandcap">The cipher wheel&rsquo;s canvas &mdash; Folio pages mounted and marked in Owen&rsquo;s workshop</div>
-  <div class="d">Orville Owen's method, and the containing programme &mdash; reverse-engineering
+  <div class="d">Orville Owen's method, and the containing program &mdash; reverse-engineering
   how the Word Cipher actually worked.</div>
   <div class="s">Latest &mdash; September 5, 2026</div>
   </div>
 </a>
 
 <a class="strand" href="/three-columns/">
-  <img class="strandfig" src="thumbs/2026-09-11-three-columns.png" width="300" height="300" loading="eager"
-       alt="Three figures stacked: ten gigawatts for Cheyenne, twenty-seven million for Laramie, nothing for the other counties">
+  <img class="strandfig" src="strand-three-columns.png" width="1600" height="800" loading="eager"
+       alt="Three figures side by side: ten gigawatts for Cheyenne, twenty-seven million for Laramie, nothing for the other counties">
   <div class="strandbody">
   <div class="k">Strand</div>
   <div class="n">Three Columns</div>
