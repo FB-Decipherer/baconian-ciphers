@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>One-Day Report · latest issue September 9, 2026</title>
+<title>One-Day Report · latest issue October 11, 2026</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
 :root{--paper:#FAF8F4;--card:#FFFDFA;--ink:#241F1A;--ink-mid:#544A40;--ink-soft:#7D7266;
@@ -70,15 +70,100 @@ font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft);line-
 footer strong{font-weight:600;color:var(--ink);letter-spacing:.04em}
 .parent{font-size:17px;color:var(--ink-mid);margin-top:30px}
 .endmark{text-align:center;color:var(--ink-soft);font-size:20px;letter-spacing:.6em;padding:26px 0 0}
+
+/* ---- the signature block --------------------------------------------------
+   Twenty items, two columns of ten, read spatially rather than linearly: rank,
+   name, year, consequence, on one line each. The years are the quiet argument
+   -- almost all of it falls in three decades. Neutral ink throughout: the
+   green/yellow/red belongs to the A/B/C columns and would lose its meaning if
+   it were used for decoration here. */
+.sig{border-top:3px solid var(--ink); border-bottom:1px solid var(--rule);
+  padding:26px 0 30px; margin:0 0 34px;}
+.sigkick{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11px;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft); margin:0 0 10px;}
+.sig h2{font-size:clamp(23px,3.1vw,32px); line-height:1.12; margin:0 0 10px; font-weight:600;
+  letter-spacing:-.01em;}
+.signote{font-size:17px; color:var(--ink-mid); margin:0 0 22px; max-width:62ch; line-height:1.5;}
+.sigcols{display:grid; grid-template-columns:1fr 1fr; gap:0 46px;}
+.sigcol h3{font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:11.5px;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft); font-weight:600;
+  margin:0 0 4px; padding-bottom:8px; border-bottom:1.5px solid var(--ink);}
+.siglist{list-style:none; margin:0; padding:0; counter-reset:none;}
+.siglist li{display:grid; grid-template-columns:26px 1fr auto; grid-template-areas:"r n y" ". c c";
+  gap:1px 10px; padding:11px 0 10px; border-bottom:1px solid var(--rule-soft); align-items:baseline;}
+.sr{grid-area:r; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:12px;
+  color:var(--ink-soft); font-variant-numeric:tabular-nums;}
+.sn{grid-area:n; font-size:18px; font-weight:600; line-height:1.25;}
+.sy{grid-area:y; font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:13px;
+  color:var(--accent); font-variant-numeric:tabular-nums; white-space:nowrap;}
+.sc{grid-area:c; font-size:15px; color:var(--ink-mid); line-height:1.4;}
+.sigpremise{font-size:16px; color:var(--ink-mid); line-height:1.5; margin:26px 0 0;
+  padding-top:16px; border-top:1px solid var(--rule); max-width:78ch;}
+@media (max-width:760px){
+  .sigcols{grid-template-columns:1fr; gap:26px;}
+  .sn{font-size:17px;} .sc{font-size:14.5px;}
+}
+@media print{
+  .sig{border-top-width:2pt; break-inside:avoid;}
+  .sigcols{gap:0 26px;} .sn{font-size:11pt;} .sc{font-size:9pt;} .sy{color:#000;}
+  .siglist li{padding:5px 0 4px; break-inside:avoid;}
+}
 </style></head><body>
 <div class="wrap">
 <header>
   <div class="eyebrow"><svg class="rose" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon fill="#4C7A4E" points="18.94,2.45 17.23,10.30 23.22,15.65 15.23,16.45 12,23.80 8.77,16.45 0.78,15.65 6.77,10.30 5.06,2.45 12,6.50"/><g fill="#B4372C"><circle cx="12" cy="7.00" r="3.9"/><circle cx="16.76" cy="10.46" r="3.9"/><circle cx="14.94" cy="16.05" r="3.9"/><circle cx="9.06" cy="16.05" r="3.9"/><circle cx="7.24" cy="10.46" r="3.9"/></g><g fill="#FCF8F0"><circle cx="13.76" cy="9.57" r="2.2"/><circle cx="14.85" cy="12.93" r="2.2"/><circle cx="12" cy="15.00" r="2.2"/><circle cx="9.15" cy="12.93" r="2.2"/><circle cx="10.24" cy="9.57" r="2.2"/></g><circle cx="12" cy="12" r="1.4" fill="#C8992F"/></svg><a href="https://gorhambury.org/">New Gorhambury</a><span class="sep">·</span>Baconian Ciphers</div>
-  <h1>One-Day Report <span class="sep">·</span> <span class="latest">latest issue: September 9, 2026</span></h1>
+  <h1>One-Day Report <span class="sep">·</span> <span class="latest">latest issue: October 11, 2026</span></h1>
   <p class="standfirst">A daily record of progress on the Baconian ciphers. Each issue is
   one day's work, presented three ways: a public FAQ, a reference column of every source
   used, and an unrestrained technical colophon.</p>
 </header>
+
+
+<section class="sig" aria-labelledby="sigh">
+  <div class="sighead">
+    <p class="sigkick">The signature content</p>
+    <h2 id="sigh">Twenty things Francis Bacon started that are still running</h2>
+    <p class="signote">Each entry is one creation, with its year, and what it drives today. An
+      accomplishment with no living consequence is not on these lists.</p>
+  </div>
+
+  <div class="sigcols">
+    <div class="sigcol">
+      <h3>Global in scope</h3>
+      <ol class="siglist">
+      <li><span class="sr">1</span><span class="sn">The scientific method</span><span class="sy">1620</span><span class="sc">Every engineering discipline rests on it</span></li>
+      <li><span class="sr">2</span><span class="sn">The binary code</span><span class="sy">1623</span><span class="sc">Every computer holds everything it holds in two states</span></li>
+      <li><span class="sr">3</span><span class="sn">Telecommunications</span><span class="sy">1623</span><span class="sc">This brought forth the Internet</span></li>
+      <li><span class="sr">4</span><span class="sn">The research institution</span><span class="sy">1626</span><span class="sc">Every funded laboratory, every peer-reviewed journal</span></li>
+      <li><span class="sr">5</span><span class="sn">The idea of progress</span><span class="sy">1605</span><span class="sc">The assumption behind every research budget</span></li>
+      <li><span class="sr">6</span><span class="sn">Cognitive bias</span><span class="sy">1620</span><span class="sc">The double blind, the control group, behavioral economics</span></li>
+      <li><span class="sr">7</span><span class="sn">The classification of knowledge</span><span class="sy">1605</span><span class="sc">Every library and faculty still cuts knowledge where he cut it</span></li>
+      <li><span class="sr">8</span><span class="sn">Knowledge as instrument</span><span class="sy">1605</span><span class="sc">Why research is funded by states and companies at all</span></li>
+      <li><span class="sr">9</span><span class="sn">Steganography as a distinct art</span><span class="sy">1623</span><span class="sc">A working branch of information security</span></li>
+      <li><span class="sr">10</span><span class="sn">The fundamental degree of Freemasonry</span><span class="sy">1626</span><span class="sc">The pattern for the fraternal order and the oath-bound chapter</span></li>
+      </ol>
+    </div>
+    <div class="sigcol">
+      <h3>The English language</h3>
+      <ol class="siglist">
+      <li><span class="sr">1</span><span class="sn">The First Folio itself</span><span class="sy">1623</span><span class="sc">Eighteen of the plays survive nowhere else</span></li>
+      <li><span class="sr">2</span><span class="sn">The vocabulary</span><span class="sy">1623</span><span class="sc">More first citations in the OED than any other source in English</span></li>
+      <li><span class="sr">3</span><span class="sn">The idiom</span><span class="sy">1623</span><span class="sc">Still in daily English, and most people do not know they are quoting</span></li>
+      <li><span class="sr">4</span><span class="sn">Dramatic blank verse</span><span class="sy">1623</span><span class="sc">It set the sound of serious English speech</span></li>
+      <li><span class="sr">5</span><span class="sn">The soliloquy</span><span class="sy">1623</span><span class="sc">The voiceover, the interior monologue, the held close-up</span></li>
+      <li><span class="sr">6</span><span class="sn">The essay</span><span class="sy">1597</span><span class="sc">The dominant form of English nonfiction ever since</span></li>
+      <li><span class="sr">7</span><span class="sn">Philosophy written in English</span><span class="sy">1605</span><span class="sc">English is now the working language of science worldwide</span></li>
+      <li><span class="sr">8</span><span class="sn">The aphorism as argument</span><span class="sy">1620</span><span class="sc">Every specification, standard, protocol and statute since</span></li>
+      <li><span class="sr">9</span><span class="sn">Modern narrative history</span><span class="sy">1622</span><span class="sc">The model for narrative history as it is still written</span></li>
+      <li><span class="sr">10</span><span class="sn">The plain style</span><span class="sy">1605</span><span class="sc">The house style of science, journalism and technical writing</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <p class="sigpremise"><b>Where this rests.</b> The second list is built on this project&rsquo;s
+    premise &mdash; that Bacon was the primary author of the 1623 Folio. <b>The One-Day Reports
+    below do not assume it. They test it, and publish the result either way.</b></p>
+</section>
 
 <div class="strands">
 <a class="strand" href="/biliteral/">
@@ -110,6 +195,19 @@ footer strong{font-weight:600;color:var(--ink);letter-spacing:.04em}
 
 <div class="archhead">All issues</div>
 <p class="archsub">Newest first. Issues are superseded, never removed &mdash; a link sent today still resolves next year.</p>
+
+<a class="issue" href="/biliteral/2026-10-11/">
+  <img class="thumb" src="thumbs/2026-10-11-biliteral.png" alt="" loading="lazy">
+  <div>
+    <div class="m">Biliteral Cipher &middot; October 11, 2026</div>
+    <div class="t">No rule, and no two groups</div>
+    <div class="c">Gallup&rsquo;s 463-page volume gives one sentence of classification guidance,
+    on page 2, naming no feature of any letter. The feature description exists only in
+    Riverbank&rsquo;s <em>Hints to the Decipherer</em> of 1916 &mdash; fifteen years later &mdash;
+    and names five characteristics, not one. Tested against all five, 149 lower-case italic
+    <em>b</em> show no two-group structure a blind search can find.</div>
+  </div>
+</a>
 
 <a class="issue" href="/biliteral/2026-09-09/">
   <div class="noshot">NO FIGURE</div>
