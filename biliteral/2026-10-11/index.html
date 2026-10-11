@@ -155,6 +155,24 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
   h2{page-break-after:avoid;}
 }
 
+/* ---- headpiece: 64 of the day's own glyphs, upper right -------------------
+   Transparent PNG with black ink, inverted in dark mode the same way the rest
+   of the palette flips. Hidden below 900px so the phone layout is unchanged. */
+.headpiece{display:none;}
+@media (min-width:900px){
+  header{position:relative;}
+  header > *:not(.headpiece){max-width:62%;}
+  .headpiece{display:block;position:absolute;top:56px;right:0;width:400px;margin:0;}
+  .headpiece img{width:100%;height:auto;display:block;opacity:.9;}
+  .headpiece figcaption{font-size:22px;line-height:1.35;color:var(--ink-soft);
+    margin-top:12px;text-align:right;font-style:italic;}
+}
+:root[data-theme="dark"] .headpiece img{filter:invert(1) brightness(.93);}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .headpiece img{filter:invert(1) brightness(.93);}
+}
+@media print{.headpiece{display:none;}}
+
 /* ---- Three Columns proper: side by side on a wide screen -------------------
    Below 1200px nothing changes and the tabs behave exactly as before. Above it
    all three are shown at once in their reading order -- plain answers, then the
@@ -187,10 +205,14 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
 
 <div class="wrap">
 <header>
+  <figure class="headpiece">
+    <img src="headpiece-2026-10-11.png" width="840" height="840"
+         alt="Sixty-four lower-case italic b cut from the First Folio, arranged in a grid.">
+    <figcaption>64 of today&rsquo;s 174, from 33 pages</figcaption>
+  </figure>
   <div class="eyebrow"><svg class="rose" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon fill="#4C7A4E" points="18.94,2.45 17.23,10.30 23.22,15.65 15.23,16.45 12,23.80 8.77,16.45 0.78,15.65 6.77,10.30 5.06,2.45 12,6.50"/><g fill="#B4372C"><circle cx="12" cy="7.00" r="3.9"/><circle cx="16.76" cy="10.46" r="3.9"/><circle cx="14.94" cy="16.05" r="3.9"/><circle cx="9.06" cy="16.05" r="3.9"/><circle cx="7.24" cy="10.46" r="3.9"/></g><g fill="#FCF8F0"><circle cx="13.76" cy="9.57" r="2.2"/><circle cx="14.85" cy="12.93" r="2.2"/><circle cx="12" cy="15.00" r="2.2"/><circle cx="9.15" cy="12.93" r="2.2"/><circle cx="10.24" cy="9.57" r="2.2"/></g><circle cx="12" cy="12" r="1.4" fill="#C8992F"/></svg><a href="https://gorhambury.org/">New Gorhambury</a><span class="sep">·</span><a href="https://baconian-ciphers.online/">Baconian Ciphers</a></div>
   <h1><span class="seg">One-Day Report</span> <span class="sep">·</span> <span class="seg">Biliteral Cipher</span> <span class="sep">·</span> <span class="seg">October 11, 2026</span></h1>
-  <div class="claimlabel">Today's claim</div>
-  <p class="standfirst">One day&rsquo;s progress, presented three ways.<br><strong>Gallup&rsquo;s 463-page volume contains no rule for the step her whole decipherment rests on: the only classification sentence in its 95 pages of front matter names no feature of any letter and tells the reader to &ldquo;educate the eye.&rdquo; The feature description exists only in Riverbank&rsquo;s <em>Hints to the Decipherer</em> of 1916, fifteen years later, and it names five characteristics rather than one. Tested against all five, 149 lower-case italic <em>b</em> from 41 Folio pages show no two-group structure a blind search can find &mdash; one result in 36 held-out tests &mdash; which bounds any real difference below 7% in size, 13% in tail length and 6 degrees of slant. Two of the five, <em>rounder</em> and <em>more robust</em>, proved invisible to the method at any magnitude: a fault in the instrument, reported as such, and not yet an answer about the Folio.</strong></p>
+  <p class="standfirst"><strong>Gallup&rsquo;s 463-page volume contains no rule for the step her whole decipherment rests on: the only classification sentence in its 95 pages of front matter names no feature of any letter and tells the reader to &ldquo;educate the eye.&rdquo; The feature description exists only in Riverbank&rsquo;s <em>Hints to the Decipherer</em> of 1916, fifteen years later, and it names five characteristics rather than one. Tested against all five, 149 lower-case italic <em>b</em> from 41 Folio pages show no two-group structure a blind search can find &mdash; one result in 36 held-out tests &mdash; which bounds any real difference below 7% in size, 13% in tail length and 6 degrees of slant. Two of the five, <em>rounder</em> and <em>more robust</em>, proved invisible to the method at any magnitude: a fault in the instrument, reported as such, and not yet an answer about the Folio.</strong></p>
   <div class="asof">findings may be superseded by later reports</div>
 </header>
 
