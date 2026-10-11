@@ -154,6 +154,32 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
   a{color:#000;}
   h2{page-break-after:avoid;}
 }
+
+/* ---- Three Columns proper: side by side on a wide screen -------------------
+   Below 1200px nothing changes and the tabs behave exactly as before. Above it
+   all three are shown at once in their reading order -- plain answers, then the
+   sources both of the others rest on, then the technical detail. The tab buttons
+   stop hiding and start EMPHASISING: the chosen column is at full strength and
+   the other two are dimmed rather than removed, so the shape of the whole is
+   visible while one is being read. Hovering a dimmed column restores it.
+   References sit in the middle on purpose: on the right they read as an
+   appendix, at the foot they go unread. ------------------------------------ */
+@media (min-width:1200px){
+  .wrap{max-width:1680px;}
+  main.wrap{display:grid;grid-template-columns:repeat(3,1fr);
+    gap:0 40px;align-items:start;}
+  main.wrap > section{display:block;border-top:2.5px solid var(--rule);
+    padding-top:20px;opacity:.7;transition:opacity .22s ease;min-width:0;}
+  main.wrap > section:not([hidden]){opacity:1;border-top-color:var(--ink);}
+  main.wrap > section:hover,
+  main.wrap > section:focus-within{opacity:1;}
+  main.wrap > section > h2:first-child{margin-top:0;}
+  .rec{grid-template-columns:1fr;gap:4px;}
+  .colmark{display:block;font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted,#8a8278);margin:0 0 10px;}
+}
+@media (max-width:1199px){.colmark{display:none;}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
 </style>
 </head>
@@ -183,6 +209,7 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
 
 <!-- ================= FAQ ================= -->
 <section id="p1" role="tabpanel" aria-labelledby="t1">
+  <span class="colmark">A &middot; plain answers</span>
   <h2>The short version</h2>
   <p>Gallup&rsquo;s decipherment rests on a step that comes before any decoding: somebody has to look
     at each italic letter on the page and put it in one of two boxes. Today asked two questions about
@@ -317,6 +344,7 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
 
 <!-- ================= REFERENCE ================= -->
 <section id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+  <span class="colmark">B &middot; sources</span>
   <h2>External documents</h2>
   <p>Every source relied on today, with what it is, what you would find there, and what it is doing
     in this issue. The link comes last on purpose.</p>
@@ -405,6 +433,7 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
 
 <!-- ================= COLOPHON ================= -->
 <section id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+  <span class="colmark">C &middot; technical</span>
   <h2>Technical colophon</h2>
   <p>Prior know-how is assumed, and the items become more &ldquo;technical&rdquo; toward the bottom.</p>
 
