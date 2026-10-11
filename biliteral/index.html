@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>One-Day Report · Biliteral Cipher · September 9, 2026</title>
+<title>One-Day Report · Biliteral Cipher · October 11, 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -162,9 +162,9 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
 <div class="wrap">
 <header>
   <div class="eyebrow"><svg class="rose" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon fill="#4C7A4E" points="18.94,2.45 17.23,10.30 23.22,15.65 15.23,16.45 12,23.80 8.77,16.45 0.78,15.65 6.77,10.30 5.06,2.45 12,6.50"/><g fill="#B4372C"><circle cx="12" cy="7.00" r="3.9"/><circle cx="16.76" cy="10.46" r="3.9"/><circle cx="14.94" cy="16.05" r="3.9"/><circle cx="9.06" cy="16.05" r="3.9"/><circle cx="7.24" cy="10.46" r="3.9"/></g><g fill="#FCF8F0"><circle cx="13.76" cy="9.57" r="2.2"/><circle cx="14.85" cy="12.93" r="2.2"/><circle cx="12" cy="15.00" r="2.2"/><circle cx="9.15" cy="12.93" r="2.2"/><circle cx="10.24" cy="9.57" r="2.2"/></g><circle cx="12" cy="12" r="1.4" fill="#C8992F"/></svg><a href="https://gorhambury.org/">New Gorhambury</a><span class="sep">·</span><a href="https://baconian-ciphers.online/">Baconian Ciphers</a></div>
-  <h1><span class="seg">One-Day Report</span> <span class="sep">·</span> <span class="seg">Biliteral Cipher</span> <span class="sep">·</span> <span class="seg">September 9, 2026</span></h1>
+  <h1><span class="seg">One-Day Report</span> <span class="sep">·</span> <span class="seg">Biliteral Cipher</span> <span class="sep">·</span> <span class="seg">October 11, 2026</span></h1>
   <div class="claimlabel">Today's claim</div>
-  <p class="standfirst">One day&rsquo;s progress, presented three ways.<br><strong>Bacon&rsquo;s published system names exactly one requirement &mdash; that the concealing text run five times the length of the concealed one &mdash; and disclaims every other in the same sentence: <em>no other condition or restriction whatsoever is required</em>. There is no start marker, no stop marker, and nothing to say which text carries a message. Alongside it, a census of Gallup&rsquo;s entire 1900 volume: eleven signatures in the whole of her deciphered corpus, every one of them a closing and not one an opening. The frame is a subscription, not a delimiter &mdash; which leaves a decipherer able to confirm where a message ends, and with nothing whatever to tell them where it begins. And the noise floor, measured for the first time: the two sorts that separate best in the whole Folio differ by a third in height &mdash; plainly visible &mdash; and still fall short of what a readable message needs.</strong></p>
+  <p class="standfirst">One day&rsquo;s progress, presented three ways.<br><strong>Gallup&rsquo;s 463-page volume contains no rule for the step her whole decipherment rests on: the only classification sentence in its 95 pages of front matter names no feature of any letter and tells the reader to &ldquo;educate the eye.&rdquo; The feature description exists only in Riverbank&rsquo;s <em>Hints to the Decipherer</em> of 1916, fifteen years later, and it names five characteristics rather than one. Tested against all five, 149 lower-case italic <em>b</em> from 41 Folio pages show no two-group structure a blind search can find &mdash; one result in 36 held-out tests &mdash; which bounds any real difference below 7% in size, 13% in tail length and 6 degrees of slant. Two of the five, <em>rounder</em> and <em>more robust</em>, proved invisible to the method at any magnitude: a fault in the instrument, reported as such, and not yet an answer about the Folio.</strong></p>
   <div class="asof">findings may be superseded by later reports</div>
 </header>
 
@@ -184,83 +184,133 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
 <!-- ================= FAQ ================= -->
 <section id="p1" role="tabpanel" aria-labelledby="t1">
   <h2>The short version</h2>
-  <p>Two questions were put to the primary sources today, both of them Walter&rsquo;s. First: when a deciphered message carries the author&rsquo;s name at its head and again at its foot, is that a cipher device &mdash; a marker saying <em>the message starts here</em> and <em>the message ends here</em> &mdash; or is it only the ordinary shape of a letter, superscription and subscription? Second: does Bacon anywhere say how a reader is supposed to know where a concealed message begins and ends inside a long book?</p>
-  <p>The two answers came from opposite directions and they agree. Neither was the answer this project expected when the day started.</p>
+  <p>Gallup&rsquo;s decipherment rests on a step that comes before any decoding: somebody has to look
+    at each italic letter on the page and put it in one of two boxes. Today asked two questions about
+    that step. Where did she say how to do it? And can it be done at all &mdash; by anyone, including
+    a machine with no opinion about Bacon?</p>
 
-  <div class="note"><strong>Today&rsquo;s result in one sentence.</strong> Bacon names <strong>one</strong> requirement for the cipher &mdash; that the concealing text run five times the length of the concealed one &mdash; and then, in the same sentence, excludes every other: <em>&ldquo;no other condition or restriction whatsoever is required.&rdquo;</em> There is no start marker, no stop marker, and nothing to say which text carries a message. And in Gallup&rsquo;s own 1900 volume, across 906,347 characters of decipherment, <strong>every one of the eleven signatures is a closing and not one is an opening</strong>. The frame is a subscription, not a delimiter.</div>
+  <p>The first question has a documentary answer, and it is sharper than expected. The second now has
+    a measured one, with the measurement&rsquo;s own limits stated alongside it.</p>
 
-  <div class="note"><strong>What that costs the method.</strong> A stop mark with no start mark cannot locate anything. You cannot read backwards from a signature unless you already know how far back to go. In the <em>Troilus</em> Prologue the distance is set by the italic passage &mdash; by the typography, which is where Gallup said she looked &mdash; and not by the cipher. So the system as Bacon published it can confirm that a message has ended. It offers nothing at all to say where one began.</div>
+  <div class="note"><strong>Today&rsquo;s result in one sentence.</strong> In 149 lower-case italic
+    <em>b</em> cut from 41 Folio pages, a search that was given no hint what to look for found
+    <strong>no two-group structure at all</strong> &mdash; one significant result in 36 held-out
+    tests &mdash; and the same search, calibrated by planting known differences, would have caught a
+    difference of 7% in size, 13% in tail length or 6 degrees of slant.</div>
 
-  <div class="note"><strong>Added later the same day &mdash; the noise floor.</strong> Walter asked the harder question: not whether we <em>found</em> a cipher, but whether one is <em>findable</em>. So the intrinsic variation of the letter was measured &mdash; 2,877 <span class="gl">w</span>&rsquo;s that the census showed are all one sort, so all their variation is paper, ink, pressure, wear and scan. Against that floor, <strong>the two sorts that separate best in the entire First Folio are 42.8&nbsp;px and 57.1&nbsp;px tall &mdash; a 33&nbsp;per&nbsp;cent difference in height, which anybody can see &mdash; and they still fall short of what a readable message needs.</strong> To reach 99&nbsp;per&nbsp;cent of characters they would have to differ by 43&nbsp;per&nbsp;cent.</div>
-
-  <figure>
-    <svg viewBox="0 0 1070 150" width="100%" role="img" aria-label="A bar representing the 1,070 glyph decisions of the Troilus Prologue, with the first seventy and last seventy marked">
-      <rect x="0" y="44" width="1070" height="40" fill="#9a9384"></rect>
-      <rect x="0" y="44" width="70" height="40" fill="#B4372C"></rect>
-      <rect x="1000" y="44" width="70" height="40" fill="#C8992F"></rect>
-      <rect x="0" y="44" width="1070" height="40" fill="none" stroke="#5f5a50" stroke-width="2"></rect>
-      <text x="0" y="30" font-family="Georgia,serif" font-size="26" fill="#B4372C">FRANCIS ST ALBAN &mdash; 70 glyphs</text>
-      <text x="1070" y="30" text-anchor="end" font-family="Georgia,serif" font-size="26" fill="#8a6a08">ELIZABETH R &middot; F. ST. A. &mdash; 70 glyphs</text>
-      <text x="535" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="26" fill="#ffffff">930 glyphs with nothing to anchor them</text>
-      <text x="535" y="122" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#5f5a50">1,070 binary decisions &middot; 214 characters &middot; one page</text>
-    </svg>
-    <figcaption>The Prologue message as it sits on the page: 214 characters, 1,070 separate <span class="a-form">a</span>-or-<span class="b-form">b</span> decisions. The last seventy carry ELIZABETH&nbsp;R and the sign-off F.&nbsp;ST.&nbsp;A. &mdash; a genuine subscription, and the only place in the corpus where a name does structural work. The first seventy carry FRANCIS ST ALBAN, which reads like a heading but is in fact only the subject of the opening sentence. Together they are 13&nbsp;per cent of the page, and they are the only glyphs in nine hundred pages whose values can be guessed without trusting the decipherer.</figcaption>
-  </figure>
+  <div class="note"><strong>And the part that cuts the other way.</strong> Two of the five
+    characteristics Riverbank themselves name &mdash; <em>rounder</em> and <em>more robust</em>
+    &mdash; turned out to be invisible to this method at any size tried. That is a fault in the
+    instrument, not a finding about the Folio, and until it is fixed this project has nothing to say
+    about those two.</div>
 
   <h2>Questions</h2>
 
   <details><summary>What is the biliteral cipher?</summary><div class="body">
-    <p>Sir Francis Bacon described it in 1623. Every letter becomes a group of five symbols, each symbol either an <span class="a-form">a</span> or a <span class="b-form">b</span> &mdash; five binary digits, three hundred years before anyone called them that. AAAAA is A, AAAAB is B, and so on.</p>
-    <p>The two symbols need not be letters. They can be two founts of type so similar that a reader notices nothing. Print an innocent passage in an alternating mixture of the two and it carries a second message, readable only by someone who can tell the founts apart. Bacon called it writing <em>omnia per omnia</em> &mdash; anything by means of anything.</p>
+    <p>Sir Francis Bacon described it in 1623. Every letter becomes a group of five symbols, each
+      symbol either an <span class="a-form">a</span> or a <span class="b-form">b</span> &mdash; five
+      binary digits, three hundred years before anyone called them that. AAAAA is A, AAAAB is B, and
+      so on.</p>
+    <p>The two symbols need not be letters. They can be two founts of type so similar that a reader
+      notices nothing. Print an innocent passage in an alternating mixture of the two and it carries
+      a second message, readable only by someone who can tell the founts apart. The system is sound;
+      nothing here disputes it.</p>
   </div></details>
 
-  <details><summary>What was actually tested today?</summary><div class="body">
-    <p>Two checks against primary text, both cheap, both decisive, and both prompted by a suggestion that turned out to be right.</p>
-    <p>The first was a census of framing. Gallup&rsquo;s 1900 volume prints every message she said she had recovered, from the Folio and from a dozen other books. The whole text was searched for every form of Bacon&rsquo;s name that could serve as an opening or a closing, and each hit was read in context to see which it was.</p>
-    <p>The second was a reading of Bacon himself &mdash; not through Riverbank, and not through Gallup&rsquo;s reproduction of him, but the 1640 Gilbert Wats English of <em>De Augmentis</em> Book VI, the translation Gallup worked from, searched for anything he says about where a hidden message starts and stops.</p>
+  <details><summary>So what is actually being tested?</summary><div class="body">
+    <p>Not the cipher. The <em>sorting</em>.</p>
+    <p>Before a single letter of hidden message can be read, every italic letter on the page must be
+      assigned to one of two founts. Gallup did that by eye, on four-hundred-year-old printing, alone.
+      If the two founts are really there and really distinguishable, then a measurement made on clean
+      images of those letters should find two groups. That is a necessary condition &mdash; it does
+      not prove a message exists, but without it nothing else can follow.</p>
+    <p>Today that test was run properly for the first time in this project: on one letter, with the
+      instrument&rsquo;s sensitivity measured rather than assumed.</p>
+  </div></details>
+
+  <details><summary>Where did Gallup explain how to tell the two founts apart?</summary><div class="body">
+    <p>Essentially nowhere, and this is the day&rsquo;s documentary finding.</p>
+    <p>Her 1901 third edition runs to 463 pages in two sequences &mdash; 95 pages of front matter and
+      368 of decipherment. The whole of the front matter offers <strong>one sentence</strong> of
+      guidance, on page 2, and it names no feature of any letter. She writes that the distinguishing
+      marks in the small letters have been difficult to classify, and that close study is needed to
+      &ldquo;educate the eye to distinguish them.&rdquo;</p>
+    <p>The section that sounds as though it should hold the method &mdash; <em>Bi-literal Cipher Plan
+      and Illustration</em>, page 51 &mdash; turns out to be Bacon&rsquo;s own a/b alphabet table.
+      That tells you how a string of a&rsquo;s and b&rsquo;s becomes a letter. It says nothing about
+      how to decide whether a given piece of printed ink <em>is</em> an a or a b. Those are different
+      problems, and only the second one is hard.</p>
+    <p>The terms <em>a-form</em> and <em>b-form</em> do not appear anywhere in the volume.</p>
+  </div></details>
+
+  <details><summary>Then where does the method come from?</summary><div class="body">
+    <p>From Riverbank, in 1916 &mdash; fifteen years after the results it would govern were published.
+      A short monograph called <em>Hints to the Decipherer</em> gives the only feature-level
+      description that exists, and it names five things, not one:</p>
+    <p>The a-form letters are &ldquo;larger, rounder, more upright, and more robust&rdquo; than the
+      b-forms. And of the long-tailed letters &mdash; which includes <em>b</em> &mdash; the b-form
+      &ldquo;usually slopes more and has longer flourishes.&rdquo;</p>
+    <p>That is a testable specification, and it is the one today&rsquo;s work was measured against.
+      It is worth being plain about the order of events: the results were published first and the
+      method described afterwards, by other people, once Fabyan had staff who needed to be taught to
+      replicate her.</p>
   </div></details>
 
   <details><summary>What did you find?</summary><div class="body">
-    <p><strong>On the framing.</strong> Eleven signature occurrences in the whole decipherment body, and every single one closes a message. Not one opens a message. The five short 1623 Folio messages, which Gallup prints together on her page 166, all end on a name &mdash; F.&nbsp;ST.&nbsp;A., FRANCIS BARON OF VERULAM, FR.&nbsp;OF&nbsp;Ve., F.&nbsp;BACON, F.&nbsp;ST.&nbsp;A. &mdash; and none of them begins with one.</p>
-    <p><strong>On Bacon.</strong> He does not merely leave the question open. He closes it. The only condition he sets is the five-to-one length ratio, and he says in the same sentence that nothing else is required. His single worked example is a Latin sentence of twenty-three letters carrying a four-letter word &mdash; a wrapper cut to fit its contents. Nothing he ever demonstrates involves finding a message inside a longer text, so the problem never comes up in anything he published.</p>
+    <p>In 149 clean images of the letter b, nothing that separates them into two groups.</p>
+    <p>The search was deliberately ignorant &mdash; it was not told what a b is, that two forms are
+      claimed, or what to look for. It looked for whatever split the set best. On a fair test, where
+      the rule is found on half the glyphs and then scored on the other half, it succeeded once in
+      36 attempts. Randomly chosen rules did about as well.</p>
+    <p>What makes that meaningful rather than empty is the calibration. The same search, given a
+      difference that really was there, found it: a 7% difference in size, a 13% difference in tail
+      length, a 6-degree difference in slant. So the absence of a result places a ceiling on how big
+      any real difference could be and still have escaped notice.</p>
   </div></details>
 
-  <details><summary>What is a delimiter, and why would a cipher need one?</summary><div class="body">
-    <p>Any concealed message hidden inside a longer innocent one has to solve a problem before it can be read: where does it start, and where does it stop? Modern systems all answer it explicitly &mdash; start and stop bits on a telegraph line, magic bytes at the head of a file, the BEGIN and END lines around an encryption key. Get the boundary wrong by one symbol and everything after it decodes to noise.</p>
-    <p>This matters more here than in most systems, because the biliteral spends five glyphs per character. A boundary error of one glyph shifts every group that follows and destroys the whole message. So a delimiter is not a nicety. It is the difference between a code and a usable system.</p>
-  </div></details>
-
-  <details><summary>Does this disprove Gallup&rsquo;s decipherment?</summary><div class="body">
-    <p>No, and the distinction is worth keeping sharp. Nothing today was measured on a photograph; no letter was classified; no message was tested for correctness. What was established is a property of the <em>system</em>, from its inventor&rsquo;s own text and its principal decipherer&rsquo;s own book.</p>
-    <p>What follows is narrower and harder to dismiss: the biliteral as published contains no mechanism for locating a concealed message. Whoever finds one has supplied the boundaries from outside the cipher. In the Prologue that outside source is the italic type, which is what Gallup said she went looking for. That is a necessary condition of the method being absent, not a message being shown false.</p>
-  </div></details>
-
-  <details><summary>Then what is FRANCIS ST ALBAN doing at the start of the Prologue message?</summary><div class="body">
-    <p>Being the subject of a sentence. This report has previously described the Prologue message as framed at both ends, and that description was wrong; it is corrected here.</p>
-    <p>The message opens <em>&ldquo;Francis St. Alban, descended from the mighty heroes of Troy, loving and revering these noble ancestors, hid in his writings&hellip;&rdquo;</em> The name is there because the sentence is about him, exactly as the other long message in the group opens <em>&ldquo;Francis of Verulam is author of all the plays&hellip;&rdquo;</em> Neither is a heading standing above a letter. Read that way, the corpus contains no opening frame at all &mdash; and the seventy glyphs at the head of the Prologue remain just as freely guessable as before, but for a grammatical reason rather than a structural one.</p>
-  </div></details>
-
-  <details><summary>Is there anything on the other side of the ledger?</summary><div class="body">
-    <p>Yes, and it was re-examined today. In 1916 James Phinney Baxter set the I.&thinsp;M. Poem a second time, in type he chose, to carry a message Gallup had never seen &mdash; a war slogan &mdash; and she is reported to have read it as readily as her own. If that test was clean it is the strongest single thing in her favour anywhere in this audit, and it is not statistical: no amount of finding-what-you-expect recovers a plaintext you have never met.</p>
-    <p>Two things temper it. Baxter was himself a committed Baconian, the test was administered privately, and it was published by the laboratory that employed her; there is no independent record of the conditions. And the diff run today shows he kept Gallup&rsquo;s opening word and her last ten characters and reset only the middle &mdash; forty-three of the fifty-nine groups. Within that span the two labellings differ at 48.4&nbsp;per cent of positions, which is chance, so the reset span is genuinely independent. The test is real. Its conditions are unrecorded.</p>
-  </div></details>
-
-  <details><summary>Could the cipher be there and simply too faint to measure?</summary><div class="body">
-    <p>That is the right question, and it was put to the data rather than argued about. The answer is a number.</p>
-    <p>Take 2,877 lower-case italic <span class="gl">w</span>&rsquo;s that the census established are all one sort. Whatever they differ by is noise: paper, ink, pressure, type wear, the scan. That spread is the floor &mdash; 2.1&nbsp;px on a 34.7&nbsp;px letter. Now go to the only place in the book where two <span class="gl">w</span> sorts genuinely coexist, the large italic of the Prologue and Epilogue leaves, and ask how far apart they sit in units of that floor. Cross-measured so the answer cannot come from the labelling, it is <strong>4.49 standard deviations</strong>.</p>
-    <p>A biliteral spends five glyphs per character, so errors compound fast. Reading a 214-character message with 99&nbsp;per&nbsp;cent of characters right needs a separation of 5.75 &mdash; which lies above the whole confidence interval of what the best real pair achieves. At 4.49 you get thirteen characters wrong in 214, and the chance of reading all 1,070 glyph decisions cleanly is about one in six hundred thousand.</p>
-    <p>So the conflict is real and now it has a size. To be secure the two forms must differ so little that nobody notices; to be readable they must differ by more than a third. The only pair in this book that comes close to readable is one anyone can see, and a pair small enough to hide falls further short, not closer.</p>
-    <p>What this does <em>not</em> settle: it measures the features the census recorded. A bit riding on one serif or a single stroke terminal would not show up. Settling that needs the pixel-level version, and the images for it were not kept &mdash; so it is the next run, not a finished result.</p>
+  <details><summary>Does that prove Gallup was wrong?</summary><div class="body">
+    <p><strong>No.</strong> It is one letter, from 41 pages, under one instrument, and it bounds
+      rather than refutes.</p>
+    <p>Three honest limits. The corpus is small &mdash; 149 letters is enough to catch a 6-degree
+      difference but not a 3-degree one. It is one letter of the alphabet, and Riverbank&rsquo;s
+      rules differ by letter shape. And two of their five characteristics were not tested at all,
+      because the method could not see them.</p>
+    <p>What the day does establish is narrower and firmer: for size, tail length and slant, any real
+      difference between two forms of b in these pages is smaller than the figures above. That is a
+      number where before there was an argument.</p>
   </div></details>
 
   <details><summary>What would change your mind?</summary><div class="body">
-    <p>On today&rsquo;s finding, one thing would settle it: a passage anywhere in Bacon, in any translation, in which he tells a reader how to find the start of a concealed message, or marks one. The Wats text was searched and the Spedding translation cross-read; if such a passage exists elsewhere in his works it has not been found, and a citation would be welcome.</p>
-    <p>On the framing census, a decipherment in Gallup&rsquo;s corpus that genuinely opens with a superscription &mdash; a name standing above the message rather than inside its first sentence &mdash; would break the pattern. Eleven hits were read in context; a twelfth that behaves differently would be reported.</p>
+    <p>Stated before the result, as always, and unchanged by it:</p>
+    <p>A measurement that splits a large set of one letter into two groups, found on part of the data
+      and still working on part it has never seen &mdash; and surviving the same test when the labels
+      are shuffled. Or, more directly: Gallup&rsquo;s own published assignment for specific glyphs on
+      specific pages, so that a rule can be trained on part of her classification and tested on the
+      rest. If her sorting is reproducible, that test will show it, and it is roughly three times
+      more sensitive than searching blind.</p>
+    <p>Today&rsquo;s negative result is an argument for getting those labels, not against it.</p>
+  </div></details>
+
+  <details><summary>Why only one letter, and why b?</summary><div class="body">
+    <p>Because a mixed bag of letters cannot be tested. Two b&rsquo;s can be compared; a b and an o
+      differ for reasons that have nothing to do with any cipher. Riverbank&rsquo;s own rules are
+      stated per letter shape, which confirms the point.</p>
+    <p><em>b</em> was chosen because it is a long-tailed letter, so Riverbank&rsquo;s most specific
+      rule applies to it; because it has an enclosed bowl, which gives an independent quality check;
+      and because they printed two b exemplars of their own, which could be used to screen the corpus
+      without appealing to anything they claimed about the two forms.</p>
   </div></details>
 
   <details><summary>Who is doing this, and why?</summary><div class="body">
-    <p>Walter Wilkinson, in Worland, Wyoming, working from free public sources: the Internet Archive&rsquo;s scans of Bacon in Wats&rsquo; 1640 English and of Gallup&rsquo;s own 1900 volume, Library of Congress scans of the Riverbank booklets, and open-source tools. Nothing here depends on access anyone could withdraw.</p>
-    <p>The wider project is <a href="https://gorhambury.org/">New Gorhambury</a>, and it includes <a href="https://gorhambury.org/public/experiments/experiment-one/">Experiment One</a>, which argues a conclusion. These reports deliberately do not. They record what was tested, what was found, and what failed, on the day it happened &mdash; including, as here, a description this report itself had got wrong and has now corrected.</p>
+    <p>Walter Wilkinson, in Worland, Wyoming, working with a computer and free scans. There is no
+      institution behind this and no funding.</p>
+    <p>The aim is not to prove or disprove that Bacon wrote Shakespeare. It is to find out whether
+      the specific evidence offered for the biliteral decipherment can carry the weight placed on it
+      &mdash; and to publish the answer in the same terms whichever way it falls. Today it fell
+      against the claim, and it is reported exactly as a positive would have been.</p>
+    <p>More at <a href="https://gorhambury.org/">New Gorhambury</a>, and at
+      <a href="https://gorhambury.org/public/experiments/experiment-one/">Experiment One</a>.
+      Experiment One argues a conclusion; these reports deliberately do not.</p>
   </div></details>
 
 </section>
@@ -268,75 +318,86 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
 <!-- ================= REFERENCE ================= -->
 <section id="p2" role="tabpanel" aria-labelledby="t2" hidden>
   <h2>External documents</h2>
-  <p>Every source relied on today, with what it is and where the original lives. All are free and public.</p>
+  <p>Every source relied on today, with what it is, what you would find there, and what it is doing
+    in this issue. The link comes last on purpose.</p>
 
   <div class="rec">
-    <div class="kind">Primary &middot; 1640 &middot; today&rsquo;s source</div>
+    <div class="kind">Primary &middot; 1901 &middot; today&rsquo;s source</div>
     <div>
-      <div class="t">Of the Advancement and Proficience of Learning, or the Partitions of Sciences, IX Bookes</div>
-      <div class="m">Francis Bacon &middot; <em>De Augmentis Scientiarum</em> (1623) interpreted into English by Gilbert Wats, Oxford, 1640 &middot; Book VI, the cipher passage at p.&nbsp;269 &middot; public domain &middot; Internet Archive scan with OCR text layer</div>
-      <div class="d">The translation Gallup herself used, and the one Riverbank reproduces. Bacon&rsquo;s statement of the cipher&rsquo;s single requirement is here, and so is his only worked example. Read directly today rather than through any intermediary, because every previous citation in this project has passed through Gallup&rsquo;s 1901 reproduction of it. The 1640 folio&rsquo;s long s and the OCR of it are both imperfect; the quoted sentence has been normalised for spelling and is marked as such in the Colophon.</div>
-      <div class="u"><a href="https://archive.org/details/ofadvancementpro00baco">archive.org/details/ofadvancementpro00baco</a></div>
+      <div class="t">The Bi-literal Cypher of Sir Francis Bacon Discovered in His Works and Deciphered</div>
+      <div class="m">Elizabeth Wells Gallup &middot; Howard Publishing Company, Detroit &middot; third edition, 1901 &middot; collated 95 + 368 pages &middot; public domain &middot; Internet Archive scan with OCR text layer</div>
+      <div class="d">The full decipherment, and the volume whose front matter was searched today. Part I&rsquo;s table of contents runs from &ldquo;Personal&rdquo; at page 1 to &ldquo;Publisher&rsquo;s Note&rdquo; at page 76; the single sentence of classification guidance is on page 2. The section at page 51 titled <em>Bi-literal Cipher Plan and Illustration</em> is Bacon&rsquo;s own biformed alphabet reproduced from <em>De Augmentis</em>, not a classification method. A full-text search of the volume returns no occurrence of <em>a-form</em> or <em>b-form</em>.</div>
+      <div class="u"><a href="https://archive.org/details/bilateralcyphero00galliala">archive.org/details/bilateralcyphero00galliala</a></div>
     </div>
   </div>
 
   <div class="rec">
-    <div class="kind">Primary &middot; 1900 &middot; today&rsquo;s source</div>
+    <div class="kind">Primary &middot; 1916 &middot; today&rsquo;s source</div>
     <div>
-      <div class="t">The Bi-Literal Cypher of Sir Francis Bacon Discovered in His Works and Deciphered by Mrs. Elizabeth Wells Gallup</div>
-      <div class="m">Howard Publishing Company, Detroit &middot; second edition, 1900 &middot; public domain &middot; Internet Archive scan with OCR text layer, 906,347 characters</div>
-      <div class="d">The book that prints every message Gallup said she had recovered, from the 1623 Folio and from Spenser, Peele, Marlowe, Burton, the <em>Novum Organum</em> and a dozen more. It is the only document that can answer the framing question, because the question is about the whole corpus and not about one page. The five short Folio messages sit together on her p.&nbsp;166, each ending on a form of Bacon&rsquo;s name.</div>
-      <div class="u"><a href="https://archive.org/details/biliteralcypher00gallgoog">archive.org/details/biliteralcypher00gallgoog</a></div>
+      <div class="t">Hints to the Decipherer of The Greatest Work of Sir Francis Bacon, Baron of Verulam, Viscount St. Alban</div>
+      <div class="m">Riverbank Laboratories, Geneva, Illinois &middot; 1916 &middot; attributed to George Fabyan &middot; public domain &middot; Internet Archive scan with OCR text layer, about 20,000 characters</div>
+      <div class="d">The only place the sorting method is set out in terms of letter features, and the source of the five characteristics tested today. Its first rule is that a-form letters are &ldquo;larger, rounder, more upright, and more robust&rdquo;; its fourth, which governs b, is that of the long-tailed letters the b-form &ldquo;usually slopes more and has longer flourishes.&rdquo; Its fifth reserves judgment by slope for circular letters such as o and q &mdash; which is why treating slant as <em>the</em> discriminator, as this project did earlier, was reading their own rule too narrowly.</div>
+      <div class="u"><a href="https://archive.org/details/hintstodeciphere00faby">archive.org/details/hintstodeciphere00faby</a></div>
     </div>
   </div>
 
   <div class="rec">
-    <div class="kind">Primary &middot; 1916 &middot; cross-check</div>
+    <div class="kind">Catalog record &middot; today&rsquo;s source</div>
     <div>
-      <div class="t">The Greatest Work of Sir Francis Bacon</div>
-      <div class="m">Riverbank Laboratories, Geneva, Illinois &middot; 1916 &middot; Library of Congress copy &middot; 28&nbsp;pp.</div>
-      <div class="d">Quotes the same Bacon passage in Spedding&rsquo;s translation rather than Wats&rsquo;, which makes it an independent check on the sentence that carries today&rsquo;s finding: Spedding has &ldquo;no other condition or restriction whatever is required&rdquo; where Wats has &ldquo;whatsoever&rdquo;. Its Appendix also states Riverbank&rsquo;s own reason for choosing the Digges and I.&thinsp;M. poems &mdash; &ldquo;because they are printed in italic in the original&rdquo; &mdash; which is the mundane explanation for why the cipher is always found in the front matter.</div>
-      <div class="u"><a href="https://gorhambury.org/public/exhibits/overview-of-riverbank-publications-baconian-monographs/">gorhambury.org &middot; overview of Riverbank publications</a></div>
+      <div class="t">HathiTrust catalog record for the 1901 third edition</div>
+      <div class="m">HathiTrust Digital Library &middot; record 006559787 &middot; catalog metadata</div>
+      <div class="d">The collation that settles the volume&rsquo;s structure: &ldquo;95, 368 p.&rdquo; &mdash; two separately numbered sequences, not one run of 463 pages. This is what establishes that the front matter is bounded at 95 pages, and therefore that the absence of a method statement inside it is a complete absence rather than an incomplete search.</div>
+      <div class="u"><a href="https://catalog.hathitrust.org/Record/006559787">catalog.hathitrust.org/Record/006559787</a></div>
     </div>
   </div>
 
   <div class="rec">
-    <div class="kind">Primary &middot; 1916 &middot; the Baxter plate</div>
+    <div class="kind">Method &middot; 1974 &middot; cited</div>
     <div>
-      <div class="t">Fundamental Principles of the Baconian Ciphers, and Application to Books of the Sixteenth and Seventeenth Centuries</div>
-      <div class="m">Riverbank Laboratories &middot; Foreword signed George Fabyan &middot; plates hand-signed W.&thinsp;F.&thinsp;Friedman, 1916 &middot; the Baxter test at book p.&nbsp;24</div>
-      <div class="d">Carries the plate titled &ldquo;Elizabeth Wells Gallup Tested as a Decipherer, By James Phinney Baxter&rdquo;, which prints the I.&thinsp;M. Poem twice with both decipherments. It also states the framing convention outright: the poem&rsquo;s message &ldquo;is complete in itself, and is signed by its author&rdquo;. That sentence is Riverbank asserting a subscription, and today&rsquo;s census is a test of it across the whole corpus.</div>
-      <div class="u"><a href="https://gorhambury.org/public/exhibits/overview-of-riverbank-publications-baconian-monographs/">gorhambury.org &middot; overview of Riverbank publications</a></div>
+      <div class="t">A Projection Pursuit Algorithm for Exploratory Data Analysis</div>
+      <div class="m">Jerome H. Friedman and John W. Tukey &middot; IEEE Transactions on Computers C-23(9), 1974 &middot; under copyright</div>
+      <div class="d">The technique used today. It takes unlabeled high-dimensional data, searches for the projection that maximizes an &ldquo;interestingness&rdquo; index, and returns that direction &mdash; so the output is the discriminating characteristic itself rather than a bare yes or no. Worth noting to avoid an easy confusion: this is Jerome Friedman the statistician, no relation to William F. Friedman of Riverbank.</div>
+      <div class="u"><a href="https://doi.org/10.1109/T-C.1974.224051">doi.org/10.1109/T-C.1974.224051</a></div>
     </div>
   </div>
 
   <div class="rec">
-    <div class="kind">Primary &middot; 1916</div>
+    <div class="kind">Method &middot; 1985 &middot; cited</div>
     <div>
-      <div class="t">The Keys for Deciphering the Greatest Work of Sir Francis Bacon</div>
-      <div class="m">Riverbank Laboratories &middot; 1916 &middot; 108&nbsp;pp. &middot; Internet Archive scan</div>
-      <div class="d">The plate volume. Its Alphabet and Classifier pairs cover exactly five texts &mdash; the I.&thinsp;M. Poem, the Digges Poem, the <em>Troilus</em> Prologue, A Catalogue, and the Names of the Principall Actors &mdash; which are the same five that Gallup prints together on her p.&nbsp;166, and the same five that a bibliographer would identify as the last matter printed for the Folio. Whether that convergence means anything is discussed in the Colophon.</div>
-      <div class="u"><a href="https://archive.org/details/keysfordecipheri00rive">archive.org/details/keysfordecipheri00rive</a></div>
+      <div class="t">The Dip Test of Unimodality</div>
+      <div class="m">J. A. Hartigan and P. M. Hartigan &middot; The Annals of Statistics 13(1), 1985 &middot; under copyright &middot; implementation used: the <span class="mono">diptest</span> package, version 0.11.0</div>
+      <div class="d">The index the search maximizes. It asks whether a one-dimensional sample needs more than a single mode to account for it, without assuming any particular distribution. Chosen over kurtosis because it responds to separation rather than to tail weight; kurtosis has not yet been run as a second opinion and should be.</div>
+      <div class="u"><a href="https://doi.org/10.1214/aos/1176346577">doi.org/10.1214/aos/1176346577</a></div>
     </div>
   </div>
 
   <div class="rec">
-    <div class="kind">Archival &middot; declassified</div>
+    <div class="kind">Images &middot; provenance</div>
     <div>
-      <div class="t">A Brief History of U.S. Cryptologic Operations 1917&ndash;1929</div>
-      <div class="m">William F. Friedman &middot; National Security Agency, declassified &middot; Friedman&rsquo;s own account of the Riverbank years</div>
-      <div class="d">Consulted for a question that comes up whenever Riverbank does: how long Friedman worked for Fabyan, and what Fabyan paid for. Friedman dates the cryptanalytic work June&nbsp;1916 to December&nbsp;1920, says he directed it throughout but for military service from May&nbsp;1918 to May&nbsp;1919, records that about eighty-five officers were trained at Riverbank in a six-week course before shipping to France, and states that Fabyan did it &ldquo;purely as a patriotic enterprise and at his own expense&rdquo;. Nothing in it dates his change of mind about the Shakespeare ciphers.</div>
-      <div class="u"><a href="https://www.nsa.gov/portals/75/documents/news-features/declassified-documents/cryptologic-spectrum/Brief_History_US_Cryptologic_Operations.pdf">nsa.gov &middot; Brief History of U.S. Cryptologic Operations 1917&ndash;1929</a></div>
+      <div class="t">First Folio page images, Bodleian Library copy</div>
+      <div class="m">Bodleian Libraries, University of Oxford &middot; Arch. G c.7 &middot; CC BY &middot; 41 pages used, at the project&rsquo;s standard working resolution</div>
+      <div class="d">Every glyph in today&rsquo;s corpus comes from these scans. The corpus index published with this issue gives the source page for each of the 174 letters by number, so any individual glyph can be traced back to the page it was cut from and checked against the original.</div>
+      <div class="u"><a href="https://digital.bodleian.ox.ac.uk/objects/9fc5fe08-dd8d-4ad6-9fd9-cc8a8b6e5d6f/">digital.bodleian.ox.ac.uk &mdash; First Folio</a></div>
     </div>
   </div>
 
   <div class="rec">
     <div class="kind">Gap &middot; not in hand</div>
     <div>
-      <div class="t">Baxter&rsquo;s own account of the 1916 test, and a high-resolution scan of Riverbank p.&nbsp;24</div>
-      <div class="m">James Phinney Baxter, author of <em>The Greatest of Literary Problems</em> (Houghton Mifflin, 1915) &middot; any Gallup&ndash;Baxter&ndash;Fabyan correspondence &middot; original 1916 plate</div>
-      <div class="d">Recorded as a gap rather than passed over, because the Baxter test is the strongest evidence in Gallup&rsquo;s favour anywhere in this audit and its conditions are unrecorded. Two things would settle it: Baxter&rsquo;s own description of how blind the test was, and a 1200-dpi image of the plate. At the 500&nbsp;dpi available the halftone gives an x-height of 23&ndash;29&nbsp;px against 46&nbsp;px for the Bodleian master, and component analysis fails on three of five target words &mdash; so his letterforms cannot be checked against his own labels. That plate is the only known page whose intended a and b values were fixed by someone other than Gallup.</div>
-      <div class="u"><a href="https://archive.org/details/keysfordecipheri00rive">archive.org &middot; Riverbank publications</a></div>
+      <div class="t">The Shakespearean Ciphers Examined</div>
+      <div class="m">William F. Friedman and Elizebeth S. Friedman &middot; Cambridge University Press, 1957 &middot; in copyright, not consulted directly</div>
+      <div class="d">The standard scholarly treatment, by two cryptanalysts who trained at Riverbank under Fabyan in the same rooms as Gallup. It is cited here from secondary description only &mdash; the book has not been read for this project and no claim in this issue rests on it. It is recorded as a gap rather than passed over, and obtaining a copy is the single most useful piece of reading outstanding.</div>
+      <div class="u"><a href="https://www.cambridge.org/us/universitypress/subjects/literature/renaissance-and-early-modern-literature/shakespearean-ciphers-examined-analysis-cryptographic-systems-used-evidence-some-author-other-william-shakespeare-wrote-plays-commonly-attributed-him">cambridge.org &mdash; publisher page</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Gap &middot; not in hand</div>
+    <div>
+      <div class="t">Communication Theory of Secrecy Systems</div>
+      <div class="m">Claude E. Shannon &middot; Bell System Technical Journal 28(4), 1949 &middot; in copyright</div>
+      <div class="d">The source of the unicity-distance idea referred to in the project&rsquo;s framing note &mdash; the amount of text beyond which only one decipherment survives. Cited from general knowledge rather than from the paper in hand. No numerical claim in this issue depends on it.</div>
+      <div class="u"><a href="https://doi.org/10.1002/j.1538-7305.1949.tb00928.x">doi.org/10.1002/j.1538-7305.1949.tb00928.x</a></div>
     </div>
   </div>
 
@@ -345,145 +406,184 @@ footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);back
 <!-- ================= COLOPHON ================= -->
 <section id="p3" role="tabpanel" aria-labelledby="t3" hidden>
   <h2>Technical colophon</h2>
-  <p>Prior know-how is assumed here, and the items become more &ldquo;technical&rdquo; toward the bottom.</p>
-  <p>A day of primary-text work rather than image work. No glyph was measured, no photograph opened. Two questions were put to two books &mdash; Bacon in Wats&rsquo; 1640 English, and Gallup&rsquo;s own 1900 volume &mdash; and both books answered in full.</p>
-  <p>This issue was <strong>produced on 9 September 2026</strong> from free files: Internet Archive scans with OCR text layers, Library of Congress scans of the Riverbank booklets held in the project&rsquo;s own archive, and one declassified NSA document. Every figure below can be reproduced by anyone with a browser.</p>
+  <p>Prior know-how is assumed, and the items become more &ldquo;technical&rdquo; toward the bottom.</p>
 
-  <h3>&#9873; Method &mdash; why the browser and not a downloader</h3>
-  <p>Both target books are whole volumes: Gallup&rsquo;s OCR text runs to <span class="mono">906,347</span> characters and the Wats folio to <span class="mono">1,317,376</span>. Fetch-and-summarise tools return only the head of a file that size, and did so here &mdash; twice, convincingly, reporting that the body &ldquo;was not included&rdquo;, which is exactly what a genuine negative result looks like. The working method was to load each plain-text file in a browser tab and run the search <em>inside the page</em>, returning only matched spans and their offsets. Nothing but the matches crosses back.</p>
+  <p>This issue was <strong>produced on 11 October 2026</strong>. It is image work, not text work:
+    174 glyphs were cut from 41 Folio pages, screened, and put to a blind separator-finder whose
+    sensitivity was measured rather than assumed. Every figure below can be recomputed from the
+    corpus and scripts published with the issue.</p>
 
-  <h3>&#9873; The framing census</h3>
-  <p>Target: every form of Bacon&rsquo;s name that could serve as an opening or a closing &mdash; <span class="mono">FRANCIS ST ALBAN</span>, <span class="mono">FRANCIS OF VERULAM</span>, <span class="mono">BARON OF VERULAM</span>, <span class="mono">FR. ST. A</span>, <span class="mono">F. ST. A.</span>, <span class="mono">FR. BACON</span>, <span class="mono">FR. OF Ve.</span> Search restricted to the decipherment body, which begins at offset &asymp;<span class="mono">128,000</span> where the running head <em>The Deciphered Secret Story</em> first appears. Running heads (&ldquo;BI-LITERAL CYPHER OF FRANCIS BACON&rdquo;, repeated on every verso and mangled a dozen ways by the OCR) were excluded by testing the 100 characters following each hit; without that filter the count is 243 and meaningless.</p>
-<pre>signature occurrences in the decipherment body   11
-of which CLOSE a message                         11
-of which OPEN  a message                          0</pre>
-  <p>Each of the eleven was read in context. All eleven sit at the end of a passage, immediately before one of Gallup&rsquo;s own editorial headings for the next source work &mdash; for example <span class="mono">&hellip;shal find it d'ficiente eene by a word. FR. BACON. | FRANCIS BACON. OF THE ADVANCEMENT OF LEARNING. 1605.</span> The heading is hers, not the cipher&rsquo;s.</p>
+  <h3>&#9873; Where the volume actually says anything</h3>
+  <p>Gallup 1901 is catalogued &ldquo;95, 368 p.&rdquo; &mdash; two sequences. Part I&rsquo;s
+    contents, in full: Personal 1, Explanatory Introduction 5, Preface to the Second Edition 15,
+    Argument 18, Notes on the Shakespeare Plays 28, Stenography 35, Francis Bacon Biographical 39,
+    Ciphers 46, Cyphars in Advancement of Learning 49, Cyphars in De Augmentis 50, Bi-literal Cipher
+    Plan and Illustration 51, facsimiles 55&ndash;72, Method of Cipher in Novum Organum 73,
+    Publisher&rsquo;s Note 76, Quarto title pages 85. The classification statement is on page 2, in
+    the &ldquo;Personal&rdquo; section, and reads in part that the distinguishing features in the
+    small letters &ldquo;have been more difficult to classify&rdquo; and that study was required to
+    &ldquo;educate the eye to distinguish them.&rdquo; No feature is named anywhere in Part I.</p>
 
-  <h3>&#9873; The five short Folio messages, Gallup p.&nbsp;166</h3>
-  <div class="tablewrap"><table>
-    <tr><th>message (opening words)</th><th>closes with</th><th>opens with a name?</th></tr>
-    <tr><td>&ldquo;Francis of Verulam is author of all the plays heretofore published by Marlowe, Greene, Peele, Shakespeare&hellip;&rdquo;</td><td>F. ST. A.</td><td>subject of the sentence</td></tr>
-    <tr><td>&ldquo;Search for keyes, the headings of the Comedies.&rdquo; <em>(I.&thinsp;M. Poem)</em></td><td>FRANCIS BARON OF VERULAM.</td><td>no</td></tr>
-    <tr><td>&ldquo;As I sometimes place rules and directions in other Ciphers, you must seeke for the others soone to aide in writing.&rdquo;</td><td>FR. OF Ve.</td><td>no</td></tr>
-    <tr><td>&ldquo;Queene Elizabeth is my true mother, and I am the lawfull heire to the throne&hellip;&rdquo;</td><td>F. BACON.</td><td>no</td></tr>
-    <tr><td>&ldquo;Francis St. Alban, descended from the mighty heroes of Troy&hellip;&rdquo; <em>(Troilus Prologue)</em></td><td>F. ST. A.</td><td>subject of the sentence</td></tr>
-  </table></div>
-  <p>Five of five close on a name. None opens with one. The two that appear to are sentences whose grammatical subject happens to be Bacon &mdash; <em>Francis of Verulam <strong>is</strong> author&hellip;</em>, <em>Francis St. Alban, descended from&hellip;, <strong>hid</strong> in his writings&hellip;</em> &mdash; not headings standing above a letter. Riverbank stated the convention itself, in <em>Fundamental Principles</em>: the poem&rsquo;s message &ldquo;is complete in itself, and is signed by its author.&rdquo; A signature. Not a pair of brackets.</p>
+  <h3>&#9873; Riverbank&rsquo;s five, as measurements</h3>
+  <pre>larger      ->  overall size of the letter
+rounder     ->  curvature of the bowl
+more upright->  slant
+more robust ->  stroke weight
+longer tail ->  length of the flourish</pre>
+  <p>Taken from <em>Hints</em> pp. 9&ndash;10. All five were planted and tested; the project&rsquo;s
+    earlier focus on slant alone followed from reading rule 5, which is explicitly about circular
+    letters, as though it governed every letter.</p>
 
-  <h3>&#9873; Bacon&rsquo;s only condition, in both translations</h3>
-  <p>Wats 1640, Book VI, at offset <span class="mono">820,946</span> of the Internet Archive OCR. The 1640 long s and the OCR of it are both imperfect; spelling is normalised here and the raw string is preserved in the working files:</p>
-<pre>"It containeth the highest degree of Cypher, which is to signifie
- omnia per omnia, yet so, as the writing infolding may bear a
- QUINTUPLE PROPORTION to the writing infolded; NO OTHER CONDITION
- OR RESTRICTION WHATSOEVER IS REQUIRED."</pre>
-  <p>Spedding&rsquo;s translation of the same sentence, quoted in Riverbank&rsquo;s <em>The Greatest Work of Sir Francis Bacon</em> (1916) and therefore an independent witness to it:</p>
-<pre>"subject however to this condition, that the infolding writing shall
- contain at least five times as many letters as the writing infolded;
- no other condition or restriction whatever is required."</pre>
-  <p>This is the day&rsquo;s finding and it is not an argument from silence. Bacon does not omit a delimiter; he states one requirement and disclaims every other in the same clause. There is no start marker, no stop marker, no signal of which text carries, and no instruction for finding a concealed message in a book &mdash; by design, on the record, in both translations.</p>
+  <h3>&#9873; The corpus</h3>
+  <p>Tesseract 5.3.4 at <span class="mono">--psm 6</span> supplies word and character boxes; letter
+    identities come from the project&rsquo;s own transcription, never from Tesseract&rsquo;s reading.
+    A word is accepted only where its box count equals the known spelling length. That yielded 183
+    candidate b from 42 pages. Binarization is Niblack k=&minus;0.25, window 35, chosen by
+    calibration: every crop is known to be a b and a b has one counter, so the right threshold is
+    the one leaving a single counter open on the largest share. Measured over 183 &mdash; Niblack
+    82.0%, Otsu 74.9%, Sauvola k=0.12 62.8%.</p>
+  <p>The transcription records 203 lower-case b in all 431 wholly-italic lines on these pages, so the
+    extraction took 183 of 203 available &mdash; 90%. That number ended a separate line of work; see
+    failures below.</p>
 
-  <h3>&#9873; Why he never had to face it</h3>
-<pre>exterior letter   "Manere te volo, donec venero."      23 letters
-interior letter   Fuge                                  4 characters
-requirement       4 x 5                              = 20 glyphs
-spare                                                =  3 letters</pre>
-  <p>His single worked example is a wrapper cut to fit its contents. The exterior sentence is barely longer than the interior word requires, so the boundary is the whole sentence and the question <em>where does it start</em> cannot arise. The delimiter problem is created by scale &mdash; by proposing that a message hides inside nine hundred pages &mdash; and scale is exactly what Bacon never demonstrates. The same passage carries the list of applications he also never documents: <em>&ldquo;as by Bells, by Trumpets, by Lights and Torches, by the Reports of Muskets, and any Instruments of like nature.&rdquo;</em></p>
+  <h3>&#9873; Two screens, cross-tabulated</h3>
+  <p>Each glyph is scored against Riverbank&rsquo;s own a-form and b-form b from <em>Keys</em> p. 39,
+    kept on the better of the two and <strong>never on the difference</strong> &mdash; filtering on
+    the difference would pre-select a corpus shaped like their claim. Independently, a geometry
+    screen tests proportion and the enclosed white of the counter.</p>
+  <pre>                    geometry keeps   geometry rejects   total
+Riverbank keeps          151               25             176
+Riverbank rejects          2                5               7
+total                    153               30             183</pre>
+  <p>They fail in opposite directions: heavy inking closes the bowl and defeats the counter test,
+    light inking defeats the overlap test. The median gap between the two Riverbank exemplars&rsquo;
+    scores is 0.016, so whole-glyph overlap carries almost no form information &mdash; which is
+    exactly what makes it safe as an &ldquo;is this a b&rdquo; gate.</p>
+  <p>A third screen rejects glyphs carrying ink that is not part of the letter: in a sound b the top
+    half of the bounding box holds 31&ndash;44% of the ink, and requiring no more than 46% flags
+    exactly four, each with a stroke from the line above welded to it. Final corpus 174, with a
+    149-glyph core whose bowls are all measurable.</p>
 
-  <h3>&#9873; The Prologue frame, counted</h3>
-<pre>message                       214 characters
-coded glyphs        214 x 5 = 1,070
-uncoded tail            "re" of "Warre"           +2
-                                               ------
-TEI letter count for the Prologue               1,072   exact
+  <h3>&#9873; The separation test</h3>
+  <p>Glyphs are registered to a 56&times;34 frame by height, centered on the ink centroid, lightly
+    blurred, reduced by SVD to 18&ndash;24 components. Projection pursuit then hill-climbs a unit
+    direction to maximize Hartigan&rsquo;s dip, with 70&ndash;220 random restarts.</p>
+  <p>The discipline is the whole of it: <strong>fit on half the glyphs, score on the other half.</strong>
+    Any search over enough directions finds a bimodal one in noise, so the winner&rsquo;s own score
+    is not evidence. A direction describing a real property still separates glyphs it was not fitted
+    to; one that fitted noise does not. The held-out score is compared against 150&ndash;200 randomly
+    chosen directions scored identically.</p>
+  <pre>real corpus, nothing planted
+  12 splits   detected 0   held-out dip 0.0294
+  24 splits   detected 1   held-out dip 0.0310
+  randomly chosen directions beat it in 62% of draws</pre>
 
-head   FRANCIS ST ALBAN      14 chars  =  70 glyphs   (glyphs 1-70)
-tail   ELIZABETH R + F ST A  14 chars  =  70 glyphs   (last 70)
-                                          ---------
-                                          140 of 1,070  =  13.1 %</pre>
-  <p>Seventy and seventy, symmetric to the glyph, and the grid, the transcription and the message reconcile exactly. Those 140 are the only glyphs in nine hundred pages whose intended values can be guessed without trusting the decipherer &mdash; and after today only the trailing seventy can be called a frame.</p>
+  <h3>&#9873; What the instrument can see</h3>
+  <p>Each characteristic planted into a random half of the real glyphs at known magnitude, the search
+    never told which or whether. Detections out of 8 independent splits:</p>
+  <pre>size        14%  8/8     10%  8/8      7%  6/8      4%  1/8
+flourish    30%  8/8     20%  7/8     13%  6/8      8%  0/8
+slant        8d  8/8      6d  7/8    4.5d  1/8
+weight      60%  2/8
+roundness   55%  1/8</pre>
+  <p>So for three of the five, the corpus bounds any real difference below 7% in size, 13% in tail
+    length and 6 degrees of slant.</p>
 
-  <h3>&#9873; The Baxter test, re-diffed</h3>
-  <p>Riverbank 1916, book p.&nbsp;24. Both streams were transcribed and verified in this project on 3&nbsp;September; today the difference was examined structurally rather than in aggregate.</p>
-<pre>Gallup  SEARCH | FOR KEYES THE HEADINGS OF THE COMEDIES FRANCIS BARO | N OF VERVLAM
-Baxter  SEARCH | KAISER KULTUR KRIEG UND SCHLACHTEN MACHT IST RECHT  | N OF VERVLAM
+  <h3>&#9873; The blind spot, and why it is a representation fault</h3>
+  <p>Weight and roundness do not register at any magnitude tried. A 60% change in stroke mass &mdash;
+    far past anything that could pass unnoticed on a page &mdash; is detected twice in eight splits,
+    barely above the one-in-twenty a wrong answer earns by chance.</p>
+  <p>The cause is in the pipeline, not the Folio. Registering to a common height normalizes size and
+    weight information away before the search begins, and no <em>linear</em> projection over pixel
+    values can express curvature. To test &ldquo;more robust,&rdquo; ink mass must be carried as an
+    absolute per-glyph quantity alongside the printing density of its source page, not normalized
+    out. To test &ldquo;rounder,&rdquo; the measurement has to be on the traced contour &mdash;
+    curvature along the outline, or the counter&rsquo;s deviation from a fitted ellipse. Neither is
+    a matter of more glyphs.</p>
 
-both messages                     59 characters
-shared head                        6 characters   (SEARCH)
-shared tail                       10 characters   (N OF VERVLAM)
-reset span              chars 7-49 = 43 groups = 215 positions
-positions differing in reset span              104   =  48.4 %
-positions differing overall               104 / 295  =  35.3 %</pre>
-  <p>48.4&nbsp;per cent is chance, which is what two independent labellings of the same letters should give, so the reset span is genuine. He kept her opening word and her sign-off and replaced the middle &mdash; economical if he was resetting a forme by hand, and it leaves even the Kaiser slogan subscribed &ldquo;of Verulam&rdquo;.</p>
+  <h3>&#9873; Filters proposed and rejected, with the measurements</h3>
+  <p><strong>Ink weight relative to the Riverbank mean.</strong> Proposed as a way to drop spills and
+    smears. The 24 heaviest glyphs turned out to be clean, well-formed b&rsquo;s that were simply
+    printed heavily; the measure runs 0.75 to 2.39 with no gap, and the Folio median sits 22% above
+    Riverbank &mdash; a fact about two printings. Rejected, and doubly so: relative darkness is one
+    of the characteristics under test, so screening on it would prejudge the question.</p>
+  <p><strong>A maximum on the counter.</strong> Among glyphs that have a counter the measure is
+    bunched between 9.7% and 12.2% of the bounding box, with no upper tail, and the 16 largest
+    counters belong to the sharpest-printed letters in the set. A ceiling would discard the best
+    evidence first. The real residue is a <em>minimum</em>: 16 glyphs have no measurable bowl.</p>
+  <p><strong>Dilating the Riverbank masks.</strong> Tried at &plusmn;1, 2 and 3 pixels, on the
+    template alone and on both sides. After the contour fix every variant returns identical recall,
+    151/153; only the scale moves, the median rising from 0.69 to 0.85 with the gate rising to match.
+    Inert, and abandoned.</p>
+  <p><strong>Re-attaching broken strokes on row overlap.</strong> Worse than the rule it replaced
+    &mdash; it pulls in the neighboring letter. Rejected on sight of the comparison figure.</p>
 
-  <h3>&#9873; Riverbank, Fabyan, Friedman &mdash; dates, and one figure that does not exist</h3>
-<pre>Friedman hired to Riverbank                    1915  (month disputed: May / September)
-cipher work, by his own account      June 1916 - December 1920   =  54 months
-military service                       May 1918 - May 1919       =  12 months
-on the ground                                                    =  42 months
-plates hand-signed and dated                   '16
-only printed repudiation                       1957              =  41 years later
-Fabyan died                                    1936
-NSA memorial plaque                            1992              =  56 years later</pre>
-  <p>Asked for the length of time Friedman drew Fabyan&rsquo;s salary while knowing the Gallup work was worthless, the honest answer is that <strong>no such figure exists</strong>: no source dates his change of mind, so the bracket is 1916 to 1957 and nothing narrows it. The charge circulates in the partisan literature; it is an accusation, not a finding, and this project applies to it the same standard it applies to Gallup. Note also that the salary bought cryptanalytic operations for the War, Navy, State and Justice departments &mdash; the Shakespeare work was one part of Riverbank, not the whole of it.</p>
+  <h3>&#9873; Three things this project had wrong</h3>
+  <p><strong>The contour rule.</strong> The binarizer kept the largest blob of ink and re-attached
+    any fragment overlapping its <em>columns</em>. Italic letters always overlap in x, so the test
+    admitted descender tails from the line above and specks below the baseline. Keeping one component
+    and nothing else cleans seven of the nine affected glyphs; the two it damages are caught
+    downstream. Two crops previously counted as merged pairs proved not to be merges at all.</p>
+  <p><strong>The template threshold.</strong> Set at 0.50 by eye. The merged pairs score at most
+    0.325, so the gate belongs at 0.35 &mdash; a measured value. The old setting was discarding real
+    letters for nothing.</p>
+  <p><strong>Dropping the Riverbank screen entirely.</strong> It was briefly removed on the grounds
+    that the two exemplars score within 0.016 of each other and so carry no form information. That
+    reasoning was backwards: the near-identical scores are precisely what make the mask form-neutral
+    and therefore safe. It was restored, and it catches every merged pair on its own.</p>
 
-  <h3>&#9873; On the &ldquo;one more quire&rdquo; reading</h3>
-  <p>There is a real convergence and it deserves stating. Riverbank&rsquo;s five plate-sets in <em>The Keys</em> &mdash; the I.&thinsp;M. Poem, the Digges Poem, the <em>Troilus</em> Prologue, A Catalogue, the Names of the Principall Actors &mdash; are exactly the last matter printed for the Folio: the quire A preliminaries plus the late-inserted Troilus leaf. Gallup&rsquo;s five short Folio messages are those same five texts, printed together on her p.&nbsp;166.</p>
-  <p>The mundane explanation is stated by Riverbank itself. <em>The Greatest Work</em> says the Digges and I.&thinsp;M. poems were chosen &ldquo;because they are printed in italic in the original (a basic condition precedent, according to the hint offered by Bacon himself)&rdquo;. The preliminaries are where the italic is, because commendatory verse and front matter were conventionally set in italic. She went where the italic was. That the italic-rich matter is also the last-printed matter is a fact about how the Folio was produced, and it makes the convergence expected under both readings rather than evidence for either.</p>
-
-  <h3>&#9873; The noise floor &mdash; is a biliteral readable from this book at all?</h3>
-  <p>Run from <span class="mono">census_records.json</span> alone; nothing fetched. Two populations, both already measured. <strong>Noise:</strong> the text italic of the thirty-six plays, n&nbsp;=&nbsp;2,877, which the census established is one sort (dip p&nbsp;&asymp;&nbsp;0.98), so every bit of its variation is paper, ink, pressure, wear and scan. <strong>Signal:</strong> the large italic of the Prologue and Epilogue leaves, n&nbsp;=&nbsp;83, the only place two <span class="gl">w</span> sorts genuinely coexist.</p>
-<pre>NOISE FLOOR      mean        sd     sd/mean
-D = jA - jB    0.1807    0.0300      16.6 %
-height, px    34.7160    2.1445       6.2 %
-jA             0.6726    0.0435       6.5 %
-stroke width   6.1841    1.1541      18.7 %
-ink area     795.6257  126.1557      15.9 %</pre>
-
-  <p><strong>A circularity caught in the first pass, and recorded rather than quietly fixed.</strong> The first run split the two sorts by the sign of D and then measured their separation <em>in D</em>. Self-fulfilling. It returned d&prime;&nbsp;=&nbsp;10.4, per-glyph accuracy 1.0000, the whole Prologue readable clean &mdash; a spectacular result and a pure artefact of the labelling. It is minuted here because it took the shape of a <em>positive</em> finding, which is the shape this project is least well defended against. Everything below is cross-measured: split on one feature, separation reported on an independent one, both directions given.</p>
-<pre>                                  d'     95% bootstrap    wrong of 214   p^1070
-split on height, measured in D   6.30    3.89 - 11.91          0.9        0.42
-split on D, measured in height   4.49    3.89 -  5.34         12.9        1.6e-06</pre>
-  <p>They disagree and the disagreement is material: at 4.49 the message is unreadable, at 6.30 it is readable with about one error. <strong>4.49 is the figure that travels, and not by preference.</strong> D is the fit to Riverbank&rsquo;s two stencils, and those stencils were cut from these very pages &mdash; the provenance finding of 5&nbsp;September. Measuring separation in D on the pages the stencils came from is partly in-sample, and in-sample separation always flatters. Height is a raw physical measurement, tuned to nothing. Note also that both bootstrap intervals share the same lower bound, 3.89.</p>
-
-<pre>WHAT THE CIPHER DEMANDS  (five glyphs per character, so p^5 per character)
-target                       per-char    per-glyph p    d' required
-90 % of characters right       0.900        0.97915        4.07
-99 % of characters right       0.990        0.99799        5.75
-99.5 % of characters right     0.995        0.99900        6.18</pre>
-  <p>The 99&nbsp;per&nbsp;cent requirement, 5.75, lies <strong>above the entire confidence interval</strong> of the out-of-sample estimate. The 90&nbsp;per&nbsp;cent requirement sits near its bottom &mdash; and 90&nbsp;per&nbsp;cent of characters is still about twenty-one wrong in 214.</p>
-  <p><strong>The verdict.</strong> The two sorts that separate best in the entire First Folio are 42.8&nbsp;px and 57.1&nbsp;px tall: a 33&nbsp;per&nbsp;cent difference in height. To reach 99&nbsp;per&nbsp;cent of characters they would have to differ by 18.2&nbsp;px on a 43&nbsp;px glyph &mdash; 43&nbsp;per&nbsp;cent. Bacon&rsquo;s third virtue is that a cipher be &ldquo;managed without suspition&rdquo;. The only pair in this book that comes close to readable is one anyone can see, and a pair small enough to hide falls further short, not closer. It also explains, with nobody needing to be dishonest, why two hundred and seventy years passed before anyone claimed to read it.</p>
-  <p><strong>What it does not show.</strong> Only the features the census recorded &mdash; height, ink area, stroke width, Jaccard fit to two stencils. A bit riding on a region never measured, one serif or a stroke terminal, would not appear. Settling that needs a per-pixel stability map over registered same-sort glyphs and then a search over every candidate region for one quiet enough to carry a bit. The 600-dpi strips for that were not kept, only the derived measurements, so it requires a re-fetch. It is the strongest open experiment in the strand.</p>
-
-  <h3>&#9873; A correction to this report</h3>
-  <p>Earlier this week the Prologue message was described here as framed at both ends, with <span class="mono">FRANCIS ST ALBAN</span> serving as an opening delimiter. Today&rsquo;s census shows that is wrong. The corpus contains no opening frame anywhere; the head name is the subject of a sentence. The glyphs are equally guessable either way, so no measurement changes &mdash; but the description does, and it is corrected rather than quietly dropped.</p>
+  <h3>&#9873; A correction to this project&rsquo;s earlier framing</h3>
+  <p>Earlier work here treated the pitch or slant angle as the discriminator to test, and reported a
+    battery of eleven hand-designed measurements as though they covered the claim. Reading <em>Hints</em>
+    directly shows that slope is Riverbank&rsquo;s rule for <em>circular</em> letters; for a
+    long-tailed letter such as b their rule names slope <em>and</em> flourish length, and their
+    general rule names size, roundness and weight besides. The earlier framing tested roughly one
+    fifth of what was claimed. Today&rsquo;s battery is the correction.</p>
 
   <h3>&#9873; Failures and dead ends</h3>
-<pre>archive.org refused CONNECT (proxy 403) from BOTH shells - the cloud
-  container and the local VM alike. Not routed around; the sanctioned
-  fetch path was used instead.
-fetch-and-summarise returned only front matter for both whole books,
-  and reported the body "not included" - a true statement that reads
-  exactly like a negative result. Recorded because it is the failure
-  mode most likely to produce a false null in work of this kind.
-Bodleian OTA copy of the Wats TCP text: 504 Gateway Time-out.
-Reading the EEBO HTML via innerText froze the renderer (CDP timeout
-  at 45 s). textContent over the plain-text file succeeded.
-The Riverbank KEYS does not print the five decipherments in letterpress
-  - they exist only in the plates - so the census could not be run from
-  the monographs and required Gallup's own volume.</pre>
+  <pre>line segmentation, attempted twice, abandoned
+  threshold on full image width  -> 18 lines where 59 exist, one band 427px tall
+  threshold on block ink         -> 41 lines where 29 exist
+  resolved by not segmenting lines at all: the alignment files
+  already record every line position, and strips render at
+  exactly 4.00x the alignment frame
+
+psm 7 on pre-cut lines, tested and abandoned
+  line coverage   56% -> 94%     a real improvement
+  b extracted     183 -> 70      a much larger loss
+  the ceiling measurement ended it: only 203 b exist in these
+  lines, so the old whole-page pass was already taking 90% of
+  everything available. nothing left to win.
+
+glyph cutting, two rules discarded before the present one
+  x-overlap merge   glued adjacent letters together
+  column minima     cut through letters
+
+archive.org refused direct fetch from both shells and from the
+  full-text API; worked around via the browser extension</pre>
 
   <h3>&#9873; Environment</h3>
-  <p>Text layers extracted from the four Riverbank monographs with <span class="mono">pdftotext -layout</span> on the local machine (<span class="mono">~/rbtxt/</span>: keys, fund, great, hints &mdash; 420,462 characters in total). Whole-volume searches run in-page in Chrome over <span class="mono">document.body.textContent</span>. No image processing, no model inference, and nothing today that a reader could not repeat with a browser and two Internet Archive URLs.</p>
+  <p>Tesseract 5.3.4. Python with NumPy, SciPy, scikit-image, Pillow;
+    <span class="mono">diptest</span> 0.11.0 for Hartigan&rsquo;s dip. Chromium via Playwright for
+    PDF rendering. Folio page images from the Bodleian scans held in the project archive. Corpus,
+    screening criteria, the planted-characteristic battery and every script named above are published
+    with this issue, so each figure can be recomputed rather than taken on trust.</p>
 
   <h3>&#9873; Publication</h3>
-  <p>GitHub Pages from the repository root, no build step, no framework, no analytics, no trackers and no cookies. The custom domain <strong>baconian-ciphers.online</strong> resolves through four A records at the apex to GitHub&rsquo;s addresses, with <span class="mono">www</span> a CNAME to the Pages host; TLS is issued automatically by Let&rsquo;s Encrypt and HTTPS is enforced. All internal links are relative, so a change of domain touches one file. Total infrastructure cost is about a dollar a year &mdash; chosen deliberately, so that nothing here depends on a service that can withdraw it. Issues are superseded, never deleted: a link sent today will resolve next year.</p>
+  <p>GitHub Pages from the repository root, no build step, no framework, no analytics, no trackers
+    and no cookies. The custom domain <strong>baconian-ciphers.online</strong> resolves through four
+    A records at the apex to GitHub&rsquo;s addresses, with <span class="mono">www</span> a CNAME to
+    the Pages host; TLS is issued automatically by Let&rsquo;s Encrypt and HTTPS is enforced. All
+    internal links are relative, so a change of domain touches one file. Total infrastructure cost is
+    about a dollar a year &mdash; chosen deliberately, so that nothing here depends on a service that
+    can withdraw it. Issues are superseded, never deleted: a link sent today will resolve next year.</p>
 
 </section>
 
 </main>
 
 <footer class="wrap">
-  One-Day Report · Biliteral Cipher · 9 September 2026<br>
+  One-Day Report · Biliteral Cipher · 11 October 2026<br>
   Walter Wilkinson · Worland · Washakie County · Wyoming · <strong>5Ws</strong><br>
   Folio images © Bodleian Libraries, University of Oxford, CC BY. Riverbank publications public domain.<br>
   &copy; 2026 Walter Wilkinson &middot; code MIT &middot; words reserved

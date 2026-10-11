@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One-Day Report · Biliteral Cipher · October 11, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#FAF8F4; --card:#FFFDFA; --ink:#241F1A; --ink-mid:#544A40;
+  --ink-soft:#7D7266; --rule:#DCD4C7; --rule-soft:#EAE4DA;
+  --accent:#5C3D24; --accent-mid:#8A6A3A; --accent-soft:#F0E9DE;
+  --a-form:#2B4C8C; --b-form:#9A4A2F; --kill:#8E2F3C;
+}
+:root[data-theme="dark"]{
+  --paper:#16130F; --card:#1E1A15; --ink:#EDE7DE; --ink-mid:#B3A899;
+  --ink-soft:#8A8073; --rule:#3A332B; --rule-soft:#2A251F;
+  --accent:#D7B183; --accent-mid:#C9A473; --accent-soft:#2A2219;
+  --a-form:#8BA6E8; --b-form:#D9906B; --kill:#DE7B87;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#16130F; --card:#1E1A15; --ink:#EDE7DE; --ink-mid:#B3A899;
+    --ink-soft:#8A8073; --rule:#3A332B; --rule-soft:#2A251F;
+    --accent:#D7B183; --accent-mid:#C9A473; --accent-soft:#2A2219;
+    --a-form:#8BA6E8; --b-form:#D9906B; --kill:#DE7B87;
+  }
+}
+*{box-sizing:border-box;}
+.endmark{text-align:center;color:var(--ink-soft);font-size:20px;letter-spacing:.6em;padding:26px 0 0;}
+body{margin:0;padding-bottom:60px;background:var(--paper);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+  font-size:18px;line-height:1.6;-webkit-text-size-adjust:100%;}
+.wrap{max-width:860px;margin:0 auto;padding:0 28px;}
+
+header{padding:52px 0 30px;}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;
+  font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-mid);}
+.rose{width:13px;height:13px;vertical-align:-2px;margin-right:.5em;}
+.eyebrow a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;}
+.eyebrow a:hover{border-bottom-color:currentColor;}
+.eyebrow .sep{opacity:.6;padding:0 .34em;font-weight:400;letter-spacing:0;font-family:"Source Serif 4",Georgia,serif;font-size:1.55em;line-height:0;vertical-align:-.04em;}
+h1{font-size:clamp(30px,5.1vw,46px);line-height:1.08;font-weight:700;
+  letter-spacing:-.015em;margin:12px 0 0;text-wrap:balance;}
+h1 .seg{white-space:nowrap;}
+h1 .sep{color:var(--accent-mid);font-weight:400;padding:0 .12em;}
+@media (max-width:520px){h1 .seg{white-space:normal;}}
+.standfirst{font-size:20px;line-height:1.5;color:var(--ink-mid);margin:16px 0 0;max-width:56ch;}
+.standfirst strong{display:inline-block;margin-top:10px;font-weight:600;color:var(--ink);}
+.claimlabel{margin-top:26px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;
+  font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-mid);}
+.asof{margin-top:20px;display:inline-block;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12px;letter-spacing:.06em;color:var(--ink-soft);
+  border:1px solid var(--rule);padding:6px 11px;}
+
+nav{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:14px 0;display:flex;flex-wrap:wrap;gap:9px;align-items:center;
+  position:sticky;top:0;background:var(--paper);z-index:5;}
+button{font-family:inherit;font-size:16px;cursor:pointer;border:1px solid var(--rule);
+  background:transparent;color:var(--ink);padding:9px 16px;border-radius:3px;}
+button:hover{border-color:var(--accent-mid);}
+button[aria-selected="true"]{background:var(--accent);color:var(--paper);border-color:var(--accent);font-weight:600;}
+:root[data-theme="dark"] button[aria-selected="true"]{color:#16130F;}
+.spacer{flex:1;}
+.util{font-size:14px;padding:8px 13px;}
+button:focus-visible{outline:2px solid var(--accent-mid);outline-offset:2px;}
+
+main{padding:8px 0 90px;}
+section[hidden]{display:none;}
+h2{font-size:26px;font-weight:700;margin:46px 0 0;letter-spacing:-.01em;text-wrap:balance;}
+h2:first-child{margin-top:34px;}
+h3{font-size:19px;font-weight:600;margin:30px 0 0;}
+p{margin:14px 0 0;max-width:66ch;}
+ul,ol{margin:14px 0 0;padding-left:22px;max-width:64ch;}
+li{margin-top:8px;}
+strong{font-weight:600;}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.85em;}
+.gl{font-style:italic;font-weight:600;}
+.a-form{color:var(--a-form);font-weight:600;}
+.b-form{color:var(--b-form);font-weight:600;}
+a{color:var(--accent);text-underline-offset:2px;}
+
+details{border-bottom:1px solid var(--rule-soft);padding:2px 0;}
+summary{cursor:pointer;padding:15px 0;font-size:19px;font-weight:600;list-style:none;
+  display:flex;gap:12px;align-items:baseline;}
+summary::-webkit-details-marker{display:none;}
+summary::before{content:"+";color:var(--accent-mid);font-family:"IBM Plex Mono",monospace;
+  font-size:17px;flex:none;width:14px;}
+details[open] summary::before{content:"\2013";}
+details[open] summary{color:var(--accent);}
+details .body{padding:0 0 18px 26px;}
+details .body p:first-child{margin-top:0;}
+
+.note{margin-top:22px;padding:16px 18px;background:var(--card);
+  border-left:3px solid var(--accent-mid);font-size:17px;color:var(--ink-mid);}
+.note strong{color:var(--ink);}
+.note.kill{border-left-color:var(--kill);}
+.note.kill strong{color:var(--kill);}
+
+.rec{border-top:1px solid var(--rule);padding:22px 0;display:grid;
+  grid-template-columns:130px 1fr;gap:6px 22px;}
+.rec:last-of-type{border-bottom:1px solid var(--rule);}
+.rec .kind{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--ink-soft);padding-top:5px;}
+.rec .t{font-size:19px;font-weight:600;line-height:1.35;}
+.rec .m{font-size:15px;color:var(--ink-soft);margin-top:3px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;}
+.rec .d{font-size:16.5px;color:var(--ink-mid);margin-top:9px;max-width:60ch;}
+.rec .u{margin-top:9px;font-size:15px;word-break:break-word;}
+
+.tablewrap{overflow-x:auto;margin-top:20px;}
+table{border-collapse:collapse;width:100%;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:14px;font-variant-numeric:tabular-nums;}
+th{text-align:left;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-soft);border-bottom:1px solid var(--rule);padding:0 14px 8px 0;white-space:nowrap;}
+td{padding:8px 14px 8px 0;border-bottom:1px solid var(--rule-soft);color:var(--ink-mid);vertical-align:top;}
+td:first-child{color:var(--ink);}
+td.n,th.n{text-align:right;padding-right:20px;}
+
+pre{margin-top:18px;padding:16px 18px;background:var(--card);border:1px solid var(--rule-soft);
+  overflow-x:auto;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13.5px;
+  line-height:1.7;color:var(--ink-mid);}
+
+figure{margin:26px 0 0;}
+.bigfig{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);}
+.bigfig img{display:block;width:100%;}
+.figbar{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:9px;}
+@media (max-width:760px){.bigfig img{width:1200px;max-width:none;}}
+figcaption{font-size:22px;line-height:1.4;font-style:italic;color:var(--ink-mid);
+  margin-top:14px;max-width:60ch;}
+
+footer strong{font-weight:600;color:var(--ink);letter-spacing:.04em;}
+footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--card);padding:30px 26px 34px;margin-top:56px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;
+  color:var(--ink-soft);line-height:1.9;}
+
+@media (max-width:640px){
+  body{font-size:17px;} .wrap{padding:0 18px;}
+  .rec{grid-template-columns:1fr;gap:4px;}
+  .rec .kind{padding-top:0;}
+  nav{position:static;}
+  figcaption{font-size:22px;}
+}
+@media print{
+  body{padding-bottom:0;}
+  .endmark{display:none;}
+  footer{background:none;}
+  nav,.util{display:none!important;}
+  section[hidden]{display:block!important;}
+  body{background:#fff;color:#000;font-size:11pt;}
+  a{color:#000;}
+  h2{page-break-after:avoid;}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow"><svg class="rose" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon fill="#4C7A4E" points="18.94,2.45 17.23,10.30 23.22,15.65 15.23,16.45 12,23.80 8.77,16.45 0.78,15.65 6.77,10.30 5.06,2.45 12,6.50"/><g fill="#B4372C"><circle cx="12" cy="7.00" r="3.9"/><circle cx="16.76" cy="10.46" r="3.9"/><circle cx="14.94" cy="16.05" r="3.9"/><circle cx="9.06" cy="16.05" r="3.9"/><circle cx="7.24" cy="10.46" r="3.9"/></g><g fill="#FCF8F0"><circle cx="13.76" cy="9.57" r="2.2"/><circle cx="14.85" cy="12.93" r="2.2"/><circle cx="12" cy="15.00" r="2.2"/><circle cx="9.15" cy="12.93" r="2.2"/><circle cx="10.24" cy="9.57" r="2.2"/></g><circle cx="12" cy="12" r="1.4" fill="#C8992F"/></svg><a href="https://gorhambury.org/">New Gorhambury</a><span class="sep">·</span><a href="https://baconian-ciphers.online/">Baconian Ciphers</a></div>
+  <h1><span class="seg">One-Day Report</span> <span class="sep">·</span> <span class="seg">Biliteral Cipher</span> <span class="sep">·</span> <span class="seg">October 11, 2026</span></h1>
+  <div class="claimlabel">Today's claim</div>
+  <p class="standfirst">One day&rsquo;s progress, presented three ways.<br><strong>Gallup&rsquo;s 463-page volume contains no rule for the step her whole decipherment rests on: the only classification sentence in its 95 pages of front matter names no feature of any letter and tells the reader to &ldquo;educate the eye.&rdquo; The feature description exists only in Riverbank&rsquo;s <em>Hints to the Decipherer</em> of 1916, fifteen years later, and it names five characteristics rather than one. Tested against all five, 149 lower-case italic <em>b</em> from 41 Folio pages show no two-group structure a blind search can find &mdash; one result in 36 held-out tests &mdash; which bounds any real difference below 7% in size, 13% in tail length and 6 degrees of slant. Two of the five, <em>rounder</em> and <em>more robust</em>, proved invisible to the method at any magnitude: a fault in the instrument, reported as such, and not yet an answer about the Folio.</strong></p>
+  <div class="asof">findings may be superseded by later reports</div>
+</header>
+
+<nav role="tablist" aria-label="Sections">
+  <button role="tab" id="t1" aria-controls="p1" aria-selected="true">FAQ</button>
+  <button role="tab" id="t2" aria-controls="p2" aria-selected="false">Reference</button>
+  <button role="tab" id="t3" aria-controls="p3" aria-selected="false">Technical Colophon</button>
+  <span class="spacer"></span>
+  <button class="util" id="phoneview" type="button" hidden>Phone view</button>
+  <button class="util" id="pdf">Save as PDF</button>
+  <button class="util" id="theme">Dark</button>
+</nav>
+</div>
+
+<main class="wrap">
+
+<!-- ================= FAQ ================= -->
+<section id="p1" role="tabpanel" aria-labelledby="t1">
+  <h2>The short version</h2>
+  <p>Gallup&rsquo;s decipherment rests on a step that comes before any decoding: somebody has to look
+    at each italic letter on the page and put it in one of two boxes. Today asked two questions about
+    that step. Where did she say how to do it? And can it be done at all &mdash; by anyone, including
+    a machine with no opinion about Bacon?</p>
+
+  <p>The first question has a documentary answer, and it is sharper than expected. The second now has
+    a measured one, with the measurement&rsquo;s own limits stated alongside it.</p>
+
+  <div class="note"><strong>Today&rsquo;s result in one sentence.</strong> In 149 lower-case italic
+    <em>b</em> cut from 41 Folio pages, a search that was given no hint what to look for found
+    <strong>no two-group structure at all</strong> &mdash; one significant result in 36 held-out
+    tests &mdash; and the same search, calibrated by planting known differences, would have caught a
+    difference of 7% in size, 13% in tail length or 6 degrees of slant.</div>
+
+  <div class="note"><strong>And the part that cuts the other way.</strong> Two of the five
+    characteristics Riverbank themselves name &mdash; <em>rounder</em> and <em>more robust</em>
+    &mdash; turned out to be invisible to this method at any size tried. That is a fault in the
+    instrument, not a finding about the Folio, and until it is fixed this project has nothing to say
+    about those two.</div>
+
+  <h2>Questions</h2>
+
+  <details><summary>What is the biliteral cipher?</summary><div class="body">
+    <p>Sir Francis Bacon described it in 1623. Every letter becomes a group of five symbols, each
+      symbol either an <span class="a-form">a</span> or a <span class="b-form">b</span> &mdash; five
+      binary digits, three hundred years before anyone called them that. AAAAA is A, AAAAB is B, and
+      so on.</p>
+    <p>The two symbols need not be letters. They can be two founts of type so similar that a reader
+      notices nothing. Print an innocent passage in an alternating mixture of the two and it carries
+      a second message, readable only by someone who can tell the founts apart. The system is sound;
+      nothing here disputes it.</p>
+  </div></details>
+
+  <details><summary>So what is actually being tested?</summary><div class="body">
+    <p>Not the cipher. The <em>sorting</em>.</p>
+    <p>Before a single letter of hidden message can be read, every italic letter on the page must be
+      assigned to one of two founts. Gallup did that by eye, on four-hundred-year-old printing, alone.
+      If the two founts are really there and really distinguishable, then a measurement made on clean
+      images of those letters should find two groups. That is a necessary condition &mdash; it does
+      not prove a message exists, but without it nothing else can follow.</p>
+    <p>Today that test was run properly for the first time in this project: on one letter, with the
+      instrument&rsquo;s sensitivity measured rather than assumed.</p>
+  </div></details>
+
+  <details><summary>Where did Gallup explain how to tell the two founts apart?</summary><div class="body">
+    <p>Essentially nowhere, and this is the day&rsquo;s documentary finding.</p>
+    <p>Her 1901 third edition runs to 463 pages in two sequences &mdash; 95 pages of front matter and
+      368 of decipherment. The whole of the front matter offers <strong>one sentence</strong> of
+      guidance, on page 2, and it names no feature of any letter. She writes that the distinguishing
+      marks in the small letters have been difficult to classify, and that close study is needed to
+      &ldquo;educate the eye to distinguish them.&rdquo;</p>
+    <p>The section that sounds as though it should hold the method &mdash; <em>Bi-literal Cipher Plan
+      and Illustration</em>, page 51 &mdash; turns out to be Bacon&rsquo;s own a/b alphabet table.
+      That tells you how a string of a&rsquo;s and b&rsquo;s becomes a letter. It says nothing about
+      how to decide whether a given piece of printed ink <em>is</em> an a or a b. Those are different
+      problems, and only the second one is hard.</p>
+    <p>The terms <em>a-form</em> and <em>b-form</em> do not appear anywhere in the volume.</p>
+  </div></details>
+
+  <details><summary>Then where does the method come from?</summary><div class="body">
+    <p>From Riverbank, in 1916 &mdash; fifteen years after the results it would govern were published.
+      A short monograph called <em>Hints to the Decipherer</em> gives the only feature-level
+      description that exists, and it names five things, not one:</p>
+    <p>The a-form letters are &ldquo;larger, rounder, more upright, and more robust&rdquo; than the
+      b-forms. And of the long-tailed letters &mdash; which includes <em>b</em> &mdash; the b-form
+      &ldquo;usually slopes more and has longer flourishes.&rdquo;</p>
+    <p>That is a testable specification, and it is the one today&rsquo;s work was measured against.
+      It is worth being plain about the order of events: the results were published first and the
+      method described afterwards, by other people, once Fabyan had staff who needed to be taught to
+      replicate her.</p>
+  </div></details>
+
+  <details><summary>What did you find?</summary><div class="body">
+    <p>In 149 clean images of the letter b, nothing that separates them into two groups.</p>
+    <p>The search was deliberately ignorant &mdash; it was not told what a b is, that two forms are
+      claimed, or what to look for. It looked for whatever split the set best. On a fair test, where
+      the rule is found on half the glyphs and then scored on the other half, it succeeded once in
+      36 attempts. Randomly chosen rules did about as well.</p>
+    <p>What makes that meaningful rather than empty is the calibration. The same search, given a
+      difference that really was there, found it: a 7% difference in size, a 13% difference in tail
+      length, a 6-degree difference in slant. So the absence of a result places a ceiling on how big
+      any real difference could be and still have escaped notice.</p>
+  </div></details>
+
+  <details><summary>Does that prove Gallup was wrong?</summary><div class="body">
+    <p><strong>No.</strong> It is one letter, from 41 pages, under one instrument, and it bounds
+      rather than refutes.</p>
+    <p>Three honest limits. The corpus is small &mdash; 149 letters is enough to catch a 6-degree
+      difference but not a 3-degree one. It is one letter of the alphabet, and Riverbank&rsquo;s
+      rules differ by letter shape. And two of their five characteristics were not tested at all,
+      because the method could not see them.</p>
+    <p>What the day does establish is narrower and firmer: for size, tail length and slant, any real
+      difference between two forms of b in these pages is smaller than the figures above. That is a
+      number where before there was an argument.</p>
+  </div></details>
+
+  <details><summary>What would change your mind?</summary><div class="body">
+    <p>Stated before the result, as always, and unchanged by it:</p>
+    <p>A measurement that splits a large set of one letter into two groups, found on part of the data
+      and still working on part it has never seen &mdash; and surviving the same test when the labels
+      are shuffled. Or, more directly: Gallup&rsquo;s own published assignment for specific glyphs on
+      specific pages, so that a rule can be trained on part of her classification and tested on the
+      rest. If her sorting is reproducible, that test will show it, and it is roughly three times
+      more sensitive than searching blind.</p>
+    <p>Today&rsquo;s negative result is an argument for getting those labels, not against it.</p>
+  </div></details>
+
+  <details><summary>Why only one letter, and why b?</summary><div class="body">
+    <p>Because a mixed bag of letters cannot be tested. Two b&rsquo;s can be compared; a b and an o
+      differ for reasons that have nothing to do with any cipher. Riverbank&rsquo;s own rules are
+      stated per letter shape, which confirms the point.</p>
+    <p><em>b</em> was chosen because it is a long-tailed letter, so Riverbank&rsquo;s most specific
+      rule applies to it; because it has an enclosed bowl, which gives an independent quality check;
+      and because they printed two b exemplars of their own, which could be used to screen the corpus
+      without appealing to anything they claimed about the two forms.</p>
+  </div></details>
+
+  <details><summary>Who is doing this, and why?</summary><div class="body">
+    <p>Walter Wilkinson, in Worland, Wyoming, working with a computer and free scans. There is no
+      institution behind this and no funding.</p>
+    <p>The aim is not to prove or disprove that Bacon wrote Shakespeare. It is to find out whether
+      the specific evidence offered for the biliteral decipherment can carry the weight placed on it
+      &mdash; and to publish the answer in the same terms whichever way it falls. Today it fell
+      against the claim, and it is reported exactly as a positive would have been.</p>
+    <p>More at <a href="https://gorhambury.org/">New Gorhambury</a>, and at
+      <a href="https://gorhambury.org/public/experiments/experiment-one/">Experiment One</a>.
+      Experiment One argues a conclusion; these reports deliberately do not.</p>
+  </div></details>
+
+</section>
+
+<!-- ================= REFERENCE ================= -->
+<section id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+  <h2>External documents</h2>
+  <p>Every source relied on today, with what it is, what you would find there, and what it is doing
+    in this issue. The link comes last on purpose.</p>
+
+  <div class="rec">
+    <div class="kind">Primary &middot; 1901 &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">The Bi-literal Cypher of Sir Francis Bacon Discovered in His Works and Deciphered</div>
+      <div class="m">Elizabeth Wells Gallup &middot; Howard Publishing Company, Detroit &middot; third edition, 1901 &middot; collated 95 + 368 pages &middot; public domain &middot; Internet Archive scan with OCR text layer</div>
+      <div class="d">The full decipherment, and the volume whose front matter was searched today. Part I&rsquo;s table of contents runs from &ldquo;Personal&rdquo; at page 1 to &ldquo;Publisher&rsquo;s Note&rdquo; at page 76; the single sentence of classification guidance is on page 2. The section at page 51 titled <em>Bi-literal Cipher Plan and Illustration</em> is Bacon&rsquo;s own biformed alphabet reproduced from <em>De Augmentis</em>, not a classification method. A full-text search of the volume returns no occurrence of <em>a-form</em> or <em>b-form</em>.</div>
+      <div class="u"><a href="https://archive.org/details/bilateralcyphero00galliala">archive.org/details/bilateralcyphero00galliala</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Primary &middot; 1916 &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Hints to the Decipherer of The Greatest Work of Sir Francis Bacon, Baron of Verulam, Viscount St. Alban</div>
+      <div class="m">Riverbank Laboratories, Geneva, Illinois &middot; 1916 &middot; attributed to George Fabyan &middot; public domain &middot; Internet Archive scan with OCR text layer, about 20,000 characters</div>
+      <div class="d">The only place the sorting method is set out in terms of letter features, and the source of the five characteristics tested today. Its first rule is that a-form letters are &ldquo;larger, rounder, more upright, and more robust&rdquo;; its fourth, which governs b, is that of the long-tailed letters the b-form &ldquo;usually slopes more and has longer flourishes.&rdquo; Its fifth reserves judgment by slope for circular letters such as o and q &mdash; which is why treating slant as <em>the</em> discriminator, as this project did earlier, was reading their own rule too narrowly.</div>
+      <div class="u"><a href="https://archive.org/details/hintstodeciphere00faby">archive.org/details/hintstodeciphere00faby</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Catalog record &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">HathiTrust catalog record for the 1901 third edition</div>
+      <div class="m">HathiTrust Digital Library &middot; record 006559787 &middot; catalog metadata</div>
+      <div class="d">The collation that settles the volume&rsquo;s structure: &ldquo;95, 368 p.&rdquo; &mdash; two separately numbered sequences, not one run of 463 pages. This is what establishes that the front matter is bounded at 95 pages, and therefore that the absence of a method statement inside it is a complete absence rather than an incomplete search.</div>
+      <div class="u"><a href="https://catalog.hathitrust.org/Record/006559787">catalog.hathitrust.org/Record/006559787</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Method &middot; 1974 &middot; cited</div>
+    <div>
+      <div class="t">A Projection Pursuit Algorithm for Exploratory Data Analysis</div>
+      <div class="m">Jerome H. Friedman and John W. Tukey &middot; IEEE Transactions on Computers C-23(9), 1974 &middot; under copyright</div>
+      <div class="d">The technique used today. It takes unlabeled high-dimensional data, searches for the projection that maximizes an &ldquo;interestingness&rdquo; index, and returns that direction &mdash; so the output is the discriminating characteristic itself rather than a bare yes or no. Worth noting to avoid an easy confusion: this is Jerome Friedman the statistician, no relation to William F. Friedman of Riverbank.</div>
+      <div class="u"><a href="https://doi.org/10.1109/T-C.1974.224051">doi.org/10.1109/T-C.1974.224051</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Method &middot; 1985 &middot; cited</div>
+    <div>
+      <div class="t">The Dip Test of Unimodality</div>
+      <div class="m">J. A. Hartigan and P. M. Hartigan &middot; The Annals of Statistics 13(1), 1985 &middot; under copyright &middot; implementation used: the <span class="mono">diptest</span> package, version 0.11.0</div>
+      <div class="d">The index the search maximizes. It asks whether a one-dimensional sample needs more than a single mode to account for it, without assuming any particular distribution. Chosen over kurtosis because it responds to separation rather than to tail weight; kurtosis has not yet been run as a second opinion and should be.</div>
+      <div class="u"><a href="https://doi.org/10.1214/aos/1176346577">doi.org/10.1214/aos/1176346577</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Images &middot; provenance</div>
+    <div>
+      <div class="t">First Folio page images, Bodleian Library copy</div>
+      <div class="m">Bodleian Libraries, University of Oxford &middot; Arch. G c.7 &middot; CC BY &middot; 41 pages used, at the project&rsquo;s standard working resolution</div>
+      <div class="d">Every glyph in today&rsquo;s corpus comes from these scans. The corpus index published with this issue gives the source page for each of the 174 letters by number, so any individual glyph can be traced back to the page it was cut from and checked against the original.</div>
+      <div class="u"><a href="https://digital.bodleian.ox.ac.uk/objects/9fc5fe08-dd8d-4ad6-9fd9-cc8a8b6e5d6f/">digital.bodleian.ox.ac.uk &mdash; First Folio</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Gap &middot; not in hand</div>
+    <div>
+      <div class="t">The Shakespearean Ciphers Examined</div>
+      <div class="m">William F. Friedman and Elizebeth S. Friedman &middot; Cambridge University Press, 1957 &middot; in copyright, not consulted directly</div>
+      <div class="d">The standard scholarly treatment, by two cryptanalysts who trained at Riverbank under Fabyan in the same rooms as Gallup. It is cited here from secondary description only &mdash; the book has not been read for this project and no claim in this issue rests on it. It is recorded as a gap rather than passed over, and obtaining a copy is the single most useful piece of reading outstanding.</div>
+      <div class="u"><a href="https://www.cambridge.org/us/universitypress/subjects/literature/renaissance-and-early-modern-literature/shakespearean-ciphers-examined-analysis-cryptographic-systems-used-evidence-some-author-other-william-shakespeare-wrote-plays-commonly-attributed-him">cambridge.org &mdash; publisher page</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Gap &middot; not in hand</div>
+    <div>
+      <div class="t">Communication Theory of Secrecy Systems</div>
+      <div class="m">Claude E. Shannon &middot; Bell System Technical Journal 28(4), 1949 &middot; in copyright</div>
+      <div class="d">The source of the unicity-distance idea referred to in the project&rsquo;s framing note &mdash; the amount of text beyond which only one decipherment survives. Cited from general knowledge rather than from the paper in hand. No numerical claim in this issue depends on it.</div>
+      <div class="u"><a href="https://doi.org/10.1002/j.1538-7305.1949.tb00928.x">doi.org/10.1002/j.1538-7305.1949.tb00928.x</a></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= COLOPHON ================= -->
+<section id="p3" role="tabpanel" aria-labelledby="t3" hidden>
+  <h2>Technical colophon</h2>
+  <p>Prior know-how is assumed, and the items become more &ldquo;technical&rdquo; toward the bottom.</p>
+
+  <p>This issue was <strong>produced on 11 October 2026</strong>. It is image work, not text work:
+    174 glyphs were cut from 41 Folio pages, screened, and put to a blind separator-finder whose
+    sensitivity was measured rather than assumed. Every figure below can be recomputed from the
+    corpus and scripts published with the issue.</p>
+
+  <h3>&#9873; Where the volume actually says anything</h3>
+  <p>Gallup 1901 is catalogued &ldquo;95, 368 p.&rdquo; &mdash; two sequences. Part I&rsquo;s
+    contents, in full: Personal 1, Explanatory Introduction 5, Preface to the Second Edition 15,
+    Argument 18, Notes on the Shakespeare Plays 28, Stenography 35, Francis Bacon Biographical 39,
+    Ciphers 46, Cyphars in Advancement of Learning 49, Cyphars in De Augmentis 50, Bi-literal Cipher
+    Plan and Illustration 51, facsimiles 55&ndash;72, Method of Cipher in Novum Organum 73,
+    Publisher&rsquo;s Note 76, Quarto title pages 85. The classification statement is on page 2, in
+    the &ldquo;Personal&rdquo; section, and reads in part that the distinguishing features in the
+    small letters &ldquo;have been more difficult to classify&rdquo; and that study was required to
+    &ldquo;educate the eye to distinguish them.&rdquo; No feature is named anywhere in Part I.</p>
+
+  <h3>&#9873; Riverbank&rsquo;s five, as measurements</h3>
+  <pre>larger      ->  overall size of the letter
+rounder     ->  curvature of the bowl
+more upright->  slant
+more robust ->  stroke weight
+longer tail ->  length of the flourish</pre>
+  <p>Taken from <em>Hints</em> pp. 9&ndash;10. All five were planted and tested; the project&rsquo;s
+    earlier focus on slant alone followed from reading rule 5, which is explicitly about circular
+    letters, as though it governed every letter.</p>
+
+  <h3>&#9873; The corpus</h3>
+  <p>Tesseract 5.3.4 at <span class="mono">--psm 6</span> supplies word and character boxes; letter
+    identities come from the project&rsquo;s own transcription, never from Tesseract&rsquo;s reading.
+    A word is accepted only where its box count equals the known spelling length. That yielded 183
+    candidate b from 42 pages. Binarization is Niblack k=&minus;0.25, window 35, chosen by
+    calibration: every crop is known to be a b and a b has one counter, so the right threshold is
+    the one leaving a single counter open on the largest share. Measured over 183 &mdash; Niblack
+    82.0%, Otsu 74.9%, Sauvola k=0.12 62.8%.</p>
+  <p>The transcription records 203 lower-case b in all 431 wholly-italic lines on these pages, so the
+    extraction took 183 of 203 available &mdash; 90%. That number ended a separate line of work; see
+    failures below.</p>
+
+  <h3>&#9873; Two screens, cross-tabulated</h3>
+  <p>Each glyph is scored against Riverbank&rsquo;s own a-form and b-form b from <em>Keys</em> p. 39,
+    kept on the better of the two and <strong>never on the difference</strong> &mdash; filtering on
+    the difference would pre-select a corpus shaped like their claim. Independently, a geometry
+    screen tests proportion and the enclosed white of the counter.</p>
+  <pre>                    geometry keeps   geometry rejects   total
+Riverbank keeps          151               25             176
+Riverbank rejects          2                5               7
+total                    153               30             183</pre>
+  <p>They fail in opposite directions: heavy inking closes the bowl and defeats the counter test,
+    light inking defeats the overlap test. The median gap between the two Riverbank exemplars&rsquo;
+    scores is 0.016, so whole-glyph overlap carries almost no form information &mdash; which is
+    exactly what makes it safe as an &ldquo;is this a b&rdquo; gate.</p>
+  <p>A third screen rejects glyphs carrying ink that is not part of the letter: in a sound b the top
+    half of the bounding box holds 31&ndash;44% of the ink, and requiring no more than 46% flags
+    exactly four, each with a stroke from the line above welded to it. Final corpus 174, with a
+    149-glyph core whose bowls are all measurable.</p>
+
+  <h3>&#9873; The separation test</h3>
+  <p>Glyphs are registered to a 56&times;34 frame by height, centered on the ink centroid, lightly
+    blurred, reduced by SVD to 18&ndash;24 components. Projection pursuit then hill-climbs a unit
+    direction to maximize Hartigan&rsquo;s dip, with 70&ndash;220 random restarts.</p>
+  <p>The discipline is the whole of it: <strong>fit on half the glyphs, score on the other half.</strong>
+    Any search over enough directions finds a bimodal one in noise, so the winner&rsquo;s own score
+    is not evidence. A direction describing a real property still separates glyphs it was not fitted
+    to; one that fitted noise does not. The held-out score is compared against 150&ndash;200 randomly
+    chosen directions scored identically.</p>
+  <pre>real corpus, nothing planted
+  12 splits   detected 0   held-out dip 0.0294
+  24 splits   detected 1   held-out dip 0.0310
+  randomly chosen directions beat it in 62% of draws</pre>
+
+  <h3>&#9873; What the instrument can see</h3>
+  <p>Each characteristic planted into a random half of the real glyphs at known magnitude, the search
+    never told which or whether. Detections out of 8 independent splits:</p>
+  <pre>size        14%  8/8     10%  8/8      7%  6/8      4%  1/8
+flourish    30%  8/8     20%  7/8     13%  6/8      8%  0/8
+slant        8d  8/8      6d  7/8    4.5d  1/8
+weight      60%  2/8
+roundness   55%  1/8</pre>
+  <p>So for three of the five, the corpus bounds any real difference below 7% in size, 13% in tail
+    length and 6 degrees of slant.</p>
+
+  <h3>&#9873; The blind spot, and why it is a representation fault</h3>
+  <p>Weight and roundness do not register at any magnitude tried. A 60% change in stroke mass &mdash;
+    far past anything that could pass unnoticed on a page &mdash; is detected twice in eight splits,
+    barely above the one-in-twenty a wrong answer earns by chance.</p>
+  <p>The cause is in the pipeline, not the Folio. Registering to a common height normalizes size and
+    weight information away before the search begins, and no <em>linear</em> projection over pixel
+    values can express curvature. To test &ldquo;more robust,&rdquo; ink mass must be carried as an
+    absolute per-glyph quantity alongside the printing density of its source page, not normalized
+    out. To test &ldquo;rounder,&rdquo; the measurement has to be on the traced contour &mdash;
+    curvature along the outline, or the counter&rsquo;s deviation from a fitted ellipse. Neither is
+    a matter of more glyphs.</p>
+
+  <h3>&#9873; Filters proposed and rejected, with the measurements</h3>
+  <p><strong>Ink weight relative to the Riverbank mean.</strong> Proposed as a way to drop spills and
+    smears. The 24 heaviest glyphs turned out to be clean, well-formed b&rsquo;s that were simply
+    printed heavily; the measure runs 0.75 to 2.39 with no gap, and the Folio median sits 22% above
+    Riverbank &mdash; a fact about two printings. Rejected, and doubly so: relative darkness is one
+    of the characteristics under test, so screening on it would prejudge the question.</p>
+  <p><strong>A maximum on the counter.</strong> Among glyphs that have a counter the measure is
+    bunched between 9.7% and 12.2% of the bounding box, with no upper tail, and the 16 largest
+    counters belong to the sharpest-printed letters in the set. A ceiling would discard the best
+    evidence first. The real residue is a <em>minimum</em>: 16 glyphs have no measurable bowl.</p>
+  <p><strong>Dilating the Riverbank masks.</strong> Tried at &plusmn;1, 2 and 3 pixels, on the
+    template alone and on both sides. After the contour fix every variant returns identical recall,
+    151/153; only the scale moves, the median rising from 0.69 to 0.85 with the gate rising to match.
+    Inert, and abandoned.</p>
+  <p><strong>Re-attaching broken strokes on row overlap.</strong> Worse than the rule it replaced
+    &mdash; it pulls in the neighboring letter. Rejected on sight of the comparison figure.</p>
+
+  <h3>&#9873; Three things this project had wrong</h3>
+  <p><strong>The contour rule.</strong> The binarizer kept the largest blob of ink and re-attached
+    any fragment overlapping its <em>columns</em>. Italic letters always overlap in x, so the test
+    admitted descender tails from the line above and specks below the baseline. Keeping one component
+    and nothing else cleans seven of the nine affected glyphs; the two it damages are caught
+    downstream. Two crops previously counted as merged pairs proved not to be merges at all.</p>
+  <p><strong>The template threshold.</strong> Set at 0.50 by eye. The merged pairs score at most
+    0.325, so the gate belongs at 0.35 &mdash; a measured value. The old setting was discarding real
+    letters for nothing.</p>
+  <p><strong>Dropping the Riverbank screen entirely.</strong> It was briefly removed on the grounds
+    that the two exemplars score within 0.016 of each other and so carry no form information. That
+    reasoning was backwards: the near-identical scores are precisely what make the mask form-neutral
+    and therefore safe. It was restored, and it catches every merged pair on its own.</p>
+
+  <h3>&#9873; A correction to this project&rsquo;s earlier framing</h3>
+  <p>Earlier work here treated the pitch or slant angle as the discriminator to test, and reported a
+    battery of eleven hand-designed measurements as though they covered the claim. Reading <em>Hints</em>
+    directly shows that slope is Riverbank&rsquo;s rule for <em>circular</em> letters; for a
+    long-tailed letter such as b their rule names slope <em>and</em> flourish length, and their
+    general rule names size, roundness and weight besides. The earlier framing tested roughly one
+    fifth of what was claimed. Today&rsquo;s battery is the correction.</p>
+
+  <h3>&#9873; Failures and dead ends</h3>
+  <pre>line segmentation, attempted twice, abandoned
+  threshold on full image width  -> 18 lines where 59 exist, one band 427px tall
+  threshold on block ink         -> 41 lines where 29 exist
+  resolved by not segmenting lines at all: the alignment files
+  already record every line position, and strips render at
+  exactly 4.00x the alignment frame
+
+psm 7 on pre-cut lines, tested and abandoned
+  line coverage   56% -> 94%     a real improvement
+  b extracted     183 -> 70      a much larger loss
+  the ceiling measurement ended it: only 203 b exist in these
+  lines, so the old whole-page pass was already taking 90% of
+  everything available. nothing left to win.
+
+glyph cutting, two rules discarded before the present one
+  x-overlap merge   glued adjacent letters together
+  column minima     cut through letters
+
+archive.org refused direct fetch from both shells and from the
+  full-text API; worked around via the browser extension</pre>
+
+  <h3>&#9873; Environment</h3>
+  <p>Tesseract 5.3.4. Python with NumPy, SciPy, scikit-image, Pillow;
+    <span class="mono">diptest</span> 0.11.0 for Hartigan&rsquo;s dip. Chromium via Playwright for
+    PDF rendering. Folio page images from the Bodleian scans held in the project archive. Corpus,
+    screening criteria, the planted-characteristic battery and every script named above are published
+    with this issue, so each figure can be recomputed rather than taken on trust.</p>
+
+  <h3>&#9873; Publication</h3>
+  <p>GitHub Pages from the repository root, no build step, no framework, no analytics, no trackers
+    and no cookies. The custom domain <strong>baconian-ciphers.online</strong> resolves through four
+    A records at the apex to GitHub&rsquo;s addresses, with <span class="mono">www</span> a CNAME to
+    the Pages host; TLS is issued automatically by Let&rsquo;s Encrypt and HTTPS is enforced. All
+    internal links are relative, so a change of domain touches one file. Total infrastructure cost is
+    about a dollar a year &mdash; chosen deliberately, so that nothing here depends on a service that
+    can withdraw it. Issues are superseded, never deleted: a link sent today will resolve next year.</p>
+
+</section>
+
+</main>
+
+<footer class="wrap">
+  One-Day Report · Biliteral Cipher · 11 October 2026<br>
+  Walter Wilkinson · Worland · Washakie County · Wyoming · <strong>5Ws</strong><br>
+  Folio images © Bodleian Libraries, University of Oxford, CC BY. Riverbank publications public domain.<br>
+  &copy; 2026 Walter Wilkinson &middot; code MIT &middot; words reserved
+</footer>
+
+<div class="endmark" aria-hidden="true">·</div>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(o){
+        var p=document.getElementById(o.getAttribute('aria-controls'));
+        var on=(o===t);
+        o.setAttribute('aria-selected',on?'true':'false');
+        p.hidden=!on;
+      });
+      window.scrollTo({top:0,behavior:'instant'});
+    });
+  });
+  document.getElementById('pdf').addEventListener('click',function(){window.print();});
+  var th=document.getElementById('theme');
+  th.addEventListener('click',function(){
+    var r=document.documentElement;
+    var dark=r.getAttribute('data-theme')==='dark';
+    if(!dark && !r.hasAttribute('data-theme')){
+      dark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    r.setAttribute('data-theme',dark?'light':'dark');
+    th.textContent=dark?'Dark':'Light';
+  });
+})();
+</script>
+<script src="../phone-view.js" defer></script>
+</body>
+</html>
