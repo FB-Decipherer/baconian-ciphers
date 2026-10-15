@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One-Day Report · Biliteral Cipher · October 12, 2026</title>
+<meta name="description" content="Three claims this project published about Bacon's Book VI do not hold on priority. Polybius, Trithemius and Pingala got there first; what has no precedent is the union of the three.">
+<link rel="canonical" href="https://baconian-ciphers.online/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#FCFAF5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15130F" media="(prefers-color-scheme: dark)">
+
+<!-- Social preview. og:image must be an ABSOLUTE url, so this only resolves
+     once baconian-ciphers.online is live; before that the card shows text only.
+     This site's address is written in by "2 - NEW SITE.command" when the site is stood up. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Baconian Ciphers">
+<meta property="og:url" content="https://baconian-ciphers.online/">
+<meta property="og:title" content="One-Day Report · Biliteral Cipher · October 12, 2026">
+<meta property="og:description" content="Three claims this project published about Bacon's Book VI do not hold on priority. Polybius, Trithemius and Pingala got there first; what has no precedent is the union of the three.">
+<meta property="og:image" content="https://baconian-ciphers.online/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A timeline of priority from Polybius to Leibniz, with Bacon marked at 1623.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="One-Day Report · Biliteral Cipher · October 12, 2026">
+<meta name="twitter:description" content="Three claims this project published about Bacon's Book VI do not hold on priority. Polybius, Trithemius and Pingala got there first; what has no precedent is the union of the three.">
+<meta name="twitter:image" content="https://baconian-ciphers.online/social.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<noscript><style>
+/* No JavaScript: nothing can switch columns, so every column still switched on
+   shows, undimmed, on every screen. The three display checkboxes below the
+   threshold go on working here -- they are CSS, not script. */
+.col{opacity:1!important}
+@media (max-width:1100px){.col{display:block!important}}
+</style></noscript>
+<style>
+:root{
+  --paper:#FCFAF5; --card:#F5F1E8; --ink:#1E1B16; --ink-mid:#4A443A;
+  --rule:#DCD5C6; --accent:#4C7A4E; --accentb:#B4372C; --gold:#8A6A15;
+  --dead:#8A8177;
+}
+:root[data-theme="dark"]{
+  --paper:#15130F; --card:#1E1B16; --ink:#F2EDE3; --ink-mid:#B7AF9F;
+  --rule:#38332A; --accent:#7FA981; --accentb:#D2695C; --gold:#D9B45C;
+  --dead:#6B655B;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.62;}
+.wrap{max-width:1560px;margin:0 auto;padding:0 26px;}
+a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule);}
+a:hover{border-bottom-color:var(--accent);}
+
+/* ---------- header ---------- */
+header{padding:38px 0 4px;}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mid);
+  display:flex;align-items:center;gap:.4em;}
+.eyebrow .sep{opacity:.55;font-family:"Source Serif 4",serif;font-size:1.5em;line-height:0;}
+.mark{width:22px;height:22px;flex:none;}
+h1{font-size:clamp(30px,4.4vw,48px);line-height:1.12;font-weight:600;margin:14px 0 0;
+  letter-spacing:-.012em;}
+h1 .sep{color:var(--accent);font-weight:400;padding:0 .18em;}
+h1 .seg{display:inline-block;}
+.claimlabel{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:#2E5A33;margin-top:20px;}
+:root[data-theme="dark"] .claimlabel{color:#8FBE91;}
+.standfirst{font-size:20px;line-height:1.5;color:var(--ink-mid);margin:8px 0 0;max-width:62ch;}
+.standfirst strong{display:inline-block;margin-top:10px;font-weight:600;color:var(--ink);}
+.asof{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-mid);
+  border:1px solid var(--rule);border-radius:999px;padding:5px 13px;display:inline-block;margin-top:20px;}
+
+/* ---------- nav ---------- */
+nav{display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  margin-top:26px;padding:11px 0;position:sticky;top:0;background:var(--paper);z-index:20;}
+button{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.06em;
+  background:none;border:1px solid var(--rule);color:var(--ink-mid);
+  padding:8px 15px;border-radius:6px;cursor:pointer;}
+button:hover{border-color:var(--accent);color:var(--ink);}
+button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+button .key{color:var(--gold);font-weight:500;margin-right:.55em;}
+button[aria-selected="true"] .key{color:var(--gold);}
+nav .spacer{flex:1;}
+.util{font-size:11.5px;padding:7px 12px;}
+
+/* ---------- the three columns ---------- */
+main{display:grid;gap:0 34px;padding:30px 0 10px;
+  grid-template-columns:1fr minmax(280px,.82fr) 1fr;}
+.col{min-width:0;}
+.col + .col{border-left:1px solid var(--rule);padding-left:34px;}
+.colhead{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-mid);padding-bottom:9px;
+  border-bottom:2px solid var(--ink);margin-bottom:20px;
+  position:sticky;top:52px;background:var(--paper);}
+.colhead b{color:var(--gold);font-weight:700;
+  display:inline-block;border:1px solid var(--rule);border-radius:6px;
+  padding:2px 7px;margin-right:.5em;line-height:1.25;}
+.col.dim{opacity:.42;}
+.col{transition:opacity .15s;}
+.col.dim:hover{opacity:.62;}
+@media (prefers-reduced-motion:reduce){.col{transition:none;}}
+h2{font-size:22px;font-weight:600;margin:30px 0 6px;letter-spacing:-.006em;}
+h2:first-of-type{margin-top:0;}
+h3{font-size:15.5px;font-weight:600;margin:24px 0 4px;
+  font-family:"IBM Plex Mono",monospace;letter-spacing:.02em;color:var(--accent);}
+p{margin:9px 0 0;}
+.lede{font-size:18px;color:var(--ink-mid);}
+ul,ol{margin:9px 0 0;padding-left:20px;}
+li{margin:5px 0;}
+.mono{font-family:"IBM Plex Mono",monospace;font-size:.9em;}
+pre{font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.5;
+  background:var(--card);border:1px solid var(--rule);border-radius:7px;
+  padding:13px 15px;overflow-x:auto;margin:12px 0 0;}
+.note{margin-top:18px;padding:14px 16px;background:var(--card);
+  border-left:3px solid var(--accent);border-radius:0 7px 7px 0;}
+
+details{border-top:1px solid var(--rule);}
+details:last-of-type{border-bottom:1px solid var(--rule);}
+summary{cursor:pointer;padding:12px 0;font-weight:600;list-style:none;
+  display:flex;gap:.6em;align-items:baseline;}
+summary::-webkit-details-marker{display:none;}
+summary::before{content:"+";font-family:"IBM Plex Mono",monospace;color:var(--accent);flex:none;}
+details[open] summary::before{content:"−";}
+details .body{padding:0 0 14px 1.5em;}
+
+/* footnote markers */
+/* reference numerals, in the text and on the cards alike: a white disc with a thin rule-colored
+   border. The numeral keeps the light-theme red in both themes, because the disc stays white. */
+.fn{font-family:"IBM Plex Mono",monospace;font-size:.66em;font-weight:500;line-height:1;
+  color:#B4372C;cursor:pointer;vertical-align:.42em;
+  display:inline-flex;align-items:center;justify-content:center;
+  width:1.8em;height:1.8em;padding:0;margin:0 .08em;
+  background:#FFFFFF;border:1px solid var(--rule);border-radius:999px;}
+.fn:hover{border-color:var(--accentb);}
+
+/* ---------- reference blocks (column B) ---------- */
+.ref{border:1px solid var(--rule);border-radius:9px;padding:15px 16px;margin-bottom:15px;
+  background:var(--card);scroll-margin-top:100px;}
+.ref.flash{border-color:var(--accentb);box-shadow:0 0 0 3px rgba(180,55,44,.14);}
+.rnum{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;line-height:1;
+  color:#B4372C;vertical-align:middle;
+  display:inline-flex;align-items:center;justify-content:center;
+  width:22px;height:22px;padding:0;
+  background:#FFFFFF;border:1px solid var(--rule);border-radius:999px;}
+.rkind{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-mid);display:inline;margin-left:.7em;}
+.rtitle{font-size:17px;font-weight:600;margin-top:7px;line-height:1.3;}
+.rmeta{font-size:13.5px;color:var(--ink-mid);margin-top:4px;font-style:italic;}
+.rprev{font-size:14.5px;margin-top:9px;}
+.rwhy{font-size:14.5px;margin-top:7px;color:var(--ink-mid);}
+.rwhy b{color:var(--ink);font-weight:600;}
+.rlink{display:block;margin-top:12px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;
+  padding:8px 11px;border:1px solid var(--rule);border-radius:6px;
+  background:var(--paper);word-break:break-all;border-bottom:1px solid var(--rule);}
+.rlink:hover{border-color:var(--accent);}
+.rlink::before{content:"→ ";color:var(--accent);}
+.rlink.broken{color:var(--dead);border-style:dashed;cursor:not-allowed;
+  text-decoration:line-through;pointer-events:none;}
+.rlink.broken::before{content:"× ";color:var(--dead);}
+#deadnote{margin-top:22px;padding:13px 15px;border:1px dashed var(--rule);border-radius:7px;
+  font-size:14px;color:var(--ink-mid);}
+
+/* ---- Column B links block: Internal links (most recent content change), then External links.
+        Same headings and captions on every Three Columns site, so a reader knows where to look. ---- */
+.colbsh{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-mid);margin:26px 0 0;}
+.colbsh:first-of-type{margin-top:18px;}
+.colbcap{font-size:15.5px;color:var(--ink-mid);margin:4px 0 12px;}
+.bcard{display:block;text-decoration:none;color:inherit;background:var(--card);
+  border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:9px;
+  padding:13px 15px;margin-bottom:15px;}
+.bcard:hover{border-color:var(--accent);}
+.bcard:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+.bcard .t{display:block;font-weight:600;font-size:16px;line-height:1.3;}
+.bcard .d{display:block;font-size:14.5px;color:var(--ink-mid);margin-top:6px;}
+details[id],h2[id]{scroll-margin-top:100px;}
+details.flash > summary{color:var(--accentb);}
+h2.flash{color:var(--accentb);}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  background:var(--card);padding:28px 26px 32px;margin-top:54px;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:1.9;color:var(--ink-mid);
+  text-align:center;}
+footer strong{color:var(--ink);letter-spacing:.04em;}
+.endmark{text-align:center;padding:26px 0 58px;color:var(--ink-mid);}
+/* one level up: the last thing on the page, a card naming the site one level above this one */
+/* a <nav>, so undo the page's own nav bar rules (sticky, flex, rules above and below) */
+.uplevel{display:block;position:static;border:0;background:none;z-index:auto;
+  max-width:62rem;margin:26px auto 0;padding:0 16px;text-align:center;}
+.uplevel a{display:inline-block;max-width:34rem;background:var(--card);border:1px solid var(--rule);
+  border-radius:8px;padding:12px 18px;color:inherit;text-decoration:none;}
+.uplevel a:hover{border-color:var(--accent);}
+.uplevel .uplabel{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mid);}
+.uplevel .upname{display:block;font-weight:600;font-size:16px;margin-top:5px;
+  text-decoration:underline;text-underline-offset:3px;}
+.uplevel a:hover .upname{color:var(--accent);}
+.uplevel .upcap{display:block;font-size:14px;color:var(--ink-mid);line-height:1.4;margin-top:3px;}
+@media print{.uplevel{display:none;}}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  main{grid-template-columns:1fr;gap:0;}
+  .col + .col{border-left:0;padding-left:0;border-top:1px solid var(--rule);
+    margin-top:34px;padding-top:26px;}
+  .col{display:none;}
+  .col.active{display:block;}
+  .col.dim{opacity:1;}
+  .colhead{position:static;}
+}
+@media print{
+  nav,.endmark{display:none;}
+  .col{display:block!important;opacity:1!important;}
+  main{grid-template-columns:1fr;}
+  .col + .col{border-left:0;padding-left:0;page-break-before:always;}
+  details{border:0;} details .body{display:block!important;padding-left:0;}
+  summary::before{content:"";}
+  body{background:#fff;color:#000;font-size:11pt;}
+}
+
+/* ---- masthead picture: the slot every instance inherits. The picture sits in a <figure> so it
+        can carry a caption, set at 22 px like every caption in the format. ---- */
+header{display:flex; gap:1.6rem; align-items:flex-start; flex-wrap:wrap}
+.masthead-text{flex:1 1 24rem; min-width:0}
+.masthead-fig{flex:0 0 auto; width:clamp(15rem,27vw,22rem); margin:0; align-self:center}
+.masthead-fig figcaption{font-size:22px; line-height:1.3; color:var(--ink-mid);
+  margin-top:.55rem; text-align:center; text-wrap:balance}
+a.masthead-img{display:block; width:100%; line-height:0;
+  border:1px solid var(--rule); border-radius:.5rem; overflow:hidden}
+a.masthead-img img{width:100%; height:auto; display:block}
+a.masthead-img:hover{outline:2px solid var(--accent); outline-offset:3px}
+a.masthead-img:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+@media (max-width:640px){.masthead-fig{width:100%; margin-top:.4rem}}
+@media print{.masthead-fig{display:none !important} header{display:block}}
+
+/* ---- a drawing inside a column: a <figure> with its caption at 22 px, like every caption in the
+        format. Its colors are the page's own, so it follows dark mode and prints in black. ---- */
+.chart-fig{margin:20px 0 4px; max-width:440px}
+.chart-fig svg{display:block; width:100%; height:auto}
+.chart-fig figcaption{font-size:22px; line-height:1.3; color:var(--ink-mid); margin-top:.6rem; text-wrap:balance}
+.tm-e{fill:none; stroke:var(--accent); stroke-width:1; stroke-linecap:round}
+.tm-n{fill:var(--ink)}
+.tm-b{fill:var(--accent); pointer-events:none}
+.tm-g{stroke:var(--rule); stroke-width:1}
+.tm-t{fill:var(--ink-mid); font-family:"Source Serif 4",Georgia,serif; font-size:13px; pointer-events:none}
+.tm-v,.tm-h{fill:var(--ink); font-weight:600}
+.tm-h{font-size:13.5px}
+.tm-k{font-variant-numeric:tabular-nums}
+.tm-hit{fill:transparent}
+@media (hover:hover){.tm-hit:hover{fill:var(--card)}}
+@media print{.tm-t,.tm-v,.tm-h,.tm-n{fill:#000} .tm-hit{fill:none}}
+/* ---- search: one box in the navigation bar, and the page is its own index (search.js) ---- */
+.searchwrap{position:relative; flex:1 1 200px; min-width:160px; max-width:330px;}
+.searchwrap input{width:100%; font-family:"IBM Plex Mono",monospace; font-size:12.5px;
+  letter-spacing:.04em; color:var(--ink); background:var(--card);
+  border:1px solid var(--rule); border-radius:6px; padding:8px 11px;}
+.searchwrap input::placeholder{color:var(--ink-mid); opacity:.85}
+.searchwrap input:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+.sr-out{position:absolute; top:calc(100% + 6px); left:0; width:min(430px,92vw); z-index:30;
+  background:var(--paper); border:1px solid var(--rule); border-radius:8px;
+  max-height:min(60vh,420px); overflow-y:auto; padding:4px;}
+.sr-out a{display:block; padding:9px 11px; border-radius:6px; text-decoration:none; color:var(--ink);}
+.sr-out a:hover{background:var(--card)}
+.sr-out a + a{border-top:1px solid var(--rule)}
+.sr-k{display:inline-block; font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--gold);
+  border:1px solid var(--rule); border-radius:4px; padding:0 5px; margin-right:.5em; vertical-align:.08em}
+.sr-t{font-weight:600; font-size:15px}
+.sr-x{display:block; font-size:13.5px; color:var(--ink-mid); line-height:1.45; margin-top:3px}
+.sr-out mark{background:none; color:var(--accentb); font-weight:600}
+.sr-none{margin:8px 11px; color:var(--ink-mid); font-size:14px}
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0 0 0 0); white-space:nowrap; border:0}
+@media (max-width:640px){.searchwrap{flex:1 1 100%; max-width:none; order:5}}
+@media print{.searchwrap{display:none !important}}
+
+/* ===================== 3Col standard block =====================
+   The threshold, and the three display checkboxes below it. The checkboxes
+   decide whether a column is on the page at all; the A/B/C tabs above keep
+   deciding which one has focus. A column that is switched off leaves the grid
+   and the tab strip together. No JavaScript is needed for any of that. */
+.threshold{margin:34px 0 26px; text-align:center}
+.threshold .bar{position:relative; height:5px;
+  border-top:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); opacity:.85}
+.threshold .mark{position:absolute; left:50%; top:50%;
+  transform:translate(-50%,-50%); background:var(--paper);
+  padding:0 13px; display:flex; align-items:center; line-height:0}
+.threshold .mark svg{width:22px; height:22px; flex:none;}
+.threshold .mark{width:max-content;}  /* the mark is absolutely positioned, so it cannot size itself from the icon:
+     without this its box is the padding alone and the icon overflows to one side,
+     leaving the gap centered on the rule but the icon not centered in the gap. */  /* explicit, or the page's own svg rules can shrink it to nothing in the flex row */
+.threshold .cap{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  font-size:11px; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--ink-mid); margin:15px auto 0; max-width:30rem; line-height:1.5}
+
+.expand{margin:0 0 6px}
+.ckin{position:absolute; width:1px; height:1px; opacity:0; overflow:hidden; white-space:nowrap}
+.moreinfo{border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+  padding:16px 0 18px;}
+.micap{font-size:22px; line-height:1.25; text-align:center; color:var(--ink-mid);
+  margin:0 0 4px; text-wrap:balance;}
+.misub{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--ink-mid); text-align:center; margin:0 0 14px; opacity:.8;}
+.mibtns{display:grid; grid-template-columns:repeat(3,1fr); gap:9px;}
+.ckbtn{display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+  gap:7px; min-height:62px; padding:11px 6px; border:1px solid var(--rule); border-radius:9px;
+  background:var(--card); color:var(--ink-mid); cursor:pointer; text-align:center;
+  font-family:"IBM Plex Mono",monospace; font-size:12px; line-height:1.25; letter-spacing:.02em;
+  -webkit-tap-highlight-color:transparent;}
+.ckbtn .box{flex:none; width:19px; height:19px; border:1.5px solid var(--rule); border-radius:4px;
+  background:var(--paper); position:relative;}
+.ckbtn .box::after{content:"\2713"; position:absolute; inset:0; display:flex;
+  align-items:center; justify-content:center; font-size:13px; line-height:1;
+  color:var(--paper); opacity:0;}
+.ckbtn:hover{border-color:var(--accent); color:var(--ink);}
+#ck-a:checked ~ .moreinfo label[for="ck-a"],
+#ck-b:checked ~ .moreinfo label[for="ck-b"],
+#ck-c:checked ~ .moreinfo label[for="ck-c"]{border-color:var(--accent); color:var(--ink);}
+#ck-a:checked ~ .moreinfo label[for="ck-a"] .box,
+#ck-b:checked ~ .moreinfo label[for="ck-b"] .box,
+#ck-c:checked ~ .moreinfo label[for="ck-c"] .box{background:var(--accent); border-color:var(--accent);}
+#ck-a:checked ~ .moreinfo label[for="ck-a"] .box::after,
+#ck-b:checked ~ .moreinfo label[for="ck-b"] .box::after,
+#ck-c:checked ~ .moreinfo label[for="ck-c"] .box::after{opacity:1;}
+#ck-a:focus-visible ~ .moreinfo label[for="ck-a"],
+#ck-b:focus-visible ~ .moreinfo label[for="ck-b"],
+#ck-c:focus-visible ~ .moreinfo label[for="ck-c"]{outline:2px solid var(--accent); outline-offset:3px;}
+.mireset{margin:13px 0 0; text-align:center;}
+.mireset button{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--ink-mid); background:none; border:0;
+  border-bottom:1px solid var(--rule); padding:3px 0; cursor:pointer;}
+.mireset button:hover{color:var(--ink); border-bottom-color:var(--accent);}
+.mireset[hidden]{display:none;}
+
+/* A column and its tab go together. !important because the no-script stylesheet
+   forces columns visible to defeat the tab strip, and these checkboxes are CSS,
+   so they have to keep working when there is no script to defeat. */
+body:has(#ck-a:not(:checked)) #cA, body:has(#ck-a:not(:checked)) #tA,
+body:has(#ck-b:not(:checked)) #cB, body:has(#ck-b:not(:checked)) #tB,
+body:has(#ck-c:not(:checked)) #cC, body:has(#ck-c:not(:checked)) #tC{display:none!important;}
+/* A footnote or an internal card re-opens a column that was switched off. This
+   carries one more :has() than the rule above, so it outranks it on specificity
+   rather than on source order. */
+body:has(#ck-a:not(:checked)) #cA:has(:target),
+body:has(#ck-b:not(:checked)) #cB:has(:target),
+body:has(#ck-c:not(:checked)) #cC:has(:target){display:block!important;}
+
+@media (min-width:1101px){
+  /* the grid closes up around whatever is left, and the leftmost column
+     never keeps the divider that belonged to the one before it */
+  body:has(#ck-a:not(:checked)) main{grid-template-columns:minmax(280px,.82fr) 1fr;}
+  body:has(#ck-b:not(:checked)) main{grid-template-columns:1fr 1fr;}
+  body:has(#ck-c:not(:checked)) main{grid-template-columns:1fr minmax(280px,.82fr);}
+  body:has(#ck-a:not(:checked)):has(#ck-b:not(:checked)) main,
+  body:has(#ck-a:not(:checked)):has(#ck-c:not(:checked)) main,
+  body:has(#ck-b:not(:checked)):has(#ck-c:not(:checked)) main{grid-template-columns:1fr;}
+  body:has(#ck-a:not(:checked)) #cB{border-left:0; padding-left:0;}
+  body:has(#ck-a:not(:checked)):has(#ck-b:not(:checked)) #cC{border-left:0; padding-left:0;}
+}
+@media print{
+  .moreinfo,.mireset{display:none;}
+  .threshold .bar{border-color:#000; opacity:1}
+  .threshold .mark{background:#fff}
+  .threshold .cap{color:#333}
+  /* everything prints, whatever the reader switched off on screen */
+  #cA,#cB,#cC{display:block!important;}
+}
+/* ===== the column code =====================================================
+   Green A, yellow B, red C. A traffic signal: public at the top, technical at
+   the bottom. It rides on the spine down the left of each column, on the rule
+   under each column heading, on the A/B/C badge, on the same letters in the tab
+   strip, and on the tick in each More Info box. The buttons themselves stay
+   neutral -- the tick is the signal, not the outline. Body text stays black,
+   and every column keeps its letter and its heading, so nothing here depends on
+   color alone. */
+:root{--col-a:#4C7A4E; --col-b:#D8AC45; --col-c:#B4372C;}
+:root[data-theme="dark"]{--col-a:#59925d; --col-b:#D9B45C; --col-c:#d66055;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --col-a:#59925d; --col-b:#D9B45C; --col-c:#d66055;}}
+
+/* the spine: each column's own left edge, in its own color */
+#cA,#cB,#cC{border-left-style:solid; border-left-width:2px; padding-left:30px;}
+#cA{border-left-color:var(--col-a);}
+/* inside a column, anything that was accent-colored takes that column's color:
+   the source cards, the + before an answer, the arrow before a link, hovers, focus rings. */
+#cA{--accent:var(--col-a);}
+#cB{--accent:var(--col-b);}
+#cC{--accent:var(--col-c);}
+#cB{border-left-color:var(--col-b);}
+#cC{border-left-color:var(--col-c);}
+
+/* the rule under each heading, and the badge */
+#cA .colhead{border-bottom-color:var(--col-a);}
+#cB .colhead{border-bottom-color:var(--col-b);}
+#cC .colhead{border-bottom-color:var(--col-c);}
+#cA .colhead b{color:var(--col-a); border-color:var(--col-a);}
+#cB .colhead b{color:var(--gold); border-color:var(--col-b);}
+#cC .colhead b{color:var(--col-c); border-color:var(--col-c);}
+/* the same letters up in the tab strip */
+#tA .key{color:var(--col-a);} #tB .key{color:var(--gold);} #tC .key{color:var(--col-c);}
+/* the tick in each More Info box; the box outline stays neutral */
+#ck-a:checked ~ .moreinfo label[for="ck-a"] .box{background:var(--col-a); border-color:var(--col-a);}
+#ck-b:checked ~ .moreinfo label[for="ck-b"] .box{background:var(--col-b); border-color:var(--col-b);}
+#ck-c:checked ~ .moreinfo label[for="ck-c"] .box{background:var(--col-c); border-color:var(--col-c);}
+#ck-a:checked ~ .moreinfo label[for="ck-a"],
+#ck-b:checked ~ .moreinfo label[for="ck-b"],
+#ck-c:checked ~ .moreinfo label[for="ck-c"]{border-color:var(--rule);}
+
+@media (max-width:1100px){
+  /* stacked: the spine moves to the top of each column, still its own color */
+  #cA,#cB,#cC{border-left:0; padding-left:0; border-top-style:solid; border-top-width:2px;}
+  #cA{border-top-color:var(--col-a);}
+  #cB{border-top-color:var(--col-b);}
+  #cC{border-top-color:var(--col-c);}
+}
+@media print{
+  /* on paper the code is three grays; the letter still says which column */
+  #cA{border-left-color:#4a4a4a;} #cB{border-left-color:#9a9a9a;} #cC{border-left-color:#6f6f6f;}
+  #cA .colhead{border-bottom-color:#4a4a4a;}
+  #cB .colhead{border-bottom-color:#9a9a9a;}
+  #cC .colhead{border-bottom-color:#6f6f6f;}
+}
+
+/* ===== the control moves into the column heading =========================
+   One row instead of two: the box that switches a column off now sits at the
+   right end of that column's own heading rule. The heading is sticky, so the
+   control travels down the page with the reader instead of scrolling away.
+   A switched-off column collapses to a narrow strip rather than disappearing,
+   because a control that removes itself leaves no way back. */
+.colhead{display:flex; align-items:center; gap:.5em;}
+.colhead .nm{flex:1 1 auto; min-width:0;}
+.colhead .sw{flex:0 0 auto; width:19px; height:19px; border-radius:4px;
+  border:1.5px solid var(--rule); background:var(--paper); position:relative;
+  cursor:pointer; -webkit-tap-highlight-color:transparent;}
+.colhead .sw::after{content:"\2713"; position:absolute; inset:0; display:flex;
+  align-items:center; justify-content:center; font-size:13px; line-height:1;
+  color:var(--paper); opacity:0;}
+.colhead .sw:hover{border-color:var(--accent);}
+#ck-a:checked ~ main #cA .colhead .sw,
+#ck-b:checked ~ main #cB .colhead .sw,
+#ck-c:checked ~ main #cC .colhead .sw{border-color:currentColor;}
+body:has(#ck-a:checked) #cA .colhead .sw{background:var(--col-a); border-color:var(--col-a);}
+body:has(#ck-b:checked) #cB .colhead .sw{background:var(--col-b); border-color:var(--col-b);}
+body:has(#ck-c:checked) #cC .colhead .sw{background:var(--col-c); border-color:var(--col-c);}
+body:has(#ck-a:checked) #cA .colhead .sw::after,
+body:has(#ck-b:checked) #cB .colhead .sw::after,
+body:has(#ck-c:checked) #cC .colhead .sw::after{opacity:1;}
+#ck-a:focus-visible ~ main #cA .colhead .sw,
+#ck-b:focus-visible ~ main #cB .colhead .sw,
+#ck-c:focus-visible ~ main #cC .colhead .sw{outline:2px solid var(--accent); outline-offset:3px;}
+
+/* the band's own furniture goes; the reset line stays and moves up under the threshold */
+.moreinfo{border:0; padding:0; margin:0;}
+.micap,.misub,.mibtns{display:none;}
+.mireset{margin:0 0 18px;}
+
+/* a switched-off column keeps its heading and collapses to a strip.
+   The band's original rule removed the whole column; that is what this undoes.
+   Its TAB still goes, because a closed column cannot be read. */
+body:has(#ck-a:not(:checked)) #cA,
+body:has(#ck-b:not(:checked)) #cB,
+body:has(#ck-c:not(:checked)) #cC{display:block!important;}
+body:has(#ck-a:not(:checked)) #cA > *:not(.colhead),
+body:has(#ck-b:not(:checked)) #cB > *:not(.colhead),
+body:has(#ck-c:not(:checked)) #cC > *:not(.colhead){display:none!important;}
+body:has(#ck-a:not(:checked)) #cA .colhead .nm,
+body:has(#ck-b:not(:checked)) #cB .colhead .nm,
+body:has(#ck-c:not(:checked)) #cC .colhead .nm{display:none;}
+body:has(#ck-a:not(:checked)) #cA .colhead,
+body:has(#ck-b:not(:checked)) #cB .colhead,
+body:has(#ck-c:not(:checked)) #cC .colhead{border-bottom:0; flex-direction:column;
+  align-items:center; gap:11px;}
+/* the strip is narrow, so the letter and the box stack instead of sitting side by side,
+   and the spine's indent shrinks or the box is pushed out of reach */
+body:has(#ck-a:not(:checked)) #cA,
+body:has(#ck-b:not(:checked)) #cB,
+body:has(#ck-c:not(:checked)) #cC{padding-left:12px; padding-right:12px;}
+body:has(#ck-a:not(:checked)) #cA .colhead b,
+body:has(#ck-b:not(:checked)) #cB .colhead b,
+body:has(#ck-c:not(:checked)) #cC .colhead b{margin-right:0;}
+
+@media (min-width:1101px){
+  body:has(#ck-a:not(:checked)) main{grid-template-columns:76px minmax(280px,.82fr) 1fr;}
+  body:has(#ck-b:not(:checked)) main{grid-template-columns:1fr 76px 1fr;}
+  body:has(#ck-c:not(:checked)) main{grid-template-columns:1fr minmax(280px,.82fr) 76px;}
+  body:has(#ck-a:not(:checked)):has(#ck-b:not(:checked)) main{grid-template-columns:76px 76px 1fr;}
+  body:has(#ck-a:not(:checked)):has(#ck-c:not(:checked)) main{grid-template-columns:76px 1fr 76px;}
+  body:has(#ck-b:not(:checked)):has(#ck-c:not(:checked)) main{grid-template-columns:1fr 76px 76px;}
+  body:has(#ck-a:not(:checked)):has(#ck-b:not(:checked)):has(#ck-c:not(:checked)) main{
+    grid-template-columns:76px 76px 76px;}
+}
+
+/* ===== the selected tab is filled with its own column's color ==============
+   The label color is not a guess: each fill was measured against paper and
+   against ink, and the one that reads takes it. Gold is the odd one out in the
+   light theme -- white on gold is 2.50:1, which fails, so its label is ink at
+   6.58:1. In the dark theme all three fills are light, so all three labels are
+   ink. Every pair below clears 4.5:1. */
+:root{--on-a:#FCFAF5; --on-b:#1E1B16; --on-c:#FCFAF5;}
+:root[data-theme="dark"]{--on-a:#1E1B16; --on-b:#1E1B16; --on-c:#1E1B16;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --on-a:#1E1B16; --on-b:#1E1B16; --on-c:#1E1B16;}}
+#tA[aria-selected="true"]{background:var(--col-a); border-color:var(--col-a); color:var(--on-a);}
+#tB[aria-selected="true"]{background:var(--col-b); border-color:var(--col-b); color:var(--on-b);}
+#tC[aria-selected="true"]{background:var(--col-c); border-color:var(--col-c); color:var(--on-c);}
+#tA[aria-selected="true"] .key{color:var(--on-a);}
+#tB[aria-selected="true"] .key{color:var(--on-b);}
+#tC[aria-selected="true"] .key{color:var(--on-c);}
+/* unselected, the letter alone carries the code, as it already did */
+
+/* the mark in the threshold is the same one as the favicon and the masthead:
+   three equal bars, one per column, taking the column colors so it follows the
+   theme. It used to be tall-short-tall in a single color, which read as a flag. */
+.threshold .mark svg rect:nth-of-type(1){fill:var(--col-a);}
+.threshold .mark svg rect:nth-of-type(2){fill:var(--col-b);}
+.threshold .mark svg rect:nth-of-type(3){fill:var(--col-c);}
+@media print{
+  .threshold .mark svg rect:nth-of-type(1){fill:#4a4a4a;}
+  .threshold .mark svg rect:nth-of-type(2){fill:#9a9a9a;}
+  .threshold .mark svg rect:nth-of-type(3){fill:#6f6f6f;}
+}
+
+/* source cards, carried over from the report shell */
+.rec{border-top:1px solid var(--rule);padding:22px 0;}
+.rec:last-of-type{border-bottom:1px solid var(--rule);}
+.rec .kind{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--ink-mid);padding-bottom:7px;}
+.rec .t{font-size:19px;font-weight:600;line-height:1.35;}
+.rec .m{font-size:15px;color:var(--ink-mid);margin-top:3px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;}
+.rec .d{font-size:16.5px;margin-top:9px;}
+.rec .u{margin-top:9px;font-size:15px;word-break:break-word;}
+.a-form{color:#2B4C8C;font-weight:600;}
+.b-form{color:#9A4A2F;font-weight:600;}
+:root[data-theme="dark"] .a-form{color:#8BA6E8;} :root[data-theme="dark"] .b-form{color:#D9906B;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .a-form{color:#8BA6E8;}
+  :root:not([data-theme="light"]) .b-form{color:#D9906B;}}
+
+/* ---- the abstract, as a dialog --------------------------------------------
+   Short enough to read in one sitting and the single most important thing on
+   the page, so it gets a button of its own rather than a place in a column.
+   Native <dialog>: Escape closes it, the backdrop closes it, no library. It is
+   also printed, after the three columns, because a reader with paper in hand
+   should not lose it. */
+.abstractbtn{border-color:var(--col-a)!important; color:var(--col-a)!important; font-weight:600;}
+.abstractbtn:hover{background:var(--col-a)!important; color:var(--paper)!important;}
+#abstractdlg{width:min(74ch,92vw); max-height:86vh; padding:0; border:0; border-radius:12px;
+  background:var(--card); color:var(--ink); box-shadow:0 18px 60px rgba(0,0,0,.34);}
+#abstractdlg::backdrop{background:rgba(0,0,0,.52); backdrop-filter:blur(2px);}
+.abstractbody{padding:34px 38px 8px; overflow:auto; max-height:calc(86vh - 78px);}
+.abskicker{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.17em;
+  text-transform:uppercase; color:var(--col-a); margin:0 0 12px;}
+#abstractdlg h2{font-size:clamp(25px,3.4vw,34px); line-height:1.1; margin:0 0 10px; font-weight:600;}
+.abssub{font-style:italic; color:var(--ink-mid); font-size:19px; line-height:1.4; margin:0 0 20px;
+  padding-bottom:18px; border-bottom:2px solid var(--col-a);}
+#abstractdlg p{font-size:17.5px; line-height:1.62; margin:0 0 1em;}
+.abskw{font-size:15.5px!important; color:var(--ink-mid); border-top:1px solid var(--rule);
+  padding-top:14px; margin-top:20px!important;}
+.absclose{position:sticky; bottom:0; display:flex; justify-content:flex-end;
+  padding:14px 38px 20px; background:linear-gradient(to top,var(--card) 68%,transparent);}
+.absclose button{font-family:"IBM Plex Mono",monospace; font-size:13px; padding:9px 20px;
+  border:1px solid var(--rule); border-radius:8px; background:var(--paper); color:var(--ink);
+  cursor:pointer;}
+.absclose button:hover{border-color:var(--col-a); color:var(--col-a);}
+@media print{
+  .abstractbtn{display:none;}
+  #abstractdlg{display:block!important; position:static; width:auto; max-height:none;
+    box-shadow:none; border-top:2px solid #000; border-radius:0; margin-top:26px; padding-top:10px;}
+  .abstractbody{max-height:none; overflow:visible; padding:0;}
+  .absclose{display:none;}
+}
+
+/* the masthead picture is black ink on transparency, so it flips with the palette */
+.masthead-fig img{background:transparent;}
+:root[data-theme="dark"] .masthead-fig img{filter:invert(1) brightness(.93);}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .masthead-fig img{filter:invert(1) brightness(.93);}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+    <div class="masthead-text">
+  <div class="eyebrow">
+    <svg class="mark" viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="1.5" y="4" width="6" height="16" rx="1.4" fill="#4C7A4E"></rect>
+      <rect x="9" y="4" width="6" height="16" rx="1.4" fill="#D8AC45"></rect>
+      <rect x="16.5" y="4" width="6" height="16" rx="1.4" fill="#B4372C"></rect>
+    </svg>
+    <span>New Gorhambury</span><span class="sep">·</span><span>Baconian Ciphers</span>
+  </div>
+  <h1><span class="seg">One-Day Report</span> <span class="sep">·</span> <span class="seg">Biliteral Cipher</span> <span class="sep">·</span> <span class="seg">October 12, 2026</span></h1>
+  <p class="standfirst"><strong>This project spends its days checking other people&rsquo;s claims. Today it checked its own. The front page said Book VI of <em>De Augmentis</em> gave the world binary code, steganography and telecommunications; asked plainly whether that is historically accurate, the answer is no. Torches carried letters in Polybius around 150 BCE, and he credits two men before him. Concealment was a named art in print seventeen years before Bacon published. Binary patterns were enumerated in antiquity. <strong>What has no precedent is the union of the three in one place</strong> &mdash; a message reduced to a fixed-length binary code, carried by any medium capable of two states, concealed in the carrying. Three entries were rewritten, and the broadest causal sentence on the site is gone.</strong></p>
+  <div class="asof">A record of one day&rsquo;s work &middot; findings may be superseded by later reports</div>
+    </div>
+
+    <figure class="masthead-fig">
+      <a class="masthead-img" href="timeline-2026-10-12.png" target="_blank" rel="noopener" title="Open the full-size picture">
+        <img src="timeline-2026-10-12.png" width="900" height="602" loading="eager" decoding="async"
+             alt="A timeline from Polybius about 150 BCE to Leibniz in 1679, with Bacon's De Augmentis of 1623 marked.">
+      </a>
+      <figcaption>Two of the three were not his. The third needed narrowing.</figcaption>
+    </figure>
+  </header>
+
+<nav role="tablist" aria-label="Columns">
+  <button role="tab" id="tA" aria-controls="cA" aria-selected="true"><span class="key">A</span>Plain answers</button>
+  <button role="tab" id="tB" aria-controls="cB" aria-selected="false"><span class="key">B</span>Sources</button>
+  <button role="tab" id="tC" aria-controls="cC" aria-selected="false"><span class="key">C</span>Technical colophon</button>
+  <span class="spacer"></span>
+  <div class="searchwrap" id="searchbar" hidden>
+    <label class="sr-only" for="sitesearch">Search this page</label>
+    <input type="search" id="sitesearch" placeholder="Search this page&hellip;" autocomplete="off" spellcheck="false" aria-controls="searchout">
+    <div class="sr-out" id="searchout" hidden></div>
+    <div class="sr-only" id="searchstatus" role="status" aria-live="polite"></div>
+  </div>
+  <button class="util abstractbtn" id="abstractopen" type="button">Abstract</button>
+  <button class="util" id="phoneview" type="button" hidden>Phone view</button>
+  <button class="util" id="pdf">Save as PDF</button>
+  <button class="util" id="theme">Dark</button>
+</nav>
+</div>
+
+<dialog id="abstractdlg" aria-labelledby="abstracth">
+  <article class="abstractbody">
+    <p class="abskicker">Cryptographic audit &middot; abstract</p>
+    <h2 id="abstracth">Bounding the two-form claim</h2>
+    <p class="abssub">A calibrated separation test on 149 lower-case italic b from the Shakespeare
+      First Folio, measured against Riverbank&rsquo;s own stated characteristics</p>
+
+    <p>Elizabeth Wells Gallup&rsquo;s <em>The Bi-literal Cypher of Sir Francis Bacon</em>
+      (1900&ndash;1910) reports several hundred pages of concealed narrative recovered from the
+      italic type of early printed books, on the premise that each italic letter belongs to one of
+      two distinguishable founts. The validity of the decipherment rests entirely on a prior step
+      &mdash; assigning each printed glyph to one of two classes &mdash; for which Gallup published
+      no reproducible rule. We locate that disclosure precisely. In the 463-page third edition
+      (Howard, 1901; collated 95 + 368 pp.), the whole of Part I offers a single sentence of
+      classification guidance, on page 2, naming no feature and directing the reader to
+      &ldquo;educate the eye&rdquo;; the terms <em>a-form</em> and <em>b-form</em> do not appear in
+      the volume. Feature-level description exists only in Riverbank&rsquo;s <em>Hints to the
+      Decipherer</em> (1916), published fifteen years after the results it would govern, and
+      specifies five characteristics: the a-form is &ldquo;larger, rounder, more upright, and more
+      robust,&rdquo; while of the long-tailed letters the b-form &ldquo;slopes more and has longer
+      flourishes.&rdquo;</p>
+
+    <p>We construct an open corpus of 174 lower-case italic b, 149 of them with measurable counters,
+      drawn from 41 First Folio pages. Glyphs are segmented with Tesseract under letter identities
+      supplied by an independent transcription rather than by recognition, and screened twice:
+      against Riverbank&rsquo;s own two b exemplars, scored on the better of the two and never on
+      their difference, and against the intrinsic geometry of the letter. We then apply projection
+      pursuit with Hartigan&rsquo;s dip as projection index, validated by fitting on half the corpus
+      and scoring the held-out half against randomly chosen directions, and we calibrate its
+      sensitivity by planting each of Riverbank&rsquo;s five characteristics at known magnitude into
+      half the glyphs.</p>
+
+    <p>The blind search detects no two-mode structure: one significant result in 36 held-out tests
+      across two independent runs, with a held-out dip of 0.029&ndash;0.031 that randomly chosen
+      directions exceed in 62% of draws. Calibration places the detection threshold at 7% in overall
+      size, 13% in tail length and 6 degrees of slant, bounding any real difference between two
+      forms of b in this corpus below those values. Two of the five characteristics &mdash; stroke
+      weight and bowl roundness &mdash; proved undetectable at any magnitude tested, including
+      changes of 60% and 55% respectively. We attribute this to the representation rather than to
+      the Folio: height registration normalizes size and weight information away, and no linear
+      projection over pixel values can express curvature. We report the gap explicitly and specify
+      the measurements required to close it.</p>
+
+    <p>The result bounds rather than refutes the two-form claim, for one letter, in one corpus,
+      under one instrument. It does not address the biliteral cipher as a system, which is sound,
+      nor Gallup&rsquo;s conclusions regarding authorship. Corpus, screening criteria,
+      planted-characteristic battery and analysis code are released in full.</p>
+
+    <p class="abskw"><b>Keywords</b> &mdash; historical cryptography; Baconian biliteral cipher;
+      Elizabeth Wells Gallup; Riverbank Laboratories; document image analysis; glyph segmentation;
+      projection pursuit; Hartigan&rsquo;s dip; unimodality testing; detection calibration;
+      Shakespeare First Folio.</p>
+  </article>
+  <form method="dialog" class="absclose"><button value="close">Close</button></form>
+</dialog>
+
+
+<div class="wrap">
+<div class="threshold" role="separator" aria-label="More info">
+  <div class="bar"><div class="mark"><svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><rect x="1.5" y="4" width="6" height="16" rx="1.4"></rect><rect x="9" y="4" width="6" height="16" rx="1.4"></rect><rect x="16.5" y="4" width="6" height="16" rx="1.4"></rect></svg></div></div>
+  <p class="cap">More info</p>
+</div>
+
+<div class="expand">
+  <!-- ===================================================================
+       DISPLAY DEFAULTS FOR THIS SITE.  This is the setting, and it is the
+       markup itself: `checked` means that column is on the page when it is
+       first opened.  Delete the word `checked` on any line to have that
+       column start switched off.  The three are independent.
+       No script is involved, so the default survives scripting being off,
+       and an archived copy of this page keeps whatever was set here.
+       =================================================================== -->
+  <input class="ckin" type="checkbox" id="ck-a" checked>
+  <input class="ckin" type="checkbox" id="ck-b" checked>
+  <input class="ckin" type="checkbox" id="ck-c" checked>
+
+  <script>
+  /* Reader memory, layered on the defaults above, plus two pieces of housekeeping
+     the tab strip needs. Placed here rather than at the end of the page so a
+     remembered choice is applied before the columns are painted and never flashes
+     open and then shut. With scripting off none of this runs and the defaults stand. */
+  (function(){
+    var KEY='3col-display', ids=['ck-a','ck-b','ck-c'], TAB={'ck-a':'tA','ck-b':'tB','ck-c':'tC'},
+        COL={'ck-a':'cA','ck-b':'cB','ck-c':'cC'}, el={}, i;
+    for(i=0;i<ids.length;i++){ el[ids[i]]=document.getElementById(ids[i]); if(!el[ids[i]]) return; }
+    var dflt={}; for(i=0;i<ids.length;i++) dflt[ids[i]]=el[ids[i]].checked;
+    var saved=null;
+    try{ saved=JSON.parse(localStorage.getItem(KEY)); }catch(e){}
+    if(saved) for(i=0;i<ids.length;i++) if(typeof saved[ids[i]]==='boolean') el[ids[i]].checked=saved[ids[i]];
+    function differs(){ for(var j=0;j<ids.length;j++) if(el[ids[j]].checked!==dflt[ids[j]]) return true; return false; }
+    function paint(){ var r=document.getElementById('ck-reset-row'); if(r) r.hidden=!differs(); }
+    /* the tab strip must never be left pointing at a column that is switched off */
+    function keepTabOnSomethingVisible(){
+      var vis=ids.filter(function(k){ return el[k].checked; });
+      if(!vis.length) return;
+      var cur=ids.filter(function(k){
+        var t=document.getElementById(TAB[k]);
+        return t && t.getAttribute('aria-selected')==='true';
+      })[0];
+      if(!cur || !el[cur].checked){
+        var t=document.getElementById(TAB[vis[0]]); if(t) t.click();
+      }
+    }
+    function save(){
+      var v={}; for(var j=0;j<ids.length;j++) v[ids[j]]=el[ids[j]].checked;
+      try{ localStorage.setItem(KEY,JSON.stringify(v)); }catch(e){}
+      paint(); keepTabOnSomethingVisible();
+    }
+    for(i=0;i<ids.length;i++) el[ids[i]].addEventListener('change',save);
+    /* following a citation into a column the reader closed switches it back on,
+       so the grid stays consistent and what they are reading is really there */
+    /* Switch on whichever column holds this element. Returns true when that
+       actually changed something. */
+    function reveal(t){
+      if(!t) return false;
+      for(var j=0;j<ids.length;j++){
+        var c=document.getElementById(COL[ids[j]]);
+        if(c && c.contains(t)){
+          if(el[ids[j]].checked) return false;
+          el[ids[j]].checked=true; save(); return true;
+        }
+      }
+      return false;
+    }
+    /* A numeral and an internal card are handled in script and never touch
+       location.hash, so hashchange cannot reach them. They call this instead;
+       without it a citation into a switched-off column scrolls to nothing. */
+    window.threeColReveal = reveal;
+    function openForTarget(){
+      var h=location.hash.slice(1); if(!h) return;
+      reveal(document.getElementById(h));
+    }
+    window.addEventListener('hashchange', openForTarget);
+    document.addEventListener('DOMContentLoaded',function(){
+      var b=document.getElementById('ck-reset');
+      if(b) b.addEventListener('click',function(){
+        for(var j=0;j<ids.length;j++) el[ids[j]].checked=dflt[ids[j]];
+        try{ localStorage.removeItem(KEY); }catch(e){}
+        paint(); keepTabOnSomethingVisible();
+      });
+      paint(); openForTarget();
+      setTimeout(keepTabOnSomethingVisible,0);
+    });
+  })();
+  </script>
+
+  <p class="mireset" id="ck-reset-row" hidden><button type="button" id="ck-reset">Back to this site&rsquo;s default view</button></p>
+  <div class="moreinfo">
+    <p class="micap">More Info</p>
+    <p class="misub">Uncheck anything you would rather not read</p>
+    <div class="mibtns">
+      <label class="ckbtn" for="ck-a"><span class="box"></span>Plain answers</label>
+      <label class="ckbtn" for="ck-b"><span class="box"></span>Sources</label>
+      <label class="ckbtn" for="ck-c"><span class="box"></span>Technical colophon</label>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="wrap">
+<main>
+
+<!-- ================= A ================= -->
+<section class="col active" id="cA" role="tabpanel" aria-labelledby="tA">
+  <div class="colhead"><b>A</b><span class="nm"> &nbsp;Plain answers</span><label class="sw" for="ck-a" title="Show or hide this column"></label></div>
+  <h2>The short version</h2>
+
+  <p>This project spends its days checking other people&rsquo;s claims. Today it checked its own, and
+    three of them did not survive.</p>
+
+  <p>The front page of this site said that Book VI of Bacon&rsquo;s <em>De Augmentis</em> gave the
+    world binary code, steganography and telecommunications. Asked plainly whether that is
+    historically accurate, the answer is no. Each of the three has a clear precedent, and two of them
+    are not close.</p>
+
+  <div class="note"><strong>Today&rsquo;s result in one sentence.</strong> Torches carried letters in
+    Polybius around 150 BCE; concealment was a named art with a printed literature before Bacon
+    published; binary patterns were enumerated in antiquity. <strong>What has no precedent is the
+    union of the three in one place</strong> &mdash; a message reduced to a fixed-length binary code,
+    carried by any medium capable of two states, concealed in the carrying.</div>
+
+  <div class="note"><strong>What changed on the site.</strong> Three entries in the signature lists
+    were rewritten to claim only what is actually Bacon&rsquo;s, and the strongest causal sentence on
+    the page &mdash; &ldquo;This brought forth the Internet&rdquo; &mdash; is gone.</div>
+
+  <h2>Questions</h2>
+
+  <details><summary>What is the biliteral cipher?</summary><div class="body">
+    <p>Sir Francis Bacon described it in 1623. Every letter becomes a group of five symbols, each
+      symbol either an <span class="a-form">a</span> or a <span class="b-form">b</span> &mdash; five
+      binary digits, three hundred years before anyone called them that.</p>
+    <p>The two symbols need not be letters. They can be two founts of type so similar that a reader
+      notices nothing. The system is sound; nothing here disputes it.</p>
+  </div></details>
+
+  <details><summary>What did you check today?</summary><div class="body">
+    <p>This site&rsquo;s own front page. It carries two lists of twenty things Bacon started that are
+      still running, and three of those entries amounted to priority claims &mdash; that he gave the
+      world binary code, telecommunications and steganography.</p>
+    <p>A priority claim is the easiest kind to check and the easiest kind to lose. Somebody either
+      did the thing earlier or they did not.</p>
+  </div></details>
+
+  <details><summary>What did you get wrong?</summary><div class="body">
+    <p><strong>Steganography.</strong> Johannes Trithemius wrote <em>Steganographia</em> around 1499;
+      it was printed in Frankfurt in 1606, seventeen years before <em>De Augmentis</em>. He coined the
+      word. Giambattista della Porta published on concealed writing in 1563. The practice goes back to
+      Herodotus. Bacon inherited a named discipline with a literature.</p>
+    <p><strong>Telecommunications.</strong> Worse. Polybius describes a working torch telegraph that
+      sent arbitrary letters over distance, with a two-torch handshake so the sender knew the receiver
+      was watching. And he does not claim it &mdash; he credits Cleoxenus and Democleitus before him.
+      That is around 150 BCE. Bacon is roughly seventeen centuries late.</p>
+    <p><strong>Binary.</strong> The survivor, but it needed narrowing. The biliteral cipher is a
+      genuine fixed-length binary encoding of an alphabet. It is not the first use of binary: Pingala
+      enumerated binary syllable patterns in antiquity, and Leibniz formalized binary arithmetic in
+      1679. &ldquo;First binary code in the world&rdquo; overreaches.</p>
+  </div></details>
+
+  <details><summary>Then what is actually his?</summary><div class="body">
+    <p>The union, and it is a stronger claim than any of the three it replaces.</p>
+    <p>Polybius had a carrier but no general code &mdash; his scheme was torches and only torches.
+      Trithemius had concealment but no encoding. Pingala had binary but transmitted nothing. Book VI
+      is the first place all three appear together: <strong>an arbitrary message, reduced to
+      fixed-length binary, carried by any medium that can hold two states, in a way that conceals that
+      anything is being carried.</strong></p>
+    <p>That is the architecture of digital communication, and no one before him had assembled it.</p>
+  </div></details>
+
+  <details><summary>Does this damage the project?</summary><div class="body">
+    <p>It improves it. An overstated claim on the front page is the first thing a hostile reader
+      tests, and the one they use to dismiss everything measured behind it. Three such claims were
+      sitting above work whose whole discipline is not overclaiming.</p>
+    <p>Naming Polybius and Trithemius before anyone else does converts the weakest point on the site
+      into a demonstration that the project checks itself. That is worth more than the claims were.</p>
+  </div></details>
+
+  <details><summary>What has this to do with the cipher work?</summary><div class="body">
+    <p>More than expected. The defensive half of modern steganography is called
+      <strong>steganalysis</strong>: you hold a carrier and must decide whether a hidden binary
+      modulation is present in it. That is the same problem this project has been working on all
+      month, with Folio glyphs as the carrier.</p>
+    <p>That field already has the quantity this project measured from scratch yesterday. It calls it
+      <strong>embedding rate</strong>, and its central result is that a payload small enough relative
+      to its carrier is not merely hard to detect but provably hard. Yesterday&rsquo;s detection
+      thresholds are the same quantity on a different carrier.</p>
+  </div></details>
+
+  <details><summary>Where does digital steganography actually turn up?</summary><div class="body">
+    <p>Printer identification dots, the near-invisible yellow grid colour laser printers lay down
+      encoding a serial number and timestamp &mdash; the biliteral cipher in a printing process.
+      Forensic watermarking, so a leaked screener identifies its source. Copyright watermarking that
+      survives compression and cropping. Protocol obfuscation, where what is concealed is not the
+      content but the fact that circumvention is happening. Covert channels in packet timing. And
+      provenance marks in generated images, audio and text.</p>
+    <p>All of them answer to Bacon&rsquo;s criterion: the thing must not raise suspicion.</p>
+  </div></details>
+
+  <details><summary>Who is doing this, and why?</summary><div class="body">
+    <p>Walter Wilkinson, in Worland, Wyoming, with a computer and free scans. No institution, no
+      funding.</p>
+    <p>The aim is to find out whether the evidence offered for the biliteral decipherment carries the
+      weight placed on it &mdash; and to publish the answer in the same terms whichever way it falls.
+      Today it fell against this project&rsquo;s own front page.</p>
+    <p>More at <a href="https://gorhambury.org/">New Gorhambury</a>, and at
+      <a href="https://gorhambury.org/public/experiments/experiment-one/">Experiment One</a>.
+      Experiment One argues a conclusion; these reports deliberately do not.</p>
+  </div></details>
+
+</section>
+
+<!-- ================= B ================= -->
+<section class="col dim" id="cB" role="tabpanel" aria-labelledby="tB">
+  <div class="colhead"><b>B</b><span class="nm"> &nbsp;Sources</span><label class="sw" for="ck-b" title="Show or hide this column"></label></div>
+  <h2>External documents</h2>
+  <p>Every source relied on today, with what it is, what you would find there, and what it is doing
+    in this issue. The link comes last on purpose.</p>
+
+  <div class="rec">
+    <div class="kind">Primary &middot; c. 150 BCE &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Histories, Book X, chapter 45 &mdash; the torch telegraph</div>
+      <div class="m">Polybius &middot; written c. 150 BCE &middot; public domain &middot; consulted today through a secondary description of X.45 rather than the Greek</div>
+      <div class="d">The precedent that defeats the telecommunications claim outright. Polybius describes a signalling system that transmits <em>arbitrary letters</em> over distance: the alphabet is divided into five groups of five, the sender raises torches on the left for the group and on the right for the letter, and a two-torch signal is exchanged first so the sender knows the receiver is watching. He explicitly does not claim the invention &mdash; he credits Cleoxenus and Democleitus and says he improved the mechanism. His stated motive is the one that matters here: earlier beacon systems could only send messages agreed in advance, and he wanted to send news nobody had anticipated.</div>
+      <div class="u"><a href="https://imperiumromanum.pl/en/curiosities/polybius-square/">imperiumromanum.pl &mdash; the Polybius square and torch telegraph</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Primary &middot; 1499 / 1606 &middot; today&rsquo;s source</div>
+    <div>
+      <div class="t">Steganographia</div>
+      <div class="m">Johannes Trithemius, Benedictine abbot &middot; written c. 1499 &middot; first printed Frankfurt, 1606 &middot; public domain &middot; consulted today through its catalog record, not the text</div>
+      <div class="d">The precedent that defeats the steganography claim. Trithemius coined the word, and the book &mdash; presented as a work on magic, its first two volumes long since shown to be cryptography and steganography &mdash; was in print seventeen years before <em>De Augmentis</em>, and written about a hundred and twenty years before. Concealing the existence of a message was a named art with a literature by the time Bacon wrote. What survives for Bacon is not the art but the <em>criterion</em>: that a cipher must not raise suspicion.</div>
+      <div class="u"><a href="https://en.wikipedia.org/wiki/Steganographia">en.wikipedia.org/wiki/Steganographia</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Primary &middot; 1640 &middot; the claim under test</div>
+    <div>
+      <div class="t">Of the Advancement and Proficience of Learning, Book VI &mdash; the cipher passage</div>
+      <div class="m">Francis Bacon &middot; <em>De Augmentis Scientiarum</em> (1623), interpreted into English by Gilbert Wats, Oxford, 1640 &middot; the cipher passage at p.&nbsp;269 &middot; public domain</div>
+      <div class="d">The text the three claims were made about. It contains the biformed alphabet, the <em>omnia per omnia</em> principle, the sentence extending the method to &ldquo;Bells, Trumpets, Lights and Torches, the Reports of Muskets,&rdquo; and the requirement that a cipher be &ldquo;without suspicion.&rdquo; Nothing in it is diminished by today&rsquo;s finding; what changes is the claim this project built on top of it. The 1605 English <em>Advancement</em> mentions ciphers only in passing &mdash; the full treatment is the 1623 Latin expansion.</div>
+      <div class="u"><a href="https://archive.org/details/ofadvancementpro00baco">archive.org/details/ofadvancementpro00baco</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Internal &middot; the document corrected</div>
+    <div>
+      <div class="t">Baconian Works &mdash; two top-ten lists</div>
+      <div class="m">This project &middot; the source document behind the signature lists on the landing page &middot; held in the project archive</div>
+      <div class="d">Where the three claims lived. Global entries 2, 3 and 9 were rewritten today, and a paragraph was added above both lists stating that where a part had precedent the entry names only what is Bacon&rsquo;s. The old wording is recorded in the corrections section of column C rather than discarded.</div>
+      <div class="u"><a href="/">baconian-ciphers.online &mdash; the lists, as corrected</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Gap &middot; not in hand</div>
+    <div>
+      <div class="t">De Furtivis Literarum Notis</div>
+      <div class="m">Giambattista della Porta &middot; Naples, 1563 &middot; public domain &middot; not consulted</div>
+      <div class="d">Cited here only as further evidence that concealed writing was an established subject with a printed literature before 1623. The steganography finding does not depend on it &mdash; Trithemius alone settles the date &mdash; so it is recorded as a gap rather than leaned on.</div>
+      <div class="u"><a href="https://en.wikipedia.org/wiki/Giambattista_della_Porta">en.wikipedia.org/wiki/Giambattista_della_Porta</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Gap &middot; not in hand</div>
+    <div>
+      <div class="t">Chandaḥśāstra</div>
+      <div class="m">Pingala &middot; India, variously dated c. 300&ndash;200 BCE &middot; public domain &middot; not consulted</div>
+      <div class="d">The binary precedent. Pingala enumerates the patterns of light and heavy syllables in verse metres, which is binary enumeration, and the combinatorial apparatus around it is recognised as an early treatment of binary representation. Cited from general knowledge, against this project&rsquo;s own claim rather than for it, which is the conservative direction. Anyone wishing to press the point harder should read it rather than this card.</div>
+      <div class="u"><a href="https://en.wikipedia.org/wiki/Pingala">en.wikipedia.org/wiki/Pingala</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Gap &middot; not in hand</div>
+    <div>
+      <div class="t">Explication de l&rsquo;Arithmétique Binaire</div>
+      <div class="m">Gottfried Wilhelm Leibniz &middot; 1703, the system worked out from 1679 &middot; public domain &middot; not consulted</div>
+      <div class="d">The other binary precedent, and the one that marks the boundary of what Bacon did. Leibniz gives binary <em>arithmetic</em> &mdash; carrying, adding, multiplying in base two. Bacon gives binary <em>encoding</em> and never computes with it. The distinction is what keeps the narrowed claim honest.</div>
+      <div class="u"><a href="https://en.wikipedia.org/wiki/Binary_number">en.wikipedia.org/wiki/Binary_number</a></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <div class="kind">Superseded &middot; 11 October 2026</div>
+    <div>
+      <div class="t">One-Day Report &middot; Biliteral Cipher &middot; October 11, 2026</div>
+      <div class="m">This project &middot; the previous issue &middot; still published, unaltered</div>
+      <div class="d">Yesterday&rsquo;s issue: the 174-glyph b corpus, the separation test, and the finding that Gallup&rsquo;s own volume contains no reproducible classification rule. None of that is affected by today&rsquo;s correction, which touches the front-page framing and not the measurements. It is linked here so a reader can see what the project said before, as issues are superseded and never deleted.</div>
+      <div class="u"><a href="/biliteral/2026-10-11/">baconian-ciphers.online/biliteral/2026-10-11/</a></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= C ================= -->
+<section class="col dim" id="cC" role="tabpanel" aria-labelledby="tC">
+  <div class="colhead"><b>C</b><span class="nm"> &nbsp;Technical colophon</span><label class="sw" for="ck-c" title="Show or hide this column"></label></div>
+  <h2>Technical colophon</h2>
+  <p>Prior know-how is assumed, and the items become more &ldquo;technical&rdquo; toward the bottom.</p>
+
+  <p>This issue was <strong>produced on 12 October 2026</strong>. It is documentary work, not image
+    work: no glyph was measured today. The question was whether three claims this project publishes
+    about Book VI of <em>De Augmentis</em> are historically accurate, and the method was to look for
+    earlier instances of each.</p>
+
+  <h3>&#9873; The three claims, before and after</h3>
+  <pre>BEFORE                     AFTER
+The binary code        ->  Binary encoding of the alphabet
+Telecommunications     ->  Medium-independent signalling
+Steganography as a         A test for concealment
+  distinct art</pre>
+  <p>The consequence line of the second also went. It read &ldquo;This brought forth the
+    Internet&rdquo; &mdash; the broadest causal claim on the site &mdash; and now reads that any
+    two-state carrier will serve, which is why the same bits travel over copper, fibre and radio.</p>
+
+  <h3>&#9873; Polybius X.45, in detail</h3>
+  <p>The scheme that defeats the telecommunications claim is not a beacon. A beacon sends one bit, and
+    only a message agreed beforehand. Polybius describes something else:</p>
+  <pre>alphabet divided into 5 groups of 5
+left torches  -> which group
+right torches -> which letter in it
+2 torches raised and answered first, as a handshake</pre>
+  <p>That is arbitrary text, letter by letter, over distance, with flow control. Polybius states the
+    motive explicitly: earlier systems could only transmit messages anticipated in advance, and he
+    wanted to send news that had not been. He also credits Cleoxenus and Democleitus rather than
+    himself, so even this is not the first instance.</p>
+
+  <h3>&#9873; Dates, for the steganography claim</h3>
+  <pre>c. 1499   Trithemius writes Steganographia
+   1563   della Porta, De Furtivis Literarum Notis
+   1606   Steganographia printed, Frankfurt
+   1623   De Augmentis</pre>
+  <p>Seventeen years between the printing and <em>De Augmentis</em>, and about a hundred and twenty
+    between the writing and it. The word itself is Trithemius&rsquo;s.</p>
+
+  <h3>&#9873; What survives on binary, and what does not</h3>
+  <p>The biliteral cipher is a fixed-length binary encoding of an alphabet: five places, two states,
+    thirty-two available patterns for twenty-four letters. That is a real and specific thing, and it
+    has the same structure as the five-bit telegraph codes that came later.</p>
+  <p>Two cautions keep it honest. <strong>Binary representation is older</strong> &mdash; Pingala
+    enumerates binary syllable patterns in antiquity. <strong>Binary arithmetic is later and is
+    Leibniz&rsquo;s</strong> &mdash; Bacon encodes with two states but never computes with them. And
+    the structural resemblance to Baudot is not a claim of influence: there is no evidence the one
+    descends from the other, and none is asserted here.</p>
+
+  <h3>&#9873; The claim that replaces them</h3>
+  <p>Stated so it can be attacked:</p>
+  <pre>Book VI of De Augmentis (1623) is the earliest known text in which
+all three of the following appear together as one method:
+
+  1. an arbitrary message reduced to a FIXED-LENGTH BINARY CODE
+  2. carried by ANY MEDIUM capable of two distinguishable states
+  3. in a manner that CONCEALS that a message is being carried</pre>
+  <p>Each component is individually anticipated. The falsifier is simple: produce a text before 1623
+    in which all three appear together. Polybius has 1 in a restricted form and 2 in one medium only;
+    Trithemius has 3; Pingala has a version of 1 and neither of the others.</p>
+
+  <h3>&#9873; Steganalysis, and why it bears on this project</h3>
+  <p>The defensive half of digital steganography is steganalysis: given a carrier, decide whether a
+    hidden binary modulation is present. That is formally the problem this project has been running
+    against Folio glyphs.</p>
+  <p>The relevant quantity there is <strong>embedding rate</strong> &mdash; payload size relative to
+    carrier capacity &mdash; and the standing result is that below a certain rate, detection becomes
+    not merely difficult but statistically hopeless for a given sample size. Yesterday&rsquo;s
+    detection thresholds (7% in size, 13% in tail length, 6 degrees of slant, with weight and
+    roundness undetectable at any magnitude) are that same quantity measured on a different carrier.
+    The audit now has a second body of prior art to cite and a vocabulary a security researcher would
+    recognise.</p>
+  <p class="note">Not yet done: mapping the thresholds onto the steganalysis formalism properly, so
+    they can be stated as an embedding rate rather than as five separate feature magnitudes.</p>
+
+  <h3>&#9873; Corrections to earlier issues</h3>
+  <p><strong>To the landing page, and to the project document behind it.</strong> Global list entries
+    2, 3 and 9 carried priority claims that do not hold. All three were rewritten today and a
+    paragraph was added above the lists naming the precedents. The old wording is preserved in the
+    table above rather than quietly dropped.</p>
+  <p><strong>Not affected:</strong> the 11 October issue. Its measurements &mdash; the 174-glyph
+    corpus, the separation test, the thresholds, the finding about Gallup&rsquo;s front matter
+    &mdash; stand unaltered. Today&rsquo;s correction is to this project&rsquo;s framing of Bacon,
+    not to anything measured about the Folio.</p>
+
+  <h3>&#9873; Failures and dead ends</h3>
+  <pre>the original formulation, offered and withdrawn
+  "Book VI introduces three technologies at the base of the
+   Internet: binary code, digital steganography,
+   telecommunications"
+  -> two of the three fail on priority, and badly. Kept here
+     because the discarded version is the evidence that the
+     check was actually run.
+
+sources consulted at second hand, and marked as such
+  Polybius X.45 read through a description, not the Greek
+  Steganographia dated from its catalog record, not the text
+  della Porta, Pingala and Leibniz cited from general
+  knowledge; all three are cited AGAINST this project's own
+  claim, which is the conservative direction, but none of
+  them has been read for this issue.</pre>
+
+  <h3>&#9873; Environment</h3>
+  <p>No computation today. Web search and page retrieval for the priority checks; the project archive
+    for the document under correction. The three source cards marked <em>Gap &middot; not in hand</em>
+    in column B are exactly the ones a reader should not take on this project&rsquo;s word.</p>
+
+  <h3>&#9873; Publication</h3>
+  <p>GitHub Pages from the repository root, no build step, no framework, no analytics, no trackers
+    and no cookies. The custom domain <strong>baconian-ciphers.online</strong> resolves through four
+    A records at the apex to GitHub&rsquo;s addresses, with <span class="mono">www</span> a CNAME to
+    the Pages host; TLS is issued automatically and HTTPS is enforced. All internal links are
+    relative, so a change of domain touches one file. Total infrastructure cost is about a dollar a
+    year &mdash; chosen deliberately, so that nothing here depends on a service that can withdraw it.
+    Issues are superseded, never deleted: a link sent today will resolve next year.</p>
+
+</section>
+
+</main>
+</div>
+
+<footer>
+  One-Day Report · Biliteral Cipher · 12 October 2026<br>
+  Walter Wilkinson · Worland · Washakie County · Wyoming · <strong>5Ws</strong><br>
+  Folio images &copy; Bodleian Libraries, University of Oxford, CC BY. Riverbank publications public domain.<br>
+  &copy; 2026 Walter Wilkinson &middot; code MIT &middot; words reserved
+</footer>
+<!-- ONE LEVEL UP. The last thing on the page: a card naming the site one level above this one,
+     with one line saying what it is, in that site's own words. It is threecolumns.online unless
+     this site sits under another instance (worland-dog-law.online sits under washakie-ai.online).
+     Delete it only on a site with nothing above it. -->
+<nav class="uplevel" aria-label="One level up">
+  <a href="https://threecolumns.online/">
+    <span class="uplabel">&uarr; One level up</span>
+    <span class="upname">threecolumns.online</span>
+    <span class="upcap">an AI automation tool for generating ultralight one-topic websites</span>
+  </a>
+</nav>
+<div class="endmark">·</div>
+
+<script>
+(function(){
+  var tabs = [].slice.call(document.querySelectorAll('[role="tab"]'));
+  var cols = { tA:'cA', tB:'cB', tC:'cC' };
+  var wide = function(){ return window.matchMedia('(min-width:1101px)').matches; };
+  function select(id){
+    tabs.forEach(function(t){
+      var on = t.id === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      var c = document.getElementById(cols[t.id]);
+      c.classList.toggle('active', on);
+      c.classList.toggle('dim', wide() ? !on : false);
+    });
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ select(t.id); });
+    t.addEventListener('keydown', function(e){
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var n = tabs[(i + d + tabs.length) % tabs.length];
+      n.focus(); select(n.id);
+    });
+  });
+  window.addEventListener('resize', function(){
+    var cur = tabs.filter(function(t){ return t.getAttribute('aria-selected') === 'true'; })[0];
+    if (cur) select(cur.id);
+  });
+  select('tA');
+
+  // A column is its own button: a click in a dimmed column (or tabbing into it) makes it the
+  // active one, exactly as its A/B/C button would. Capture phase, so a marker or card that
+  // sends the reader to another column still has the last word.
+  Object.keys(cols).forEach(function(tid){
+    var c = document.getElementById(cols[tid]);
+    var take = function(){ if (!c.classList.contains('active')) select(tid); };
+    c.addEventListener('click', take, true);
+    c.addEventListener('focusin', take);
+  });
+
+  // footnote markers -> reference card
+  document.querySelectorAll('.fn').forEach(function(f){
+    f.addEventListener('click', function(){
+      var el = document.getElementById(f.dataset.ref);
+      if (!el) return;
+      if (window.threeColReveal) window.threeColReveal(el);
+      select('tB');
+      el.scrollIntoView({behavior:'smooth', block:'center'});
+      el.classList.add('flash');
+      setTimeout(function(){ el.classList.remove('flash'); }, 1600);
+    });
+  });
+
+  // internal link cards -> open the passage they point at, in its own column
+  function openPassage(id){
+    var d = document.getElementById(id);
+    if (!d) return false;
+    if (window.threeColReveal) window.threeColReveal(d);
+    var col = d.closest('.col');
+    if (col) {
+      var tab = tabs.filter(function(t){ return cols[t.id] === col.id; })[0];
+      if (tab) select(tab.id);
+    }
+    if (d.tagName === 'DETAILS') d.open = true;
+    d.scrollIntoView({behavior:'smooth', block:'start'});
+    d.classList.add('flash');
+    setTimeout(function(){ d.classList.remove('flash'); }, 1600);
+    return true;
+  }
+  document.querySelectorAll('[data-open]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      if (openPassage(a.dataset.open)) e.preventDefault();
+    });
+  });
+
+  document.getElementById('pdf').addEventListener('click', function(){ window.print(); });
+  // print: open every folded answer first, and fold them again after, so paper misses nothing
+  var unfolded = [];
+  window.addEventListener('beforeprint', function(){
+    var closed = [].filter.call(document.querySelectorAll('details'), function(d){ return !d.open; });
+    closed.forEach(function(d){ d.open = true; });
+    unfolded = unfolded.concat(closed);
+  });
+  window.addEventListener('afterprint', function(){
+    unfolded.forEach(function(d){ d.open = false; });
+    unfolded = [];
+  });
+  var th = document.getElementById('theme');
+  th.addEventListener('click', function(){
+    var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+    th.textContent = dark ? 'Dark' : 'Light';
+  });
+
+  // link health: same-origin status file only. No file, no claim.
+  fetch('links.json', {cache:'no-store'}).then(function(r){
+    if (!r.ok) throw 0; return r.json();
+  }).then(function(d){
+    var dead = d.dead || {}, any = false;
+    Object.keys(dead).forEach(function(id){
+      var card = document.getElementById(id);
+      if (!card) return;
+      var a = card.querySelector('.rlink');
+      if (!a) return;
+      a.classList.add('broken');
+      a.removeAttribute('href');
+      a.setAttribute('aria-disabled','true');
+      any = true;
+    });
+    if (any) {
+      var n = document.getElementById('deadnote');
+      var lines = Object.keys(dead).map(function(id){
+        var t = document.getElementById(id).querySelector('.rtitle').textContent;
+        return '&ldquo;' + t + '&rdquo; — unreachable as of ' + dead[id];
+      });
+      n.innerHTML = '<b>A note on the struck-through links.</b> ' +
+        'These sources were live when this report was written and are not now. ' +
+        'They are shown rather than removed, so that what was cited stays visible.<br><br>' +
+        lines.join('<br>') + '<br><br>Last checked ' + (d.checked || 'unknown') + '.';
+      n.hidden = false;
+    }
+  }).catch(function(){ /* no status file: say nothing */ });
+})();
+</script>
+<script src="phone-view.js" defer></script>
+<script src="top-button.js" defer></script>
+<script src="back-link.js" defer></script>
+<script src="cite-back.js" defer></script>
+<script src="search.js" defer></script>
+
+<script>
+/* The abstract dialog. Native <dialog> does the heavy lifting: Escape closes it
+   and the backdrop is free. The only thing added is closing on a backdrop click,
+   which the element does not do by itself. */
+(function(){
+  var dlg=document.getElementById('abstractdlg'), btn=document.getElementById('abstractopen');
+  if(!dlg||!btn) return;
+  btn.addEventListener('click', function(){ dlg.showModal(); });
+  dlg.addEventListener('click', function(e){
+    if(e.target===dlg){ dlg.close(); }      /* click outside the panel */
+  });
+})();
+</script>
+</body>
+</html>
