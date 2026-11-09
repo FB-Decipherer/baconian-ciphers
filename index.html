@@ -117,6 +117,10 @@ footer strong{font-weight:600;color:var(--ink);letter-spacing:.04em}
   .sigcols{gap:0 26px;} .sn{font-size:11pt;} .sc{font-size:9pt;} .sy{color:#000;}
   .siglist li{padding:5px 0 4px; break-inside:avoid;}
 }
+
+/* Wikipedia links: a light dotted underline, so they read as Wikipedia at a glance. Source-card buttons (.rlink) keep their box. 7 Nov 2026. */
+a[href*="wikipedia.org"]:not(.rlink){text-decoration:none;border-bottom:1px dotted rgba(110,104,94,.5);}
+a[href*="wikipedia.org"]:not(.rlink):hover{border-bottom-color:var(--accentb,#B4372C);}
 </style></head><body>
 <div class="wrap">
 <header>
